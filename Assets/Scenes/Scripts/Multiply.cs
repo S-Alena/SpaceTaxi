@@ -10,45 +10,55 @@ using Vector3 = UnityEngine.Vector3;
 
 public class Multiply : MonoBehaviour
 {
+    public GameObject plönet;
     public GameObject böbbel;
     private int böbbelCount = 0;
     public int böbbelLimit;
-    
-    //soll dafür sorgen dass sie in einer area spawnen
-    public Rect spawnArea;
-
+    int i = 0;
 
     void Start()
     {
-        // erzeuge zwischen 1 und 6 böbbels
-        böbbelLimit = Random.Range(1, 6);
+        // Anzahl böbbels
+        böbbelLimit = Random.Range(5, 10);
     }
 
     void Update()
-    {  
-        if(böbbelCount < böbbelLimit) {
+    {
+        if (böbbelCount < 10)
+        {
+            //erzeugt eine randomized Location
+            Vector3 spawnLocation = newLocation();
             
-            int a = 20;
-            Vector3 spawnLocation = newLocation(a);
             
-
+            //erzeugt ein böbbel
             GameObject go = Instantiate(böbbel, spawnLocation, Quaternion.identity);
-            böbbelCount += 1;
-                
-            print("Böbbels: " +böbbelCount);
+            //zählt böbbel, und setzt den Winkel eins weiter
+            böbbelCount ++;
+            i ++;
+            
+            print("Böbbels: " + böbbelCount);
 
         }
     }
-    
-    Vector3 newLocation(int a)
-    {
-        Vector3 spawnLocation = new Vector3(
-            Random.Range(spawnArea.x, spawnArea.y) + a, // x position
-            Random.Range(spawnArea.width, spawnArea.height) + a, // y position
-            0);
 
+    Vector3 newLocation()
+    {
+        float x;
+        float y;
+        
+        //Ein Kreis ist 2mal PI, geteilt durch Anzahl der böbbel, i sorgt dafür dass es um einen xten Teil verschoben wird
+        float zet =  i *  2 * Mathf.PI / böbbelLimit;
+        
+        //setzt die location, ausgehend vom Mittelpunkt vom zugewiesenen PLönet
+        Vector3 spawnLocation = new Vector3(
+            x = Mathf.Sin(zet) * 70 + plönet.transform.position.x,
+            y = Mathf.Cos(zet) * 70 + plönet.transform.position.y,
+            0);
+        
         return spawnLocation;
-    }
+
+      }
 }
+
 
     
