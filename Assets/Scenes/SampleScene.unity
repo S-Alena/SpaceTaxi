@@ -276,6 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
+  "b\xF6bbelLimit": 6
   spawnArea:
     serializedVersion: 2
     x: -100
