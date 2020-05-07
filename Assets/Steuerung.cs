@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Steuerung : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class Steuerung : MonoBehaviour
     private List<string> collisionOrder = new List<string>();
 
     private List<string> correctOrder = new List<string>();
+    
+    public bool end = false;
+    public GameObject deathText;
+    public GameObject successText;
 
     void Start()
     {
@@ -19,6 +24,9 @@ public class Steuerung : MonoBehaviour
         correctOrder.Add("Plänet (3)");
 
         correctOrder.Add("Plänet (4)");
+        
+        deathText.SetActive(false);
+        successText.SetActive(false);
     }
 
     private int max = 5;
@@ -27,6 +35,10 @@ public class Steuerung : MonoBehaviour
 
     private void Update()
     {
+        if (end && Input.GetMouseButtonDown(0))
+        {
+            string sceneName = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(sceneName);
 
         if (Input.GetKeyDown(KeyCode.W) && velocity.y <= max)
         {
@@ -100,8 +112,13 @@ public class Steuerung : MonoBehaviour
 
             if (equal)
             {
-                Debug.Log("success");
+                successText.SetActive(true);
             }
+            else
+            {
+                deathText.SetActive(true);
+            }
+            end = true;
         }
 
 
