@@ -1576,11 +1576,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4ba6f7f56376a4b878104bbabeafbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 0, y: 0, z: 0}
+  speed: 70
   end: 0
   deathText: {fileID: 767572578}
   successText: {fileID: 1664041067}
-  pos: {x: 380, y: 250}
 --- !u!50 &1883159158
 Rigidbody2D:
   serializedVersion: 4
@@ -1601,7 +1600,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1883159159
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1770,11 +1769,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4ba6f7f56376a4b878104bbabeafbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 0, y: 0, z: 0}
+  speed: 10
   end: 0
   deathText: {fileID: 767572578}
   successText: {fileID: 1664041067}
-  pos: {x: 380, y: 260}
 --- !u!1 &1962617135
 GameObject:
   m_ObjectHideFlags: 0

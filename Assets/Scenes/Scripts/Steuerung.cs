@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Steuerung : MonoBehaviour
 {
-    public Vector3 velocity;
+
+    public float speed = 10f;
+
     private List<string> collisionOrder = new List<string>();
     private List<string> correctOrder = new List<string>();
 
@@ -13,9 +15,9 @@ public class Steuerung : MonoBehaviour
     public GameObject deathText;
     public GameObject successText;
 
+
     void Start()
     {
-        velocity = new Vector3(0, 0, 0);
 
         correctOrder.Add("Plänet (1)");
         correctOrder.Add("Plänet (2)");
@@ -26,60 +28,35 @@ public class Steuerung : MonoBehaviour
         successText.SetActive(false);
     }
 
-    private int max = 5;
-    private int min = -5;
-    public Vector2 pos = new Vector2(380, 260);
+
 
     private void Update()
     {
-        if (end && Input.GetMouseButtonDown(0))
+        Vector3 pos = transform.position;
+
+        if (Input.GetKey("w"))
         {
-            string sceneName = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(sceneName);
+            pos.y += speed * Time.deltaTime;
+        }
+        if (Input.GetKey("s"))
+        {
+            pos.y -= speed * Time.deltaTime;
+        }
+        if (Input.GetKey("d"))
+        {
+            pos.x += speed * Time.deltaTime;
+        }
+        if (Input.GetKey("a"))
+        {
+            pos.x -= speed * Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && velocity.y <= max)
-        {
-            velocity += new Vector3(0, 2 * Time.deltaTime, 0);
-        }
+        transform.position = pos;
 
-        if (Input.GetKeyDown(KeyCode.S) & velocity.y >= min)
-        {
-            velocity += new Vector3(0, -2 * Time.deltaTime, 0);
-        }
-
-        if (Input.GetKeyDown(KeyCode.A) && velocity.x >= min)
-        {
-            velocity += new Vector3(-2 * Time.deltaTime, 0, 0);
-        }
-
-        if (Input.GetKeyDown(KeyCode.D) && velocity.x <= max)
-        {
-            velocity += new Vector3(2 * Time.deltaTime, 0, 0);
-        }
-        transform.position += velocity;
-        CheckPos();
+  
     }
 
-    void CheckPos()
-    {
-        if (transform.position.x > pos.x)
-        {
-            velocity = new Vector3(0, -50 * Time.deltaTime, 0);
-        }
-        if (transform.position.y > pos.y)
-        {
-            velocity = new Vector3(0, -50 * Time.deltaTime, 0);
-        }
-        if (transform.position.x < -pos.x)
-        {
-            velocity = new Vector3(0, 50 * Time.deltaTime, 0);
-        }
-        if (transform.position.y < -pos.y)
-        {
-            velocity = new Vector3(0, 50 * Time.deltaTime, 0);
-        }
-    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
