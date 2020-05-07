@@ -248,6 +248,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelLimit": 10
+  "b\xF6bbelCollection": []
 --- !u!1 &411872656
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,6 +775,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelLimit": 10
+  "b\xF6bbelCollection": []
 --- !u!1 &759421926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,6 +1155,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelLimit": 10
+  "b\xF6bbelCollection": []
 --- !u!1 &1109508796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,6 +1360,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelLimit": 10
+  "b\xF6bbelCollection": []
 --- !u!1 &1365759920
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,7 +1560,6 @@ GameObject:
   - component: {fileID: 1883159158}
   - component: {fileID: 1883159157}
   - component: {fileID: 1883159161}
-  - component: {fileID: 1883159162}
   m_Layer: 0
   m_Name: STaxi
   m_TagString: Untagged
@@ -1576,7 +1579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4ba6f7f56376a4b878104bbabeafbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 70
+  speed: 300
   end: 0
   deathText: {fileID: 767572578}
   successText: {fileID: 1664041067}
@@ -1757,22 +1760,6 @@ PolygonCollider2D:
       - {x: 1.7249999, y: -2.09}
       - {x: 1.7249999, y: 2.34}
       - {x: 1.5749999, y: 2.75}
---- !u!114 &1883159162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1883159156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea4ba6f7f56376a4b878104bbabeafbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  end: 0
-  deathText: {fileID: 767572578}
-  successText: {fileID: 1664041067}
 --- !u!1 &1962617135
 GameObject:
   m_ObjectHideFlags: 0

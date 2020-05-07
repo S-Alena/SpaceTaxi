@@ -14,31 +14,38 @@ public class Multiply : MonoBehaviour
     public GameObject böbbel;
     private int böbbelCount = 0;
     public int böbbelLimit;
+    public List<GameObject> böbbelCollection = new List<GameObject>();
     int i = 0;
+
 
     void Start()
     {
         // Anzahl böbbels
         böbbelLimit = Random.Range(5, 10);
+
+        for (böbbelCount = 0; böbbelCount <= böbbelLimit; böbbelCount++) 
+        {
+            //erzeugt eine randomized Location
+            Vector3 spawnLocation = newLocation();
+
+
+            //erzeugt ein böbbel
+            GameObject go = Instantiate(böbbel, spawnLocation, Quaternion.identity);
+            //zählt böbbel, und setzt den Winkel eins weiter
+  
+            i++;
+
+            print("Böbbels: " + böbbelCount);
+
+            böbbelCollection.Add(go);
+
+        }
+
     }
 
     void Update()
     {
-        if (böbbelCount < 10)
-        {
-            //erzeugt eine randomized Location
-            Vector3 spawnLocation = newLocation();
-            
-            
-            //erzeugt ein böbbel
-            GameObject go = Instantiate(böbbel, spawnLocation, Quaternion.identity);
-            //zählt böbbel, und setzt den Winkel eins weiter
-            böbbelCount ++;
-            i ++;
-            
-            print("Böbbels: " + böbbelCount);
 
-        }
     }
 
     Vector3 newLocation()
