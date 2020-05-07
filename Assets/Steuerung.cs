@@ -7,7 +7,7 @@ public class Steuerung : MonoBehaviour
 {
     public Vector3 velocity;
     private List<string> collisionOrder = new List<string>();
-
+    
     private List<string> correctOrder = new List<string>();
     
     public bool end = false;
@@ -40,30 +40,32 @@ public class Steuerung : MonoBehaviour
             string sceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(sceneName);
 
-        if (Input.GetKeyDown(KeyCode.W) && velocity.y <= max)
-        {
-            velocity += new Vector3(0, 2 * Time.deltaTime, 0);
-        }
+            if (Input.GetKeyDown(KeyCode.W) && velocity.y <= max)
+            {
+                velocity += new Vector3(0, 2 * Time.deltaTime, 0);
+            }
 
-        if (Input.GetKeyDown(KeyCode.S) & velocity.y >= min)
-        {
-            velocity += new Vector3(0, -2 * Time.deltaTime, 0);
-        }
+            if (Input.GetKeyDown(KeyCode.S) & velocity.y >= min)
+            {
+                velocity += new Vector3(0, -2 * Time.deltaTime, 0);
+            }
 
-        if (Input.GetKeyDown(KeyCode.A) && velocity.x >= min)
-        {
-            velocity += new Vector3(-2 * Time.deltaTime, 0, 0);
-        }
+            if (Input.GetKeyDown(KeyCode.A) && velocity.x >= min)
+            {
+                velocity += new Vector3(-2 * Time.deltaTime, 0, 0);
+            }
 
-        if (Input.GetKeyDown(KeyCode.D) && velocity.x <= max)
-        {
-            velocity += new Vector3(2 * Time.deltaTime, 0, 0);
+            if (Input.GetKeyDown(KeyCode.D) && velocity.x <= max)
+            {
+                velocity += new Vector3(2 * Time.deltaTime, 0, 0);
+            }
+
+            transform.position += velocity;
+            CheckPos();
         }
-        transform.position += velocity;
-        CheckPos();
     }
 
-    void CheckPos()
+    private void CheckPos()
     {
         if (transform.position.x > pos.x)
         {
@@ -84,7 +86,7 @@ public class Steuerung : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collided with " + collision.gameObject.name);
 
