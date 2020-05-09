@@ -5,19 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Steuerung : MonoBehaviour
 {
-
-    public float speed = 10f;
-
+    public Vector3 velocity;
     private List<string> collisionOrder = new List<string>();
     private List<string> correctOrder = new List<string>();
+    private List<GameObject> rocketBobbels = new List<GameObject>();
 
     public bool end = false;
     public GameObject deathText;
     public GameObject successText;
 
-
     void Start()
     {
+        velocity = new Vector3(0, 0, 0);
 
         correctOrder.Add("Plänet (1)");
         correctOrder.Add("Plänet (2)");
@@ -28,35 +27,69 @@ public class Steuerung : MonoBehaviour
         successText.SetActive(false);
     }
 
-
+    private int max = 2;
+    private int min = -2;
+    public Vector2 pos = new Vector2(380, 260);
 
     private void Update()
     {
-        Vector3 pos = transform.position;
-
-        if (Input.GetKey("w"))
+        if (end && Input.GetMouseButtonDown(0))
         {
-            pos.y += speed * Time.deltaTime;
-        }
-        if (Input.GetKey("s"))
-        {
-            pos.y -= speed * Time.deltaTime;
-        }
-        if (Input.GetKey("d"))
-        {
-            pos.x += speed * Time.deltaTime;
-        }
-        if (Input.GetKey("a"))
-        {
-            pos.x -= speed * Time.deltaTime;
+            string sceneName = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(sceneName);
         }
 
-        transform.position = pos;
+        while (Input.GetKey(KeyCode.W) && velocity.y <= max)
+        {
+            velocity += new Vector3(0, Time.deltaTime, 0);
+        }
 
-  
+        while (Input.GetKey(KeyCode.S) & velocity.y >= min)
+        {
+            velocity += new Vector3(0, - Time.deltaTime, 0);
+        }
+
+        while (Input.GetKey(KeyCode.A) && velocity.x >= min)
+        {
+            velocity += new Vector3(- Time.deltaTime, 0, 0);
+        }
+
+        while (Input.GetKey(KeyCode.D) && velocity.x <= max)
+        {
+            velocity += new Vector3( Time.deltaTime, 0, 0);
+        }
+
+        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            velocity = new Vector3(velocity.x, velocity.y, velocity.z)*0.95f;
+        }
+        transform.position += velocity;
+        CheckPos();
     }
 
-
+    void CheckPos()
+    {
+        if (transform.position.x > pos.x)
+        {
+            //velocity = new Vector3(velocity.x, velocity.y, 0);
+            transform.position = new Vector3(pos.x, transform.position.y, 0);
+        }
+        if (transform.position.y > pos.y)
+        {
+            //velocity = new Vector3(0, 50 * Time.deltaTime, 0);
+            transform.position = new Vector3(transform.position.x, pos.y, 0);
+        }
+        if (transform.position.x < -pos.x)
+        {
+            //velocity = new Vector3(0, 50 * Time.deltaTime, 0);
+            transform.position = new Vector3(-pos.x, transform.position.y, 0);
+        }
+        if (transform.position.y < -pos.y)
+        {
+            //velocity = new Vector3(0, 50 * Time.deltaTime, 0);
+            transform.position = new Vector3(transform.position.x, -pos.y, 0);
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -94,5 +127,7 @@ public class Steuerung : MonoBehaviour
             }
             end = true;
         }
+
+
     }
 }
