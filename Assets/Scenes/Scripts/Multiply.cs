@@ -71,8 +71,11 @@ public class Multiply : MonoBehaviour
 
     private void OnPassengerRemoval()
     {
-        böbbelCollection.RemoveAll(delegate (GameObject o) { return o == null; });
-        Destroy(this.plönet);
+        //for ( GameObject obj)
+        for (int i=0; i< böbbelCollection.Count; i++)
+        {
+            Destroy(böbbelCollection[i]);
+        }
         print("OnPassengerRemoval Triggered");
     }
 }
