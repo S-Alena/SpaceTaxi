@@ -12,7 +12,7 @@ public class Steuerung : MonoBehaviour
 
     public bool end = false;
     public GameObject deathText;
-    public GameObject successText;
+    public GameObject successText; 
 
     void Start()
     {
@@ -128,6 +128,7 @@ public class Steuerung : MonoBehaviour
             end = true;
         }
 
+        GameEvents.current.PlanetCollision();
 
     }
 }

@@ -20,6 +20,9 @@ public class Multiply : MonoBehaviour
 
     void Start()
     {
+
+        GameEvents.current.onPlanetCollision += OnPassengerRemoval;
+
         // Anzahl böbbels
         böbbelLimit = Random.Range(5, 10);
 
@@ -38,7 +41,7 @@ public class Multiply : MonoBehaviour
             print("Böbbels: " + böbbelCount);
 
             böbbelCollection.Add(go);
-
+            
         }
 
     }
@@ -65,6 +68,13 @@ public class Multiply : MonoBehaviour
         return spawnLocation;
 
       }
+
+    private void OnPassengerRemoval()
+    {
+        böbbelCollection.RemoveAll(delegate (GameObject o) { return o == null; });
+        Destroy(this.plönet);
+        print("OnPassengerRemoval Triggered");
+    }
 }
 
 
