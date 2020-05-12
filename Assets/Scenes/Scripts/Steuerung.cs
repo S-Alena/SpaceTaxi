@@ -128,7 +128,7 @@ public class Steuerung : MonoBehaviour
             end = true;
         }
 
-        GameEvents.current.PlanetCollision();
+        GameEvents.current.PlanetCollision(collision.gameObject.name);
 
     }
 }

@@ -13,13 +13,13 @@ public class GameEvents : MonoBehaviour
     }
 
 
-    public event Action onPlanetCollision;
+    public event Action<string> onPlanetCollision;
 
-    public void PlanetCollision()
+    public void PlanetCollision(string nameOfPlanet)
     {
         if(onPlanetCollision != null)
         {
-            onPlanetCollision();
+            onPlanetCollision(nameOfPlanet);
         }
     }
 }

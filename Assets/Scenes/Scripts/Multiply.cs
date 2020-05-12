@@ -69,14 +69,18 @@ public class Multiply : MonoBehaviour
 
       }
 
-    private void OnPassengerRemoval()
+    private void OnPassengerRemoval(string nameOfPlanet)
     {
-        //for ( GameObject obj)
-        for (int i=0; i< böbbelCollection.Count; i++)
+        //
+        if (nameOfPlanet == this.plönet.name)
         {
-            Destroy(böbbelCollection[i]);
+            for (int i = 0; i < böbbelCollection.Count; i++)
+            {
+                Destroy(böbbelCollection[i]);
+            }
+            print("OnPassengerRemoval Triggered");
         }
-        print("OnPassengerRemoval Triggered");
+
     }
 }
 
