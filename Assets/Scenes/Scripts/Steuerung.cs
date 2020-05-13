@@ -18,10 +18,10 @@ public class Steuerung : MonoBehaviour
     {
         velocity = new Vector3(0, 0, 0);
 
-        correctOrder.Add("Plänet (1)");
-        correctOrder.Add("Plänet (2)");
-        correctOrder.Add("Plänet (3)");
-        correctOrder.Add("Plänet (4)");
+        correctOrder.Add("Plänet Blau");
+        correctOrder.Add("Plänet Gelb");
+        correctOrder.Add("Plänet Grün");
+        correctOrder.Add("Plänet Rot");
 
         deathText.SetActive(false);
         successText.SetActive(false);

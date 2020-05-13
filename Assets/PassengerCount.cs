@@ -33,20 +33,24 @@ public class PassengerCount : MonoBehaviour
         if (color == red)
         {
             redPassengerCount ++;
+            TextChange(redPassengerDisplay, redPassengerCount, "Rote");
         }
         else if (color == green)
         {
             greenPassengerCount ++;
+            TextChange(greenPassengerDisplay, greenPassengerCount, "Grüne");
         }
         else if (color == blue)
         {
             bluePassengerCount ++;
+            TextChange(bluePassengerDisplay, bluePassengerCount, "Blaue");
         }
         else if (color == yellow)
         {
             yellowPassengerCount ++;
+            TextChange(yellowPassengerDisplay, yellowPassengerCount, "Gelbe");
         }
-        TextChange();
+        
     }
 
     private void DeletePassengerCount(Color color)
@@ -73,11 +77,12 @@ public class PassengerCount : MonoBehaviour
         {
             yellowPassengerCount = 0;
         }
-        TextChange();
+        
     }
 
-    public void TextChange()
+    public void TextChange(Text Passenger, int passCount, string Color)
     {
-        redPassengerDisplay.text = "Passengers: " + redPassengerCount;
+        
+        Passenger.text = Color + " Passagiere: " + passCount;
     }
 }
