@@ -13,24 +13,35 @@ public class GameEvents : MonoBehaviour
     }
 
 
-    public event Action<string> onPlanetCollision;
+    public event Action<string,int> onPlanetCollision;
 
-    public void PlanetCollision(string nameOfPlanet)
+    public void PlanetCollision(string nameOfPlanet, int numberOfPassengers)
     {
         if(onPlanetCollision != null)
         {
-            onPlanetCollision(nameOfPlanet);
+            onPlanetCollision(nameOfPlanet, numberOfPassengers);
         }
     }
 
 
-    public event Action onPassengerPickup;
+    public event Action<Color> onPassengerPickup;
 
-    public void PassengerPickup()
+    public void PassengerPickup(Color planetColor)
     {
         if(onPassengerPickup != null)
         {
-            onPassengerPickup();
+            onPassengerPickup(planetColor);
         }
     }
+
+    public event Action<Color> onPassengerRelease;
+
+    public void PassengerRelease(Color planetColor)
+    {
+        if (onPassengerRelease != null)
+        {
+            onPassengerRelease(planetColor);
+        }
+    }
+
 }

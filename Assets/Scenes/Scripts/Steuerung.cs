@@ -128,7 +128,29 @@ public class Steuerung : MonoBehaviour
             end = true;
         }
 
-        GameEvents.current.PlanetCollision(collision.gameObject.name);
+        Color red = new Color(1, 0, 0,1);
+        Color green = new Color(0, 1, 0,1);
+        Color blue = new Color(0, 0, 1,1);
+        Color yellow = new Color(1, 1, 0,1);
+        int passengerCount = 0;
+ 
+            if (collision.gameObject.GetComponent<SpriteRenderer>().color == red) {
+            passengerCount = PassengerCount.redPassengerCount;
+            } else if (collision.gameObject.GetComponent<SpriteRenderer>().color == green)
+            {
+                passengerCount = PassengerCount.greenPassengerCount;
+            }
+            else if (collision.gameObject.GetComponent<SpriteRenderer>().color == blue)
+            {
+                passengerCount = PassengerCount.bluePassengerCount;
+            }
+            else if (collision.gameObject.GetComponent<SpriteRenderer>().color == yellow)
+            {
+                passengerCount = PassengerCount.yellowPassengerCount;
+            }
+
+
+            GameEvents.current.PlanetCollision(collision.gameObject.name, passengerCount);
 
     }
 }

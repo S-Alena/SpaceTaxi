@@ -12,31 +12,35 @@ public class Multiply : MonoBehaviour
 {
     public GameObject plönet;
     public GameObject böbbel;
-    private int böbbelCount = 0;
     public int böbbelLimit;
     public List<GameObject> böbbelCollection = new List<GameObject>();
-    int i = 0;
+    public List<Color> colors = new List<Color>();
 
 
     void Start()
     {
+        colors.Add(new Color(1, 0, 0, 1));
+        colors.Add(new Color(0, 1, 0, 1));
+        colors.Add(new Color(0, 0, 1, 1));
+        colors.Add(new Color(1, 1, 0, 1));
 
         GameEvents.current.onPlanetCollision += OnPassengerRemoval;
 
         // Anzahl böbbels
         böbbelLimit = Random.Range(5, 10);
 
-        for (böbbelCount = 0; böbbelCount <= böbbelLimit; böbbelCount++) 
+        for (int böbbelCount = 0; böbbelCount <= böbbelLimit; böbbelCount++)
         {
             //erzeugt eine randomized Location
-            Vector3 spawnLocation = newLocation();
+            Vector3 spawnLocation = newLocation(böbbelLimit, böbbelCount);
 
 
             //erzeugt ein böbbel
             GameObject go = Instantiate(böbbel, spawnLocation, Quaternion.identity);
             //zählt böbbel, und setzt den Winkel eins weiter
-  
-            i++;
+
+            go.GetComponent<SpriteRenderer>().color = colors[Random.Range(0,colors.Count)];
+            
 
             print("Böbbels: " + böbbelCount);
 
@@ -51,13 +55,13 @@ public class Multiply : MonoBehaviour
 
     }
 
-    Vector3 newLocation()
+    Vector3 newLocation(int limit, int böbbelNumber)
     {
         float x;
         float y;
         
         //Ein Kreis ist 2mal PI, geteilt durch Anzahl der böbbel, i sorgt dafür dass es um einen xten Teil verschoben wird
-        float zet =  i *  2 * Mathf.PI / böbbelLimit;
+        float zet =  böbbelNumber *  2 * Mathf.PI / limit;
         
         //setzt die location, ausgehend vom Mittelpunkt vom zugewiesenen PLönet
         Vector3 spawnLocation = new Vector3(
@@ -69,20 +73,44 @@ public class Multiply : MonoBehaviour
 
       }
 
-    private void OnPassengerRemoval(string nameOfPlanet)
+    private void OnPassengerRemoval(string nameOfPlanet, int numberOfColorPassengers)
     {
-        //
+        
         if (nameOfPlanet == this.plönet.name)
         {
-            print("Anzah Böbbel:" + böbbelCollection.Count);
-            for (int i = 0; i < böbbelCollection.Count; i++)
+            int j = 0;
+            for (int i = böbbelCollection.Count -1; i >= 0; i--)
             {
-                Destroy(böbbelCollection[i]);
-                GameEvents.current.PassengerPickup(); //Triggert Event das Passenger Count erhöht
+                if(böbbelCollection[i].GetComponent<SpriteRenderer>().color != this.plönet.GetComponent<SpriteRenderer>().color)
+                {
+                    GameEvents.current.PassengerPickup(böbbelCollection[i].GetComponent<SpriteRenderer>().color);
+                    Destroy(böbbelCollection[i]);
+                    böbbelCollection.Remove(böbbelCollection[i]);//Triggert Event das Passenger Count erhöht
+                    j++;
+                }
             }
-            print("OnPassengerRemoval Triggered");
-            
+
+            print("Anzahl Böbbel aufgenommen:" + j);
+
+            for (int böbbelCount = 0; böbbelCount < numberOfColorPassengers; böbbelCount++)
+            {
+                //erzeugt eine randomized Location
+                Vector3 spawnLocation = newLocation(numberOfColorPassengers, böbbelCount);
+
+
+                //erzeugt ein böbbel
+                GameObject go = Instantiate(böbbel, spawnLocation, Quaternion.identity);
+                //zählt böbbel, und setzt den Winkel eins weiter
+                go.GetComponent<SpriteRenderer>().color = this.plönet.GetComponent<SpriteRenderer>().color;
+
+                böbbelCollection.Add(go);
+
+                GameEvents.current.PassengerRelease(this.plönet.GetComponent<SpriteRenderer>().color);
+
+            }
+            print("Böbbel auf Planet: " + böbbelCollection.Count);
         }
+        
 
     }
 }
