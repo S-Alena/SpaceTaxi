@@ -74,12 +74,14 @@ public class Multiply : MonoBehaviour
         //
         if (nameOfPlanet == this.plönet.name)
         {
+            print("Anzah Böbbel:" + böbbelCollection.Count);
             for (int i = 0; i < böbbelCollection.Count; i++)
             {
                 Destroy(böbbelCollection[i]);
+                GameEvents.current.PassengerPickup(); //Triggert Event das Passenger Count erhöht
             }
             print("OnPassengerRemoval Triggered");
-            GameEvents.current.PassengerPickup();
+            
         }
 
     }
