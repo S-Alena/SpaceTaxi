@@ -79,6 +79,7 @@ public class Multiply : MonoBehaviour
                 Destroy(böbbelCollection[i]);
             }
             print("OnPassengerRemoval Triggered");
+            GameEvents.current.PassengerPickup();
         }
 
     }

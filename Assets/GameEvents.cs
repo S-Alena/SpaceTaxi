@@ -22,4 +22,15 @@ public class GameEvents : MonoBehaviour
             onPlanetCollision(nameOfPlanet);
         }
     }
+
+
+    public event Action onPassengerPickup;
+
+    public void PassengerPickup()
+    {
+        if(onPassengerPickup != null)
+        {
+            onPassengerPickup();
+        }
+    }
 }
