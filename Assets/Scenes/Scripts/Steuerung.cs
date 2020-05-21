@@ -64,29 +64,25 @@ public class Steuerung : MonoBehaviour
             velocity = new Vector3(velocity.x, velocity.y, velocity.z)*0.95f;
         }
         transform.position += velocity;
-        CheckPos();
+        //CheckPos();
     }
 
     void CheckPos()
     {
         if (transform.position.x > pos.x)
         {
-            //velocity = new Vector3(velocity.x, velocity.y, 0);
             transform.position = new Vector3(pos.x, transform.position.y, 0);
         }
         if (transform.position.y > pos.y)
         {
-            //velocity = new Vector3(0, 50 * Time.deltaTime, 0);
             transform.position = new Vector3(transform.position.x, pos.y, 0);
         }
         if (transform.position.x < -pos.x)
         {
-            //velocity = new Vector3(0, 50 * Time.deltaTime, 0);
             transform.position = new Vector3(-pos.x, transform.position.y, 0);
         }
         if (transform.position.y < -pos.y)
         {
-            //velocity = new Vector3(0, 50 * Time.deltaTime, 0);
             transform.position = new Vector3(transform.position.x, -pos.y, 0);
         }
     }

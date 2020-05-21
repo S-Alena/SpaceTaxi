@@ -47,3 +47,6 @@ TagManager:
   - name: "pl\xE4net"
     uniqueID: 886939899
     locked: 0
+  - name: Foreground
+    uniqueID: 2664859559
+    locked: 0

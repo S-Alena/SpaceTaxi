@@ -29,7 +29,7 @@ public class Multiply : MonoBehaviour
         // Anzahl böbbels
         böbbelLimit = Random.Range(5, 10);
 
-        for (int böbbelCount = 0; böbbelCount <= böbbelLimit; böbbelCount++)
+        for (int böbbelCount = 0; böbbelCount < böbbelLimit; böbbelCount++)
         {
             //erzeugt eine randomized Location
             Vector3 spawnLocation = newLocation(böbbelLimit, böbbelCount);
@@ -65,8 +65,8 @@ public class Multiply : MonoBehaviour
         
         //setzt die location, ausgehend vom Mittelpunkt vom zugewiesenen PLönet
         Vector3 spawnLocation = new Vector3(
-            x = Mathf.Sin(zet) * 70 + plönet.transform.position.x,
-            y = Mathf.Cos(zet) * 70 + plönet.transform.position.y,
+            x = Mathf.Sin(zet) * 70 + this.plönet.transform.position.x,
+            y = Mathf.Cos(zet) * 70 + this.plönet.transform.position.y,
             0);
         
         return spawnLocation;
@@ -83,9 +83,9 @@ public class Multiply : MonoBehaviour
             {
                 if(böbbelCollection[i].GetComponent<SpriteRenderer>().color != this.plönet.GetComponent<SpriteRenderer>().color)
                 {
-                    GameEvents.current.PassengerPickup(böbbelCollection[i].GetComponent<SpriteRenderer>().color);
+                    GameEvents.current.PassengerPickup(böbbelCollection[i].GetComponent<SpriteRenderer>().color);//Triggert Event das Passenger Count erhöht
                     Destroy(böbbelCollection[i]);
-                    böbbelCollection.Remove(böbbelCollection[i]);//Triggert Event das Passenger Count erhöht
+                    böbbelCollection.Remove(böbbelCollection[i]);
                     j++;
                 }
             }
