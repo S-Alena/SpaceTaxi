@@ -29,7 +29,8 @@ public class Steuerung : MonoBehaviour
         deathText.SetActive(false);
         successText.SetActive(false);
     }
-
+    
+    //Geschwindigkeit
     private int max = 2;
     private int min = -2;
     
@@ -70,6 +71,7 @@ public class Steuerung : MonoBehaviour
         CheckPos();
     }
 
+    //Collision Control Border
     void CheckPos()
     {
             if (transform.position.y > pos.y) //W

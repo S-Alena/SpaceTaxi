@@ -26,7 +26,6 @@ public class Multiply : MonoBehaviour
 
         GameEvents.current.onPlanetCollision += OnPassengerRemoval;
 
-        // Anzahl böbbels
         böbbelLimit = Random.Range(5, 10);
 
         for (int böbbelCount = 0; böbbelCount < böbbelLimit; böbbelCount++)
@@ -39,14 +38,15 @@ public class Multiply : MonoBehaviour
             GameObject go = Instantiate(böbbel, spawnLocation, Quaternion.identity);
             //zählt böbbel, und setzt den Winkel eins weiter
 
-            go.GetComponent<SpriteRenderer>().color = colors[Random.Range(0,colors.Count)];
-            
+            go.GetComponent<SpriteRenderer>().color = colors[Random.Range(0, colors.Count)];
+
 
             //print("Böbbels: " + böbbelCount);
 
-            böbbelCollection.Add(go);
+           böbbelCollection.Add(go);
             
-        }
+
+    }
 
     }
 
@@ -79,14 +79,20 @@ public class Multiply : MonoBehaviour
         if (nameOfPlanet == this.plönet.name)
         {
             int j = 0;
+            
+            //Böbbel absetzen
             for (int i = böbbelCollection.Count -1; i >= 0; i--)
             {
                 if(böbbelCollection[i].GetComponent<SpriteRenderer>().color != this.plönet.GetComponent<SpriteRenderer>().color)
                 {
-                    GameEvents.current.PassengerPickup(böbbelCollection[i].GetComponent<SpriteRenderer>().color);//Triggert Event das Passenger Count erhöht
-                    Destroy(böbbelCollection[i]);
-                    böbbelCollection.Remove(böbbelCollection[i]);
-                    j++;
+                    //Triggert Event das Passenger Count erhöht
+                    
+                        GameEvents.current.PassengerPickup(böbbelCollection[i].GetComponent<SpriteRenderer>().color);
+
+                        Destroy(böbbelCollection[i]);
+                        böbbelCollection.Remove(böbbelCollection[i]);
+                        j++;
+                    
                 }
             }
 
