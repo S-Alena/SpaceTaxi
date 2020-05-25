@@ -12,10 +12,13 @@ public class Steuerung : MonoBehaviour
 
     public bool end = false;
     public GameObject deathText;
-    public GameObject successText; 
-
+    public GameObject successText;
+    public Vector3 pos = new Vector3();
+   
     void Start()
     {
+        pos = Size.mSize;
+        
         velocity = new Vector3(0, 0, 0);
 
         correctOrder.Add("Plänet Blau");
@@ -29,7 +32,7 @@ public class Steuerung : MonoBehaviour
 
     private int max = 2;
     private int min = -2;
-    public Vector2 pos = new Vector2(380, 260);
+    
 
     private void Update()
     {
@@ -64,28 +67,36 @@ public class Steuerung : MonoBehaviour
             velocity = new Vector3(velocity.x, velocity.y, velocity.z)*0.95f;
         }
         transform.position += velocity;
-        //CheckPos();
+        CheckPos();
     }
 
     void CheckPos()
     {
-        if (transform.position.x > pos.x)
-        {
-            transform.position = new Vector3(pos.x, transform.position.y, 0);
+            if (transform.position.y > pos.y) //W
+            {
+               transform.position = new Vector3(transform.position.x, pos.y, 0);
+            }
+
+            if (transform.position.x < -pos.x) //A
+            {
+                transform.position = new Vector3(-pos.x, transform.position.y, 0);
+            }
+        
+            if (transform.position.y < -pos.y) //S
+            {
+                transform.position = new Vector3(transform.position.x, -pos.y, 0);
+                
+            }
+            if (transform.position.x > pos.x) //D
+            {
+                transform.position = new Vector3(pos.x, transform.position.y, 0);
+            }
         }
-        if (transform.position.y > pos.y)
-        {
-            transform.position = new Vector3(transform.position.x, pos.y, 0);
-        }
-        if (transform.position.x < -pos.x)
-        {
-            transform.position = new Vector3(-pos.x, transform.position.y, 0);
-        }
-        if (transform.position.y < -pos.y)
-        {
-            transform.position = new Vector3(transform.position.x, -pos.y, 0);
-        }
-    }
+        
+        
+            
+    
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

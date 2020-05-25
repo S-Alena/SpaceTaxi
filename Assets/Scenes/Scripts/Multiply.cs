@@ -42,7 +42,7 @@ public class Multiply : MonoBehaviour
             go.GetComponent<SpriteRenderer>().color = colors[Random.Range(0,colors.Count)];
             
 
-            print("Böbbels: " + böbbelCount);
+            //print("Böbbels: " + böbbelCount);
 
             böbbelCollection.Add(go);
             
@@ -108,7 +108,7 @@ public class Multiply : MonoBehaviour
                 GameEvents.current.PassengerRelease(this.plönet.GetComponent<SpriteRenderer>().color);
 
             }
-            print("Böbbel auf Planet: " + böbbelCollection.Count);
+            //print("Böbbel auf Planet: " + böbbelCollection.Count);
         }
         
 
