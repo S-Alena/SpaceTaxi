@@ -13,7 +13,7 @@ public class Steuerung : MonoBehaviour
     public bool end = false;
     public GameObject deathText;
     public GameObject successText;
-    public Vector3 pos = new Vector3();
+    private Vector3 pos = new Vector3();
    
     void Start()
     {
@@ -68,7 +68,7 @@ public class Steuerung : MonoBehaviour
             velocity = new Vector3(velocity.x, velocity.y, velocity.z)*0.95f;
         }
         transform.position += velocity;
-        //CheckPos();
+        CheckPos();
     }
 
     //Collision Control Border
