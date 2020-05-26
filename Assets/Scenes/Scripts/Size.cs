@@ -11,7 +11,7 @@ public class Size : MonoBehaviour
     void Start()
     {
         mSize = GetComponent<EdgeCollider2D>().bounds.size/2;
-        //print("IDK Mate: " + mSize);
+        print("IDK Mate: " + mSize);
         
     }
 

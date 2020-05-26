@@ -4412,8 +4412,8 @@ GameObject:
   - component: {fileID: 1883159160}
   - component: {fileID: 1883159159}
   - component: {fileID: 1883159158}
-  - component: {fileID: 1883159157}
   - component: {fileID: 1883159161}
+  - component: {fileID: 1883159157}
   m_Layer: 0
   m_Name: STaxi
   m_TagString: Untagged
@@ -4437,7 +4437,7 @@ MonoBehaviour:
   end: 0
   deathText: {fileID: 767572578}
   successText: {fileID: 1664041067}
-  pos: {x: 460, y: 220, z: 0}
+  pos: {x: 100, y: 100, z: 0}
 --- !u!50 &1883159158
 Rigidbody2D:
   serializedVersion: 4
