@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System;
 
 public class Steuerung : MonoBehaviour
 {
     public Vector3 velocity;
-    private List<string> collisionOrder = new List<string>();
-    private List<string> correctOrder = new List<string>();
+    public float fuel = 500;
+    public GameObject fuelDisplay;
+    public GameObject home;
+    //private List<string> collisionOrder = new List<string>();
+    //private List<string> correctOrder = new List<string>();
     private List<GameObject> rocketBobbels = new List<GameObject>();
 
     public bool end = false;
-    public GameObject deathText;
-    public GameObject successText;
+    public Text endText;
     private Vector3 pos = new Vector3();
    
     void Start()
@@ -21,13 +25,12 @@ public class Steuerung : MonoBehaviour
         
         velocity = new Vector3(0, 0, 0);
 
-        correctOrder.Add("Plänet Blau");
-        correctOrder.Add("Plänet Gelb");
-        correctOrder.Add("Plänet Grün");
-        correctOrder.Add("Plänet Rot");
+        //correctOrder.Add("Plänet Blau");
+        //correctOrder.Add("Plänet Gelb");
+        //correctOrder.Add("Plänet Grün");
+        //correctOrder.Add("Plänet Rot");
 
-        deathText.SetActive(false);
-        successText.SetActive(false);
+        endText.enabled =false;
     }
     
     //Geschwindigkeit
@@ -37,38 +40,54 @@ public class Steuerung : MonoBehaviour
 
     private void Update()
     {
-        if (end && Input.GetMouseButtonDown(0))
+        if (end && Input.anyKey && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D))
         {
             string sceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(sceneName);
         }
 
-        while (Input.GetKey(KeyCode.W) && velocity.y <= max)
-        {
-            velocity += new Vector3(0, Time.deltaTime, 0);
+        if(!end){
+
+            while (Input.GetKey(KeyCode.W) && velocity.y <= max)
+            {
+                velocity += new Vector3(0, Time.deltaTime, 0);
+                fuel-=0.1f ;
+            }
+            
+            while (Input.GetKey(KeyCode.S) & velocity.y >= min)
+            {
+                velocity += new Vector3(0, -Time.deltaTime, 0);
+                fuel -=0.1f;
+            }
+
+            while (Input.GetKey(KeyCode.A) && velocity.x >= min)
+            {
+                velocity += new Vector3(-Time.deltaTime, 0, 0);
+                fuel -=0.1f;
+            }
+
+            while (Input.GetKey(KeyCode.D) && velocity.x <= max)
+            {
+                velocity += new Vector3(Time.deltaTime, 0, 0);
+                fuel -=0.1f;
+            }
+
+            if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+            {
+                velocity = new Vector3(velocity.x, velocity.y, velocity.z) * 0.95f;
+            }
+            transform.position += velocity;
+
+            if(fuel <= 0)
+            {
+                endText.text = "Game Over." + Environment.NewLine + "Press to Restart";
+                endText.enabled = true;
+                end = true;
+            }
+
+            fuelDisplay.GetComponent<SpriteRenderer>().size = new Vector2(fuel,1);
         }
 
-        while (Input.GetKey(KeyCode.S) & velocity.y >= min)
-        {
-            velocity += new Vector3(0, - Time.deltaTime, 0);
-        }
-
-        while (Input.GetKey(KeyCode.A) && velocity.x >= min)
-        {
-            velocity += new Vector3(- Time.deltaTime, 0, 0);
-        }
-
-        while (Input.GetKey(KeyCode.D) && velocity.x <= max)
-        {
-            velocity += new Vector3( Time.deltaTime, 0, 0);
-        }
-
-        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
-        {
-            velocity = new Vector3(velocity.x, velocity.y, velocity.z)*0.95f;
-        }
-        transform.position += velocity;
-        CheckPos();
     }
 
     //Collision Control Border
@@ -102,40 +121,9 @@ public class Steuerung : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
         Debug.Log("Collided with " + collision.gameObject.name);
 
-        if (collision.gameObject.name != "Background" && !collisionOrder.Contains(collision.gameObject.name))
-        {
-            collisionOrder.Add(collision.gameObject.name);
-        }
-
-        Debug.Log(collisionOrder[0]);
-        Debug.Log(collisionOrder.Count);
-
-
-        if (collisionOrder.Count == correctOrder.Count)
-        {
-            bool equal = true;
-
-            for (int i = 0; i < correctOrder.Count; i++)
-            {
-                if (!correctOrder[i].Equals(collisionOrder[i]))
-                {
-                    equal = false;
-                }
-            }
-
-
-            if (equal)
-            {
-                successText.SetActive(true);
-            }
-            else
-            {
-                deathText.SetActive(true);
-            }
-            end = true;
-        }
 
         Color red = new Color(1, 0, 0,1);
         Color green = new Color(0, 1, 0,1);
@@ -144,7 +132,7 @@ public class Steuerung : MonoBehaviour
         int passengerCount = 0;
  
             if (collision.gameObject.GetComponent<SpriteRenderer>().color == red) {
-            passengerCount = PassengerCount.redPassengerCount;
+                passengerCount = PassengerCount.redPassengerCount;
             } else if (collision.gameObject.GetComponent<SpriteRenderer>().color == green)
             {
                 passengerCount = PassengerCount.greenPassengerCount;
@@ -156,10 +144,27 @@ public class Steuerung : MonoBehaviour
             else if (collision.gameObject.GetComponent<SpriteRenderer>().color == yellow)
             {
                 passengerCount = PassengerCount.yellowPassengerCount;
+        }
+        else
+        {
+            
+            if (PassengerCount.yellowPassengerCount==0 && PassengerCount.greenPassengerCount == 0 && PassengerCount.bluePassengerCount == 0 && PassengerCount.redPassengerCount == 0)
+            {
+                endText.text = "You made it. " + Environment.NewLine + "Transported = " + PassengerCount.transported;
             }
+            else
+            {
+                endText.text = "Game Over." + Environment.NewLine + "Press to Restart";
+            }
+            endText.enabled =true;
+            end = true;
+
+        }
 
 
-            GameEvents.current.PlanetCollision(collision.gameObject.name, passengerCount);
+        GameEvents.current.PlanetCollision(collision.gameObject.name, passengerCount);
+        
+        fuel += passengerCount * 50 ;
 
     }
 }

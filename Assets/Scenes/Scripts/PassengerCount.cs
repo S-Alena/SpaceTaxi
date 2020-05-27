@@ -9,11 +9,14 @@ public class PassengerCount : MonoBehaviour
     public static int greenPassengerCount = 0;
     public static int yellowPassengerCount = 0;
     public static int bluePassengerCount = 0;
+    public static int transported;
+    public static int transporting;
 
     public Text redPassengerDisplay;
     public Text greenPassengerDisplay;
     public Text yellowPassengerDisplay;
     public Text bluePassengerDisplay;
+    public Text transportingText;
 
     // Start is called before the first frame update
     void Start()
@@ -50,11 +53,15 @@ public class PassengerCount : MonoBehaviour
             yellowPassengerCount ++;
             TextChange(yellowPassengerDisplay, yellowPassengerCount, "Gelbe");
         }
-        
+        transported++;
+        transporting = redPassengerCount + greenPassengerCount + bluePassengerCount + yellowPassengerCount;
+        TextChange(transportingText, transporting, "");
+
     }
 
     private void DeletePassengerCount(Color color)
     {
+        Debug.Log("Deleted");
         Color red = new Color(1, 0, 0, 1);
         Color green = new Color(0, 1, 0, 1);
         Color blue = new Color(0, 0, 1, 1);
@@ -64,20 +71,26 @@ public class PassengerCount : MonoBehaviour
         if (color == red)
         {
             redPassengerCount = 0;
+            TextChange(redPassengerDisplay, redPassengerCount, "Rote");
         }
         else if (color == green)
         {
             greenPassengerCount = 0;
+            TextChange(greenPassengerDisplay, greenPassengerCount, "Grüne");
         }
         else if (color == blue)
         {
             bluePassengerCount = 0;
+            TextChange(bluePassengerDisplay, bluePassengerCount, "Blaue");
         }
         else if (color == yellow)
         {
             yellowPassengerCount = 0;
+            TextChange(yellowPassengerDisplay, yellowPassengerCount, "Gelbe");
         }
-        
+
+        transporting = redPassengerCount + greenPassengerCount + bluePassengerCount + yellowPassengerCount;
+        TextChange(transportingText, transporting, "");
     }
 
     public void TextChange(Text Passenger, int passCount, string Color)

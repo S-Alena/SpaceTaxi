@@ -12,7 +12,8 @@ public class Multiply : MonoBehaviour
 {
     public GameObject plönet;
     public GameObject böbbel;
-    public int böbbelLimit;
+    public int böbbelMax;
+    private int böbbelLimit;
     public List<GameObject> böbbelCollection = new List<GameObject>();
     public List<Color> colors = new List<Color>();
 
@@ -26,7 +27,7 @@ public class Multiply : MonoBehaviour
 
         GameEvents.current.onPlanetCollision += OnPassengerRemoval;
 
-        böbbelLimit = Random.Range(5, 10);
+        böbbelLimit = Random.Range(0, böbbelMax);
 
         for (int böbbelCount = 0; böbbelCount < böbbelLimit; böbbelCount++)
         {
@@ -79,14 +80,16 @@ public class Multiply : MonoBehaviour
         if (nameOfPlanet == this.plönet.name)
         {
             int j = 0;
-            
+
             //Böbbel absetzen
-            for (int i = böbbelCollection.Count -1; i >= 0; i--)
-            {
-                if(böbbelCollection[i].GetComponent<SpriteRenderer>().color != this.plönet.GetComponent<SpriteRenderer>().color)
-                {
-                    //Triggert Event das Passenger Count erhöht
+
+            for (int i = böbbelCollection.Count - 1; i >= 0; i--)
+               {
+                 if (böbbelCollection[i].GetComponent<SpriteRenderer>().color != this.plönet.GetComponent<SpriteRenderer>().color && PassengerCount.transporting <= 6)
+                    {
                     
+                        //Triggert Event das Passenger Count erhöht
+
                         GameEvents.current.PassengerPickup(böbbelCollection[i].GetComponent<SpriteRenderer>().color);
 
                         Destroy(böbbelCollection[i]);
@@ -97,7 +100,7 @@ public class Multiply : MonoBehaviour
             }
 
             print("Anzahl Böbbel aufgenommen:" + j);
-
+             
             for (int böbbelCount = 0; böbbelCount < numberOfColorPassengers; böbbelCount++)
             {
                 //erzeugt eine randomized Location
