@@ -31,12 +31,14 @@ public class Steuerung : MonoBehaviour
         //correctOrder.Add("Plänet Rot");
 
         endText.enabled =false;
+
+        rb = GetComponent<Rigidbody2D>();
     }
-    
-    //Geschwindigkeit
-    private int max = 2;
-    private int min = -2;
-    
+
+    public float speed;
+    private Rigidbody2D rb;
+    private Vector2 moveVelocity;
+
 
     private void Update()
     {
@@ -48,46 +50,16 @@ public class Steuerung : MonoBehaviour
 
         if(!end){
 
-            while (Input.GetKey(KeyCode.W) && velocity.y <= max)
-            {
-                velocity += new Vector3(0, Time.deltaTime, 0);
-                fuel-=0.1f ;
-            }
-            
-            while (Input.GetKey(KeyCode.S) & velocity.y >= min)
-            {
-                velocity += new Vector3(0, -Time.deltaTime, 0);
-                fuel -=0.1f;
-            }
-
-            while (Input.GetKey(KeyCode.A) && velocity.x >= min)
-            {
-                velocity += new Vector3(-Time.deltaTime, 0, 0);
-                fuel -=0.1f;
-            }
-
-            while (Input.GetKey(KeyCode.D) && velocity.x <= max)
-            {
-                velocity += new Vector3(Time.deltaTime, 0, 0);
-                fuel -=0.1f;
-            }
-
-            if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
-            {
-                velocity = new Vector3(velocity.x, velocity.y, velocity.z) * 0.95f;
-            }
-            transform.position += velocity;
-
-            if(fuel <= 0)
-            {
-                endText.text = "Game Over." + Environment.NewLine + "Press to Restart";
-                endText.enabled = true;
-                end = true;
-            }
+            Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            moveVelocity = moveInput.normalized * speed;
 
             fuelDisplay.GetComponent<SpriteRenderer>().size = new Vector2(fuel,1);
         }
+    }
 
+    void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
     }
 
     //Collision Control Border
