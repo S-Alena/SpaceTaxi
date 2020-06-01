@@ -1085,7 +1085,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305331193}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -43.8, y: 22.3, z: 8.958334}
+  m_LocalPosition: {x: -24.4, y: 22.3, z: 8.958334}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1883159160}
@@ -5426,7 +5426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
-  fuel: 500
+  fuel: 100
   fuelDisplay: {fileID: 305331193}
   home: {fileID: 1290380888}
   end: 0
@@ -5677,7 +5677,7 @@ SpriteRenderer:
   m_Size: {x: 0.4, y: 0.3329684}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1962617137

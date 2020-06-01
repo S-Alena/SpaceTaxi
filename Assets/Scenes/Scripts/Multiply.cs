@@ -105,8 +105,7 @@ public class Multiply : MonoBehaviour
             {
                 //erzeugt eine randomized Location
                 Vector3 spawnLocation = newLocation(numberOfColorPassengers, böbbelCount);
-
-
+                
                 //erzeugt ein böbbel
                 GameObject go = Instantiate(böbbel, spawnLocation, Quaternion.identity);
                 //zählt böbbel, und setzt den Winkel eins weiter

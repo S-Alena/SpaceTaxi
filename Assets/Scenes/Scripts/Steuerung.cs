@@ -8,11 +8,10 @@ using System;
 public class Steuerung : MonoBehaviour
 {
     public Vector3 velocity;
-    public float fuel = 500;
+    public float fuel = 100;
     public GameObject fuelDisplay;
     public GameObject home;
-    //private List<string> collisionOrder = new List<string>();
-    //private List<string> correctOrder = new List<string>();
+
     private List<GameObject> rocketBobbels = new List<GameObject>();
 
     public bool end = false;
@@ -22,14 +21,7 @@ public class Steuerung : MonoBehaviour
     void Start()
     {
         pos = Size.mSize;
-        
         velocity = new Vector3(0, 0, 0);
-
-        //correctOrder.Add("Plänet Blau");
-        //correctOrder.Add("Plänet Gelb");
-        //correctOrder.Add("Plänet Grün");
-        //correctOrder.Add("Plänet Rot");
-
         endText.enabled =false;
 
         rb = GetComponent<Rigidbody2D>();
@@ -60,6 +52,20 @@ public class Steuerung : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+    }
+
+    //Treibstoffansicht entsprechend der geflogenen Strecke anpassen
+    void changeFuel()
+    {
+        fuel -= 0.15f;
+        fuelDisplay.transform.localScale = new Vector3(fuel, 1, fuel);
+        if (fuel <= 0)
+        {
+            endText.text = "Game Over." + Environment.NewLine + "Press to Restart";
+            endText.enabled = true;
+            end = true;
+        }
+        print("fuelDisplay-Scale: " + fuelDisplay.transform.localScale.x);
     }
 
     //Collision Control Border
