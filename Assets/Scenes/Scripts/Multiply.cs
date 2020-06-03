@@ -85,7 +85,7 @@ public class Multiply : MonoBehaviour
 
             for (int i = böbbelCollection.Count - 1; i >= 0; i--)
             {
-                if (böbbelCollection[i].GetComponent<SpriteRenderer>().color != this.plönet.GetComponent<SpriteRenderer>().color && PassengerCount.transporting <= 6)
+                if (böbbelCollection[i].GetComponent<SpriteRenderer>().color != this.plönet.GetComponent<SpriteRenderer>().color)
                 {
 
                     //Triggert Event das Passenger Count erhöht

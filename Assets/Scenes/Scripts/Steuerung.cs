@@ -8,7 +8,7 @@ using System;
 public class Steuerung : MonoBehaviour
 {
     public Vector3 velocity;
-    public float fuel = 100;
+    public float fuel = 5f;
     public GameObject fuelDisplay;
     public GameObject home;
 
@@ -38,6 +38,11 @@ public class Steuerung : MonoBehaviour
         {
             string sceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(sceneName);
+            PassengerCount.redPassengerCount = 0;
+            PassengerCount.greenPassengerCount = 0;
+            PassengerCount.yellowPassengerCount = 0;
+            PassengerCount.bluePassengerCount = 0;
+            PassengerCount.transported = 0;
         }
 
         if(!end){
@@ -46,8 +51,11 @@ public class Steuerung : MonoBehaviour
             moveVelocity = moveInput.normalized * speed;
 
             //fuelDisplay.GetComponent<SpriteRenderer>().size = new Vector2(fuel,1);
-            changeFuel();
             
+        }
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+                changeFuel();
         }
     }
 
@@ -66,6 +74,7 @@ public class Steuerung : MonoBehaviour
             endText.text = "Game Over." + Environment.NewLine + "Press to Restart";
             endText.enabled = true;
             end = true;
+            moveVelocity = new Vector3(0, 0, 0);
         }
         print("fuelDisplay-Scale: " + fuelDisplay.transform.localScale.x);
     }
@@ -125,7 +134,7 @@ public class Steuerung : MonoBehaviour
             {
                 passengerCount = PassengerCount.yellowPassengerCount;
         }
-        else
+        else if(collision.gameObject.name == "Home")
         {
             
             if (PassengerCount.yellowPassengerCount==0 && PassengerCount.greenPassengerCount == 0 && PassengerCount.bluePassengerCount == 0 && PassengerCount.redPassengerCount == 0)
@@ -143,8 +152,11 @@ public class Steuerung : MonoBehaviour
 
 
         GameEvents.current.PlanetCollision(collision.gameObject.name, passengerCount);
-        
-        fuel += passengerCount * 50 ;
+            fuel += passengerCount * 15;
+        if(fuel >= 50)
+        {
+            fuel = 50;
+        }
 
     }
 }
