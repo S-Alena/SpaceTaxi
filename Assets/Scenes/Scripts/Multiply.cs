@@ -44,10 +44,10 @@ public class Multiply : MonoBehaviour
 
             //print("Böbbels: " + böbbelCount);
 
-           böbbelCollection.Add(go);
-            
+            böbbelCollection.Add(go);
 
-    }
+
+        }
 
     }
 
@@ -60,23 +60,23 @@ public class Multiply : MonoBehaviour
     {
         float x;
         float y;
-        
+
         //Ein Kreis ist 2mal PI, geteilt durch Anzahl der böbbel, i sorgt dafür dass es um einen xten Teil verschoben wird
-        float zet =  böbbelNumber *  2 * Mathf.PI / limit;
-        
+        float zet = böbbelNumber * 2 * Mathf.PI / limit;
+
         //setzt die location, ausgehend vom Mittelpunkt vom zugewiesenen PLönet
         Vector3 spawnLocation = new Vector3(
             x = Mathf.Sin(zet) * 70 + this.plönet.transform.position.x,
             y = Mathf.Cos(zet) * 70 + this.plönet.transform.position.y,
-            0);
-        
+            -40);
+
         return spawnLocation;
 
-      }
+    }
 
     private void OnPassengerRemoval(string nameOfPlanet, int numberOfColorPassengers)
     {
-        
+
         if (nameOfPlanet == this.plönet.name)
         {
             int j = 0;
@@ -84,28 +84,28 @@ public class Multiply : MonoBehaviour
             //Böbbel absetzen
 
             for (int i = böbbelCollection.Count - 1; i >= 0; i--)
-               {
-                 if (böbbelCollection[i].GetComponent<SpriteRenderer>().color != this.plönet.GetComponent<SpriteRenderer>().color && PassengerCount.transporting <= 6)
-                    {
-                    
-                        //Triggert Event das Passenger Count erhöht
+            {
+                if (böbbelCollection[i].GetComponent<SpriteRenderer>().color != this.plönet.GetComponent<SpriteRenderer>().color && PassengerCount.transporting <= 6)
+                {
 
-                        GameEvents.current.PassengerPickup(böbbelCollection[i].GetComponent<SpriteRenderer>().color);
+                    //Triggert Event das Passenger Count erhöht
 
-                        Destroy(böbbelCollection[i]);
-                        böbbelCollection.Remove(böbbelCollection[i]);
-                        j++;
-                    
+                    GameEvents.current.PassengerPickup(böbbelCollection[i].GetComponent<SpriteRenderer>().color);
+
+                    Destroy(böbbelCollection[i]);
+                    böbbelCollection.Remove(böbbelCollection[i]);
+                    j++;
+
                 }
             }
 
             print("Anzahl Böbbel aufgenommen:" + j);
-             
+
             for (int böbbelCount = 0; böbbelCount < numberOfColorPassengers; böbbelCount++)
             {
                 //erzeugt eine randomized Location
                 Vector3 spawnLocation = newLocation(numberOfColorPassengers, böbbelCount);
-                
+
                 //erzeugt ein böbbel
                 GameObject go = Instantiate(böbbel, spawnLocation, Quaternion.identity);
                 //zählt böbbel, und setzt den Winkel eins weiter
@@ -118,10 +118,9 @@ public class Multiply : MonoBehaviour
             }
             //print("Böbbel auf Planet: " + böbbelCollection.Count);
         }
-        
+
 
     }
 }
 
 
-    
