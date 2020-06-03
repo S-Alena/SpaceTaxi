@@ -45,7 +45,9 @@ public class Steuerung : MonoBehaviour
             Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             moveVelocity = moveInput.normalized * speed;
 
-            fuelDisplay.GetComponent<SpriteRenderer>().size = new Vector2(fuel,1);
+            //fuelDisplay.GetComponent<SpriteRenderer>().size = new Vector2(fuel,1);
+            changeFuel();
+            
         }
     }
 
