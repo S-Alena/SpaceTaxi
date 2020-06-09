@@ -5516,6 +5516,8 @@ GameObject:
   - component: {fileID: 1883159161}
   - component: {fileID: 1883159157}
   - component: {fileID: 1883159162}
+  - component: {fileID: 1883159163}
+  - component: {fileID: 1883159164}
   m_Layer: 0
   m_Name: STaxi
   m_TagString: Untagged
@@ -5638,7 +5640,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -5731,6 +5733,33 @@ SortingGroup:
   m_SortingLayerID: -418125521
   m_SortingLayer: 1
   m_SortingOrder: 0
+--- !u!114 &1883159163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883159156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70564ec270bb7643891f72769ac5b3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1000
+--- !u!114 &1883159164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883159156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd43c1a0219effd419fd66e22e738c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endText: {fileID: 767572580}
+  end: 0
 --- !u!1 &1962617135
 GameObject:
   m_ObjectHideFlags: 0
@@ -5798,7 +5827,7 @@ SpriteRenderer:
   m_Size: {x: 0.4, y: 0.3329684}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1962617137
