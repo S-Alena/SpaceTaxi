@@ -34,7 +34,7 @@ public class PassengerCount : MonoBehaviour
         
 
         if (color == red)
-        {
+        {     
             redPassengerCount ++;
             TextChange(redPassengerDisplay, redPassengerCount, "Rote");
         }
@@ -70,21 +70,25 @@ public class PassengerCount : MonoBehaviour
 
         if (color == red)
         {
+            GameEvents.current.FuelPickup(redPassengerCount);
             redPassengerCount = 0;
             TextChange(redPassengerDisplay, redPassengerCount, "Rote");
         }
         else if (color == green)
         {
+            GameEvents.current.FuelPickup(greenPassengerCount);
             greenPassengerCount = 0;
             TextChange(greenPassengerDisplay, greenPassengerCount, "Grüne");
         }
         else if (color == blue)
         {
+            GameEvents.current.FuelPickup(bluePassengerCount);
             bluePassengerCount = 0;
             TextChange(bluePassengerDisplay, bluePassengerCount, "Blaue");
         }
         else if (color == yellow)
         {
+            GameEvents.current.FuelPickup(yellowPassengerCount);
             yellowPassengerCount = 0;
             TextChange(yellowPassengerDisplay, yellowPassengerCount, "Gelbe");
         }

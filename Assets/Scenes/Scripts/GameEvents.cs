@@ -44,4 +44,14 @@ public class GameEvents : MonoBehaviour
         }
     }
 
+    public event Action<int> onFuelPickup;
+
+    public void FuelPickup(int numberOfPassengersDropped)
+    {
+        if(onFuelPickup != null)
+        {
+            onFuelPickup(numberOfPassengersDropped);
+        }
+    }
+
 }
