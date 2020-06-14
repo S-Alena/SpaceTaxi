@@ -134,7 +134,12 @@ public class TaxiManager : MonoBehaviour
         if(fuelRange >= 0)
         {
             this.fuelDisplayRenderer.transform.localScale = new Vector3(fuelRange, fuelRange, 1);
-            
+        }
+        if(fuelRange < 0)
+        {
+            endText.text = "Game Over." + Environment.NewLine + "Press to Restart";
+            endText.enabled = true;
+            end = true;
         }
     }
 
