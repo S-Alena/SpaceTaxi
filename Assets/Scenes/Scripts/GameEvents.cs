@@ -54,4 +54,14 @@ public class GameEvents : MonoBehaviour
         }
     }
 
+    public event Action onGameOver;
+
+    public void RestartGame()
+    {
+        if(onGameOver != null)
+        {
+            onGameOver();
+        }
+    }
+
 }

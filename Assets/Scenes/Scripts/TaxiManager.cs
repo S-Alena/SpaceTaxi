@@ -15,7 +15,6 @@ public class TaxiManager : MonoBehaviour
 
     //relevant for collision
     public Text endText;
-    public bool end = false;
     //************
 
     //relevant for fuel
@@ -28,7 +27,10 @@ public class TaxiManager : MonoBehaviour
     private Vector3 positonBeforeMoving;
     private Vector3 positionAfterMoving;
     private float movingDistance;
+    //************
 
+    //relevant for end
+    private bool end = false;
 
 
 
@@ -45,6 +47,11 @@ public class TaxiManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (end == true && Input.anyKey)
+        {
+            GameEvents.current.RestartGame();
+        }
+
         //ReadPostitionBeforeMoving(); //Save Position in Variable before SpaceTaxi is moved (1)
         MovementUpdate(); //Move SpaceTaxi (2)
         //ReadPostitionAfterMoving(); //Save Position in Variable after SpaceTaxi is moved (3)
