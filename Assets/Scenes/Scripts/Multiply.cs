@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UIElements;
 using Quaternion = UnityEngine.Quaternion;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
@@ -10,24 +11,50 @@ using Vector3 = UnityEngine.Vector3;
 
 public class Multiply : MonoBehaviour
 {
+    //currently used for the plänet böbbel count (siehe switch case)
+    Color red = new Color(1, 0, 0,1);
+    Color green = new Color(0, 1, 0,1);
+    Color blue = new Color(0, 0, 1,1);
+    Color yellow = new Color(1, 1,0 ,1);
+
     public GameObject plönet;
     public GameObject böbbel;
     public int böbbelMax;
+    public int böbbelMin;
     private int böbbelLimit;
     public List<GameObject> böbbelCollection = new List<GameObject>();
     public List<Color> colors = new List<Color>();
-
+    
+    
 
     void Start()
     {
+        Color otherColor = plönet.GetComponent<SpriteRenderer>().color;
         colors.Add(new Color(1, 0, 0, 1));
         colors.Add(new Color(0, 1, 0, 1));
         colors.Add(new Color(0, 0, 1, 1));
         colors.Add(new Color(1, 1, 0, 1));
+        
+        if(otherColor == red)
+        {
+           böbbelMin = 2;
+        }
+        if(otherColor == green)
+        {
+            böbbelMin = 2;
+        }
+        if(otherColor == blue)
+        {
+            böbbelMin = 3;
+        }
+        if(otherColor == yellow)
+        {
+            böbbelMin = 4;
+        }
 
         GameEvents.current.onPlanetCollision += OnPassengerRemoval;
 
-        böbbelLimit = Random.Range(0, böbbelMax);
+        böbbelLimit = Random.Range(böbbelMin, böbbelMax);
 
         for (int böbbelCount = 0; böbbelCount < böbbelLimit; böbbelCount++)
         {

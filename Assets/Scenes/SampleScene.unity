@@ -171,6 +171,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &2086889
@@ -286,6 +287,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &3207362
@@ -535,6 +537,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &180697178
@@ -875,6 +878,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!1 &301329620
@@ -913,6 +917,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &301329622
@@ -1198,6 +1203,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &336196786
@@ -1327,6 +1333,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &403900065
@@ -1470,6 +1477,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &456496124
@@ -1585,6 +1593,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &456843588
@@ -1797,6 +1806,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &575549548
@@ -1926,6 +1936,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &676855134
@@ -2270,6 +2281,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!1 &759421926
@@ -2465,6 +2477,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &797250298
@@ -2608,6 +2621,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &896269309
@@ -2933,7 +2947,8 @@ MonoBehaviour:
   "pl\xF6net": {fileID: 1030646487}
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
-  "b\xF6bbelMax": 10
+  "b\xF6bbelMax": 6
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!1 &1034439439
@@ -2972,6 +2987,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &1034439441
@@ -3173,6 +3189,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &1091803287
@@ -3302,6 +3319,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &1149975608
@@ -3643,6 +3661,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!1 &1228638213
@@ -3681,6 +3700,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &1228638215
@@ -3824,6 +3844,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 0
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &1290380891
@@ -3999,6 +4020,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &1390643104
@@ -4114,6 +4136,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &1516391946
@@ -4243,6 +4266,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &1541235800
@@ -4584,6 +4608,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &1584146555
@@ -4777,6 +4802,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &1640909975
@@ -4920,6 +4946,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &1807480890
@@ -5035,6 +5062,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &1844000671
@@ -5164,6 +5192,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &1846028553
@@ -5293,6 +5322,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   "b\xF6bbelMax": 10
+  "b\xF6bbelMin": 0
   "b\xF6bbelCollection": []
   colors: []
 --- !u!210 &1873060838
@@ -5421,7 +5451,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1000
   endText: {fileID: 767572580}
-  end: 0
 --- !u!50 &1883159158
 Rigidbody2D:
   serializedVersion: 4
