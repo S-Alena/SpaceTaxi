@@ -1,27 +1,17 @@
-WHAT WE HAVE DONE, ARR! GOOD JOB YOU FILTHY ANIMALS!
-	NEU:
-	-Böbbels werden gespawnt
-
-	ALT:
-	-Einfache WASD Steuerung
-	-Colliders
-	-Win/Loose condition
-
-
+PROBLEMS:
 
 WHAT WE GOTTA DO MATEYS:
 
--Randomized Farben
--Array für die Passagiere
--Fix die Steuerung
-
--Den GameManager einrichten
-
-DISTAND FUTURE:
-	-Rakete kann Passagiere einsammeln
-	-Rakete kann Passagiere abliefern
-	-Böbbels haben "richtigen" Planet
-	-Rakete kriegt Fuel
 	-Rakete dreht sich
 	-Rakete kann landen
 	-Bildschirmausschnitt wird angezeigt
+
+
+DONE:
+
+	-Böbbels werden gespawnt
+	-Klick Steuerung
+	-Randomized Farben
+	-Array für die Passagiere
+	-Fix die Steuerung
+
