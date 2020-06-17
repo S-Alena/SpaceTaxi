@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -18,16 +19,10 @@ public class UIManager : MonoBehaviour
         Button btn2 = QuitGame.GetComponent<Button>();
         btn2.onClick.AddListener(Quit);
     }
-
-    void Update()
-    {
-    }
-
-
-    
+     
     public void LoadLevel()
     {
-        Application.LoadLevel(level);
+        SceneManager.LoadScene(level,LoadSceneMode.Single);
     }
 
     public void Quit()
