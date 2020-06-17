@@ -50,6 +50,11 @@ public class TaxiManager : MonoBehaviour
         if (end == true && Input.anyKey)
         {
             GameEvents.current.RestartGame();
+            PassengerCount.redPassengerCount = 0;
+            PassengerCount.greenPassengerCount = 0;
+            PassengerCount.yellowPassengerCount = 0;
+            PassengerCount.bluePassengerCount = 0;
+            PassengerCount.transported = 0;
         }
 
         //ReadPostitionBeforeMoving(); //Save Position in Variable before SpaceTaxi is moved (1)
@@ -91,11 +96,19 @@ public class TaxiManager : MonoBehaviour
 
     void Move()
     {
-        //transform.rotation = Quaternion.LookRotation(Vector3.forward, targetPosition); //rotation of Player
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-        if (transform.position == targetPosition)
+        //transform.rotation = Quaternion.LookRotation(targetPosition,Vector3.forward); //rotation of Player
+        if(fuelRange >= 0)
         {
-            isMoving = false;
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            if (transform.position == targetPosition)
+            {
+                isMoving = false;
+            }
+        }else{
+            endText.text = "Fuel Empty." + Environment.NewLine + "Press to Restart";
+            endText.enabled = true;
+            end = true;
+
         }
     }
 
@@ -144,7 +157,7 @@ public class TaxiManager : MonoBehaviour
         }
         if(fuelRange < 0)
         {
-            endText.text = "Game Over." + Environment.NewLine + "Press to Restart";
+            endText.text = "Fuel Empty." + Environment.NewLine + "Press to Restart";
             endText.enabled = true;
             end = true;
         }
@@ -202,7 +215,7 @@ public class TaxiManager : MonoBehaviour
             }
             else
             {
-                endText.text = "Game Over." + Environment.NewLine + "Press to Restart";
+                endText.text = "You didnt bring all the Passengers home!" + Environment.NewLine + "Press to Restart";
             }
             endText.enabled = true;
             end = true;
