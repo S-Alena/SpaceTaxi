@@ -10,19 +10,21 @@ public class PassengerCount : MonoBehaviour
     public static int yellowPassengerCount = 0;
     public static int bluePassengerCount = 0;
     public static int transported;
-    public static int transporting;
 
     public Text redPassengerDisplay;
     public Text greenPassengerDisplay;
     public Text yellowPassengerDisplay;
     public Text bluePassengerDisplay;
-    public Text transportingText;
 
     // Start is called before the first frame update
     void Start()
     {
         GameEvents.current.onPassengerPickup += UpdatePassengerCount;
         GameEvents.current.onPassengerRelease += DeletePassengerCount;
+    }
+    void Update()
+    {
+        this.gameObject.transform.Rotate(new Vector3(0, 0, 1), Space.Self);
     }
 
     private void UpdatePassengerCount(Color color)
@@ -36,26 +38,24 @@ public class PassengerCount : MonoBehaviour
         if (color == red)
         {     
             redPassengerCount ++;
-            TextChange(redPassengerDisplay, redPassengerCount, "Rote");
+            TextChange(redPassengerDisplay, redPassengerCount);
         }
         else if (color == green)
         {
             greenPassengerCount ++;
-            TextChange(greenPassengerDisplay, greenPassengerCount, "Grüne");
+            TextChange(greenPassengerDisplay, greenPassengerCount);
         }
         else if (color == blue)
         {
             bluePassengerCount ++;
-            TextChange(bluePassengerDisplay, bluePassengerCount, "Blaue");
+            TextChange(bluePassengerDisplay, bluePassengerCount);
         }
         else if (color == yellow)
         {
             yellowPassengerCount ++;
-            TextChange(yellowPassengerDisplay, yellowPassengerCount, "Gelbe");
+            TextChange(yellowPassengerDisplay, yellowPassengerCount);
         }
         transported++;
-        transporting = redPassengerCount + greenPassengerCount + bluePassengerCount + yellowPassengerCount;
-        TextChange(transportingText, transporting, "");
 
     }
 
@@ -72,34 +72,32 @@ public class PassengerCount : MonoBehaviour
         {
             GameEvents.current.FuelPickup(redPassengerCount);
             redPassengerCount = 0;
-            TextChange(redPassengerDisplay, redPassengerCount, "Rote");
+            TextChange(redPassengerDisplay, redPassengerCount);
         }
         else if (color == green)
         {
             GameEvents.current.FuelPickup(greenPassengerCount);
             greenPassengerCount = 0;
-            TextChange(greenPassengerDisplay, greenPassengerCount, "Grüne");
+            TextChange(greenPassengerDisplay, greenPassengerCount);
         }
         else if (color == blue)
         {
             GameEvents.current.FuelPickup(bluePassengerCount);
             bluePassengerCount = 0;
-            TextChange(bluePassengerDisplay, bluePassengerCount, "Blaue");
+            TextChange(bluePassengerDisplay, bluePassengerCount);
         }
         else if (color == yellow)
         {
             GameEvents.current.FuelPickup(yellowPassengerCount);
             yellowPassengerCount = 0;
-            TextChange(yellowPassengerDisplay, yellowPassengerCount, "Gelbe");
+            TextChange(yellowPassengerDisplay, yellowPassengerCount);
         }
-
-        transporting = redPassengerCount + greenPassengerCount + bluePassengerCount + yellowPassengerCount;
-        TextChange(transportingText, transporting, "");
+        
     }
 
-    public void TextChange(Text Passenger, int passCount, string Color)
+    public void TextChange(Text Passenger, int passCount)
     {
         
-        Passenger.text = Color + " Passagiere: " + passCount;
+        Passenger.text = passCount.ToString();
     }
 }

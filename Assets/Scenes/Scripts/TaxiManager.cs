@@ -32,6 +32,10 @@ public class TaxiManager : MonoBehaviour
     //relevant for end
     private bool end = false;
 
+    //relevant for planning
+    public List<GameObject> böbbelCollection = new List<GameObject>();
+    public GameObject plänet;
+
 
 
     // Start is called before the first frame update
@@ -62,6 +66,12 @@ public class TaxiManager : MonoBehaviour
         //ReadPostitionAfterMoving(); //Save Position in Variable after SpaceTaxi is moved (3)
         //CalculateMovingDistance(); //Calculate the distace the SpaceTaxi has moved with the values from 1 and 3 (4)
         FuelUpdate(); //Substract the movingDistance from the fuelRange and Update fuelDisplayRenderer (5)
+        int i = 0;
+        foreach (var böbbel in böbbelCollection)
+        {
+            //böbbelUpdate(böbbel, i);
+            i++;
+        }
     }
 
 
@@ -69,7 +79,7 @@ public class TaxiManager : MonoBehaviour
     private void ReadPostitionBeforeMoving()
     {
         positonBeforeMoving = transform.position;
-        Debug.Log("positonBeforeMoving: " + positonBeforeMoving);
+        Debug.Log("positionBeforeMoving: " + positonBeforeMoving);
     }
 
     //**** Point & Click Movement ****
@@ -215,7 +225,7 @@ public class TaxiManager : MonoBehaviour
             }
             else
             {
-                endText.text = "You didnt bring all the Passengers home!" + Environment.NewLine + "Press to Restart";
+                endText.text = "You didn't bring " + Environment.NewLine + "all the Passengers home!" + Environment.NewLine + "Press to Restart";
             }
             endText.enabled = true;
             end = true;
@@ -223,9 +233,51 @@ public class TaxiManager : MonoBehaviour
         }
 
         GameEvents.current.PlanetCollision(collision.gameObject.name, passengerCount);
+
+        /*foreach (var böbbel in böbbelCollection)
+        {
+            Destroy(böbbel);
+        }
+        böbbelCollection.Clear();
+        BöbbelUpdate(PassengerCount.bluePassengerCount, blue, 1);
+        BöbbelUpdate(PassengerCount.redPassengerCount , red, 2);
+        BöbbelUpdate(PassengerCount.yellowPassengerCount, yellow,3);
+        BöbbelUpdate(PassengerCount.greenPassengerCount, green,4);*/
     }
     //*************************************
+  /*  void BöbbelUpdate(int böbbelLimit, Color böbbelColor, int plänetNumber) {
 
+        //erzeugt eine randomized Location
+        Vector3 spawnLocation = plänetLocation(plänetNumber);
+        //erzeugt ein böbbel
+        GameObject go = Instantiate(plänet, spawnLocation, Quaternion.identity);
+        go.GetComponent<BoxCollider2D>().enabled = false;
+        //zählt böbbel, und setzt den Winkel eins weiter
+        go.GetComponent<SpriteRenderer>().color = böbbelColor;
+        böbbelCollection.Add(go);
 
+    }
+
+Vector3 plänetLocation(int plänetNumber)
+{
+        //setzt die location, ausgehend vom Mittelpunkt vom zugewiesenen PLönet
+        Vector3 spawnLocation = new Vector3(
+            this.gameObject.transform.position.x,
+        this.gameObject.transform.position.y - (plänetNumber * 200),
+        0);
+
+    return spawnLocation;
+
+}
+
+void böbbelUpdate(GameObject böbbel, int i)
+    {
+        if (isMoving == true && !end)
+        {
+
+            Vector3 böbbelTarget = new Vector3(targetPosition.x, targetPosition.y - (200 * i), targetPosition.z);
+            böbbel.transform.position = Vector3.MoveTowards(böbbel.transform.position, böbbelTarget, speed * Time.deltaTime);
+        }
+    }*/
 
 }
