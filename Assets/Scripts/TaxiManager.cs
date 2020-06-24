@@ -70,9 +70,8 @@ public class TaxiManager : MonoBehaviour
             PassengerCount.transported = 0;
         }
 
-        //ReadPostitionBeforeMoving(); //Save Position in Variable before SpaceTaxi is moved (1)
+      
         MovementUpdate(); //Move SpaceTaxi (2)
-        //ReadPostitionAfterMoving(); //Save Position in Variable after SpaceTaxi is moved (3)
         //CalculateMovingDistance(); //Calculate the distace the SpaceTaxi has moved with the values from 1 and 3 (4)
         FuelUpdate(); //Substract the movingDistance from the fuelRange and Update fuelDisplayRenderer (5)
         int i = 0;
@@ -85,12 +84,6 @@ public class TaxiManager : MonoBehaviour
     }
 
 
-    //**** Save Position in Variable before SpaceTaxi is moved ****
-    private void ReadPostitionBeforeMoving()
-    {
-        positonBeforeMoving = transform.position;
-        Debug.Log("positionBeforeMoving: " + positonBeforeMoving);
-    }
 
     //**** Point & Click Movement ****
     void MovementUpdate() //called once per frame
@@ -137,31 +130,7 @@ public class TaxiManager : MonoBehaviour
 
 
 
-    //**** Save Position in Variable after SpaceTaxi is moved ****
-    private void ReadPostitionAfterMoving()
-    {
-        positionAfterMoving = transform.position;
-        Debug.Log("positonAfterMoving: " + positionAfterMoving);
-    }
-
-    //**** Calculate the Distance the SpaceTaxi has moved ****
-    private void CalculateMovingDistance()
-    {
-
-
-        if(isMoving == true)
-        {
-            Vector3 positionToMoveTo = Vector3.MoveTowards(positonBeforeMoving, targetPosition, speed * Time.deltaTime);
-            movingDistance = Vector3.Distance(positonBeforeMoving, positionToMoveTo);
-
-            Debug.Log("movingDistance: " + movingDistance);
-        }
-        else
-        {
-            movingDistance = 0;
-        }
-
-    }
+ 
 
 
 

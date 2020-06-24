@@ -25,7 +25,7 @@ public class PassengerCount : MonoBehaviour
     }
     void Update()
     {
-        this.gameObject.transform.Rotate(new Vector3(0, 0, 1), Space.Self);
+        //this.gameObject.transform.Rotate(new Vector3(0, 0, 1), Space.Self);
     }
 
     private void UpdatePassengerCount(Color color)
