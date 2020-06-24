@@ -41,15 +41,18 @@ TagManager:
   - name: Background
     uniqueID: 625320225
     locked: 0
+  - name: fuel
+    uniqueID: 3876841775
+    locked: 0
   - name: "pl\xE4net"
     uniqueID: 886939899
     locked: 0
-  - name: fuel
-    uniqueID: 3876841775
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Foreground
     uniqueID: 2664859559
     locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: UI
+    uniqueID: 1902288553
     locked: 0
