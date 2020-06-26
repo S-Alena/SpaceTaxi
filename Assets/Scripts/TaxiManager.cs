@@ -42,9 +42,9 @@ public class TaxiManager : MonoBehaviour
     public GameObject plänet;
 
     public static Color red = new Color(252 / 255f, 142 / 255f, 101 / 255f, 1);
-    public static Color pink = new Color(232 / 255f, 83 / 255f, 140 / 255f, 1);
+    public static Color pink = new Color(224 / 255f, 22 / 255f, 113 / 255f, 1);
     public static Color blue = new Color(133 / 255f, 198 / 255f, 230 / 255f, 1);
-    public static Color yellow = new Color(1, 201 / 255f, 142 / 255f, 1);
+    public static Color yellow = new Color(1, 228 / 255f, 184 / 255f, 1);
 
 
     // Start is called before the first frame update
