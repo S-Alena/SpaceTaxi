@@ -20,12 +20,12 @@ public class TaxiManager : MonoBehaviour
     //************
 
     //relevant for fuel
-    private float fuelRange = 300;
+    private float fuelRange = 3000;
     public GameObject fuelDisplay;
     private SpriteRenderer fuelDisplayRenderer; //reference to the circle sprite that shows the fuel
 
-    private float oneFuelLoad = 100;
-    private float maxFuel = 500;
+    private float oneFuelLoad = 400;
+    private float maxFuel = 3000;
 
     private Vector3 positonBeforeMoving;
     private Vector3 positionAfterMoving;
@@ -42,7 +42,7 @@ public class TaxiManager : MonoBehaviour
     public GameObject plänet;
 
     public static Color red = new Color(252 / 255f, 142 / 255f, 101 / 255f, 1);
-    public static Color pink = new Color(224 / 255f, 22 / 255f, 113 / 255f, 1);
+    public static Color pink = new Color(0.8773585f, 0.08690815f, 0.4414128f, 1);
     public static Color blue = new Color(133 / 255f, 198 / 255f, 230 / 255f, 1);
     public static Color yellow = new Color(1, 228 / 255f, 184 / 255f, 1);
 
@@ -60,7 +60,7 @@ public class TaxiManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (end == true && Input.anyKey)
+        if (end == true && Input.anyKeyDown)
         {
             GameEvents.current.RestartGame();
             PassengerCount.redPassengerCount = 0;
@@ -81,6 +81,14 @@ public class TaxiManager : MonoBehaviour
             i++;
         }
         prevPosition = this.transform.position;
+        if(isMoving == true)
+        {
+           this.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+        }
+        else
+        {
+            this.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+        }
     }
 
 
@@ -139,9 +147,9 @@ public class TaxiManager : MonoBehaviour
     {
         if(isMoving == true)
         {
-            float dist = Vector3.Distance(prevPosition, transform.position) / 2175f;
+            float dist = Vector3.Distance(prevPosition, transform.position);
             Debug.Log("Travel Distance since last Frame: " + dist);
-            fuelRange = fuelRange - (600f * dist); 
+            fuelRange = fuelRange - (2*dist); 
         }
         if(fuelRange >= 0)
         {
@@ -150,6 +158,13 @@ public class TaxiManager : MonoBehaviour
         if(fuelRange < 0)
         {
             endText.text = "Fuel Empty." + Environment.NewLine + "Press to Restart";
+            endText.enabled = true;
+            end = true;
+        }
+        //Debug.Log("Fuel Overlap: "+ fuelDisplay.GetComponent<FuelOverlap>().isOverlapping);
+        if (!fuelDisplay.GetComponent<FuelOverlap>().isOverlapping)
+        {
+            endText.text = "No Planet reachable" + Environment.NewLine + "Press to Restart";
             endText.enabled = true;
             end = true;
         }
@@ -174,7 +189,7 @@ public class TaxiManager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        Debug.Log("Collided with " + collision.gameObject.name);
+        //Debug.Log("Collided with " + collision.gameObject.name);
 
         int passengerCount = 0;
 
@@ -182,19 +197,19 @@ public class TaxiManager : MonoBehaviour
         {
             passengerCount = PassengerCount.redPassengerCount;
         }
-        else if (collision.gameObject.GetComponent<SpriteRenderer>().color == pink)
+        if (collision.gameObject.GetComponent<SpriteRenderer>().color == pink)
         {
             passengerCount = PassengerCount.pinkPassengerCount;
         }
-        else if (collision.gameObject.GetComponent<SpriteRenderer>().color == blue)
+        if (collision.gameObject.GetComponent<SpriteRenderer>().color == blue)
         {
             passengerCount = PassengerCount.bluePassengerCount;
         }
-        else if (collision.gameObject.GetComponent<SpriteRenderer>().color == yellow)
+        if (collision.gameObject.GetComponent<SpriteRenderer>().color == yellow)
         {
             passengerCount = PassengerCount.yellowPassengerCount;
         }
-        else if (collision.gameObject.name == "Home")
+        if (collision.gameObject.name == "Home")
         {
 
             if (PassengerCount.yellowPassengerCount == 0 && PassengerCount.pinkPassengerCount == 0 && PassengerCount.bluePassengerCount == 0 && PassengerCount.redPassengerCount == 0)

@@ -15,8 +15,10 @@ public class Multiply : MonoBehaviour
 
     public GameObject plönet;
     public GameObject böbbel;
-    public int böbbelMax;
-    public int böbbelMin;
+    public int passengerRed;
+    public int passengerPink;
+    public int passengerBlue;
+    public int passengerYellow;
     private int böbbelLimit;
     public List<GameObject> böbbelCollection = new List<GameObject>();
     public List<Color> colors = new List<Color>();
@@ -24,52 +26,45 @@ public class Multiply : MonoBehaviour
 
     void Start()
     {
-        Color otherColor = plönet.GetComponent<SpriteRenderer>().color;
-        colors.Add(TaxiManager.red);
-        colors.Add(TaxiManager.pink);
-        colors.Add(TaxiManager.blue);
-        colors.Add(TaxiManager.yellow);
-        
-        if(otherColor == TaxiManager.red)
-        {
-           böbbelMin = 2;
-        }
-        if(otherColor == TaxiManager.pink)
-        {
-            böbbelMin = 2;
-        }
-        if(otherColor == TaxiManager.blue)
-        {
-            böbbelMin = 3;
-        }
-        if(otherColor == TaxiManager.yellow)
-        {
-            böbbelMin = 4;
-        }
 
         GameEvents.current.onPlanetCollision += OnPassengerRemoval;
 
-        böbbelLimit = Random.Range(böbbelMin, böbbelMax);
-
-        for (int böbbelCount = 0; böbbelCount < böbbelLimit; böbbelCount++)
+        for (int i = 0; i < passengerRed; i++)
+        {
+            colors.Add(TaxiManager.red);
+        }
+        for (int i = 0; i < passengerPink; i++)
+        {
+            colors.Add(TaxiManager.pink);
+        }
+        for (int i = 0; i < passengerYellow; i++)
+        {
+            colors.Add(TaxiManager.yellow);
+        }
+        for (int i = 0; i < passengerBlue; i++)
+        {
+            colors.Add(TaxiManager.blue);
+        }
+        int count = 0;
+        foreach (Color color in colors)
         {
             //erzeugt eine randomized Location
-            Vector3 spawnLocation = newLocation(böbbelLimit, böbbelCount);
+            Vector3 spawnLocation = newLocation(colors.Count, count);
 
 
             //erzeugt ein böbbel
             GameObject go = Instantiate(böbbel, spawnLocation, Quaternion.identity);
             //zählt böbbel, und setzt den Winkel eins weiter
 
-            go.GetComponent<SpriteRenderer>().color = colors[Random.Range(0, colors.Count)];
+            go.GetComponent<SpriteRenderer>().color = color;
 
 
             //print("Böbbels: " + böbbelCount);
 
             böbbelCollection.Add(go);
-
-
+            count++;
         }
+
 
     }
 
