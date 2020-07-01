@@ -18,9 +18,7 @@ public class CameraManager : MonoBehaviour
     //relevant for edge scrolling
     float edgeSize = 30f;
 
-    public GameObject spaceShip;
-    private Vector2 spaceShipPos;
-    public Renderer shipRenderer;
+    public GameObject worldCenter;
 
     public float maxStray = 3000f; //maximal distance between camera position and taxi position
 
@@ -30,14 +28,11 @@ public class CameraManager : MonoBehaviour
     {
         cam = GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
-        shipRenderer = spaceShip.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        spaceShipPos = spaceShip.transform.position;
-
 
         //zoom
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
@@ -45,7 +40,7 @@ public class CameraManager : MonoBehaviour
             if(zoomSize > minZoom)
             {
                 zoomSize -= 100;
- 
+                MoveCam();
             }
         }
 
@@ -64,6 +59,7 @@ public class CameraManager : MonoBehaviour
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         //edge scrolling
+        /*
         if (Input.mousePosition.x > Screen.width - edgeSize)
         {
             moveInput.Set(1, 0);
@@ -80,6 +76,7 @@ public class CameraManager : MonoBehaviour
         {
             moveInput.Set(0, -1);
         }
+        */
 
         moveVelocity = moveInput.normalized * moveSpeed;
 
@@ -87,7 +84,7 @@ public class CameraManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float strayDistance = Vector2.Distance(spaceShipPos, (rb.position + moveVelocity * Time.fixedDeltaTime));
+        float strayDistance = Vector2.Distance(worldCenter.transform.position, (rb.position + moveVelocity * Time.fixedDeltaTime));
 
         Debug.Log("Distance: " + strayDistance);
 
@@ -97,5 +94,18 @@ public class CameraManager : MonoBehaviour
             rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
         }
 
+    }
+
+
+    void MoveCam()
+    {
+        Vector3 moveTowards = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        float amount = 100f;
+
+        // Calculate how much we will have to move towards the zoomTowards position
+        float multiplier = (1.0f / cam.orthographicSize * amount);
+
+        // Move camera
+        transform.position += (moveTowards - transform.position) * multiplier;
     }
 }
