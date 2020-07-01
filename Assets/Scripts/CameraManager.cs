@@ -18,23 +18,34 @@ public class CameraManager : MonoBehaviour
     //relevant for edge scrolling
     float edgeSize = 30f;
 
+    public GameObject spaceShip;
+    private Vector2 spaceShipPos;
+    public Renderer shipRenderer;
+
+    public float maxStray = 3000f; //maximal distance between camera position and taxi position
+
 
     // Start is called before the first frame update
     void Start()
     {
         cam = GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
+        shipRenderer = spaceShip.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        spaceShipPos = spaceShip.transform.position;
+
+
         //zoom
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             if(zoomSize > minZoom)
             {
                 zoomSize -= 100;
+ 
             }
         }
 
@@ -48,11 +59,12 @@ public class CameraManager : MonoBehaviour
 
         cam.orthographicSize = zoomSize;
 
+
         //movement
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         //edge scrolling
-        if(Input.mousePosition.x > Screen.width - edgeSize)
+        if (Input.mousePosition.x > Screen.width - edgeSize)
         {
             moveInput.Set(1, 0);
         }
@@ -75,6 +87,15 @@ public class CameraManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+        float strayDistance = Vector2.Distance(spaceShipPos, (rb.position + moveVelocity * Time.fixedDeltaTime));
+
+        Debug.Log("Distance: " + strayDistance);
+
+
+        if(strayDistance < maxStray)
+        {
+            rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+        }
+
     }
 }
