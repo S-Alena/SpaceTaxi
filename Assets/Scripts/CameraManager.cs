@@ -105,7 +105,12 @@ public class CameraManager : MonoBehaviour
         // Calculate how much we will have to move towards the zoomTowards position
         float multiplier = (1.0f / cam.orthographicSize * amount);
 
-        // Move camera
-        transform.position += (moveTowards - transform.position) * multiplier;
+        float strayDistance = Vector2.Distance(worldCenter.transform.position, (transform.position + (moveTowards - transform.position) * multiplier));
+
+        if (strayDistance < maxStray)
+        {
+            // Move camera
+            transform.position += (moveTowards - transform.position) * multiplier;
+        }
     }
 }
