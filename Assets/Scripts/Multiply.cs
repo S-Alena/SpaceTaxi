@@ -15,6 +15,8 @@ public class Multiply : MonoBehaviour
 
     public GameObject plönet;
     public GameObject böbbel;
+    private GameObject halo;
+    private bool withinRange = false;
     public int passengerRed;
     public int passengerPink;
     public int passengerBlue;
@@ -28,6 +30,9 @@ public class Multiply : MonoBehaviour
     {
 
         GameEvents.current.onPlanetCollision += OnPassengerRemoval;
+
+        halo = plönet.transform.GetChild(0).gameObject;
+        halo.active = false;
 
         for (int i = 0; i < passengerRed; i++)
         {
@@ -135,9 +140,30 @@ public class Multiply : MonoBehaviour
             }
             //print("Böbbel auf Planet: " + böbbelCollection.Count);
         }
-
-
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.name == "FuelRange")
+        {
+            withinRange = true;
+            Debug.Log(plönet.name + "is within Range");
+        }
+    }
+
+    void OnMouseEnter()
+    {
+        if(withinRange == true)
+        {
+            halo.active = true;
+        }
+    }
+
+    void OnMouseExit()
+    {
+        halo.active = false;
+    }
+
 }
 
 

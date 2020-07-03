@@ -86,7 +86,7 @@ public class CameraManager : MonoBehaviour
     {
         float strayDistance = Vector2.Distance(worldCenter.transform.position, (rb.position + moveVelocity * Time.fixedDeltaTime));
 
-        Debug.Log("Distance: " + strayDistance);
+        //Debug.Log("Distance: " + strayDistance);
 
 
         if(strayDistance < maxStray)
