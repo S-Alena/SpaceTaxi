@@ -53,8 +53,10 @@ public class TaxiManager : MonoBehaviour
         endText.enabled = false;
         fuelDisplayRenderer = fuelDisplay.GetComponent<SpriteRenderer>(); // circle sprite is first child element of the SpaceTaxi
         fuelDisplayRenderer.enabled = true;
+        targetPosition.Set(transform.position.x, transform.position.y, transform.position.z);
 
         GameEvents.current.onFuelPickup += AddFuel;
+        GameEvents.current.onFlyCommand += UpdateTargetPosition;
     }
 
     // Update is called once per frame
@@ -70,8 +72,9 @@ public class TaxiManager : MonoBehaviour
             PassengerCount.transported = 0;
         }
 
-      
-        MovementUpdate(); //Move SpaceTaxi (2)
+
+        //MovementUpdateOld(); //Move SpaceTaxi (2)
+        MovementUpdate();
         //CalculateMovingDistance(); //Calculate the distace the SpaceTaxi has moved with the values from 1 and 3 (4)
         FuelUpdate(); //Substract the movingDistance from the fuelRange and Update fuelDisplayRenderer (5)
         int i = 0;
@@ -94,7 +97,9 @@ public class TaxiManager : MonoBehaviour
 
 
     //**** Point & Click Movement ****
-    void MovementUpdate() //called once per frame
+
+    /*
+    void MovementUpdateOld() //called once per frame
     {
         positonBeforeMoving = transform.position;
         if (Input.GetMouseButtonDown(0))
@@ -133,7 +138,18 @@ public class TaxiManager : MonoBehaviour
 
         }
     }
+    */
 
+
+    void UpdateTargetPosition(Vector3 planetPosition)
+    {
+        this.targetPosition.Set(planetPosition.x, planetPosition.y, planetPosition.z);
+    }
+
+    void MovementUpdate()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+    }
     //*************************************
 
 

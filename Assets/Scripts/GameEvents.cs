@@ -54,6 +54,16 @@ public class GameEvents : MonoBehaviour
         }
     }
 
+    public event Action<Vector3> onFlyCommand;
+
+    public void FlyToPlanetCenter(Vector3 destinationPosition)
+    {
+        if(onFlyCommand != null)
+        {
+            onFlyCommand(destinationPosition);
+        }
+    }
+
     public event Action onGameOver;
 
     public void RestartGame()

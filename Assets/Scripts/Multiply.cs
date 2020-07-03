@@ -151,6 +151,14 @@ public class Multiply : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "FuelRange")
+        {
+            withinRange = false;
+        }
+    }
+
     void OnMouseEnter()
     {
         if(withinRange == true)
@@ -164,6 +172,16 @@ public class Multiply : MonoBehaviour
         halo.active = false;
     }
 
+    void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if(withinRange == true)
+            {
+                GameEvents.current.FlyToPlanetCenter(plönet.transform.position);
+            }
+        }
+    }
 }
 
 
