@@ -120,7 +120,7 @@ public class TaxiManager : MonoBehaviour
         isMoving = true;
     }
 
-    void Move()
+    void MoveOld()
     {
         //transform.rotation = Quaternion.LookRotation(targetPosition,Vector3.forward); //rotation of Player
         if(fuelRange >= 0)
@@ -144,11 +144,35 @@ public class TaxiManager : MonoBehaviour
     void UpdateTargetPosition(Vector3 planetPosition)
     {
         this.targetPosition.Set(planetPosition.x, planetPosition.y, planetPosition.z);
+        isMoving = true;
     }
 
     void MovementUpdate()
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        if (isMoving == true)
+        {
+            Move();
+        }
+    }
+
+    void Move()
+    {
+        if (fuelRange >= 0)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            fuelDisplay.transform.position = Vector3.MoveTowards(fuelDisplay.transform.position, targetPosition, speed * Time.deltaTime);
+            if (transform.position == targetPosition)
+            {
+                isMoving = false;
+            }
+        }
+        else
+        {
+            endText.text = "Fuel Empty." + Environment.NewLine + "Press to Restart";
+            endText.enabled = true;
+            end = true;
+
+        }
     }
     //*************************************
 
