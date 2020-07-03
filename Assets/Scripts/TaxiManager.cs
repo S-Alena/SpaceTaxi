@@ -143,7 +143,7 @@ public class TaxiManager : MonoBehaviour
 
     void UpdateTargetPosition(Vector3 planetPosition)
     {
-        this.targetPosition.Set(planetPosition.x, planetPosition.y, planetPosition.z);
+        this.targetPosition.Set(planetPosition.x, planetPosition.y, 0);
         isMoving = true;
     }
 
