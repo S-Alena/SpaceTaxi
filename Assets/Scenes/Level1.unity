@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 2086888}
   m_Layer: 0
   m_Name: Planet Pink (5)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 3207361}
   m_Layer: 0
   m_Name: Planet Rot (5)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -633,7 +633,7 @@ GameObject:
   - component: {fileID: 180697177}
   m_Layer: 0
   m_Name: Planet Rot (1)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -886,7 +886,7 @@ GameObject:
   - component: {fileID: 198766073}
   m_Layer: 0
   m_Name: Planet Rot
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1262,7 +1262,7 @@ GameObject:
   - component: {fileID: 301329621}
   m_Layer: 0
   m_Name: Planet Pink (4)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1485,7 +1485,7 @@ GameObject:
   - component: {fileID: 336196785}
   m_Layer: 0
   m_Name: Planet Blau (2)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1699,7 +1699,7 @@ GameObject:
   - component: {fileID: 403900064}
   m_Layer: 0
   m_Name: Planet Rot (4)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1832,7 +1832,7 @@ GameObject:
   - component: {fileID: 456496123}
   m_Layer: 0
   m_Name: Planet Gelb (5)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1965,7 +1965,7 @@ GameObject:
   - component: {fileID: 456843587}
   m_Layer: 0
   m_Name: Planet Pink (3)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2348,7 +2348,7 @@ GameObject:
   - component: {fileID: 575549547}
   m_Layer: 0
   m_Name: Planet Rot (2)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2573,7 +2573,7 @@ GameObject:
   - component: {fileID: 676855133}
   m_Layer: 0
   m_Name: Planet Blau (1)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2824,7 +2824,7 @@ GameObject:
   - component: {fileID: 738650410}
   m_Layer: 0
   m_Name: Planet Pink
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3195,7 +3195,7 @@ GameObject:
   - component: {fileID: 797250297}
   m_Layer: 0
   m_Name: Planet Blau (3)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3571,7 +3571,7 @@ GameObject:
   - component: {fileID: 896269308}
   m_Layer: 0
   m_Name: Planet Blau (7)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4298,7 +4298,7 @@ GameObject:
   - component: {fileID: 1030646492}
   m_Layer: 0
   m_Name: Planet Gelb
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4431,7 +4431,7 @@ GameObject:
   - component: {fileID: 1034439440}
   m_Layer: 0
   m_Name: Planet Pink (2)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4879,7 +4879,7 @@ GameObject:
   - component: {fileID: 1091803286}
   m_Layer: 0
   m_Name: Planet Rot (3)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5174,7 +5174,7 @@ GameObject:
   - component: {fileID: 1149975607}
   m_Layer: 0
   m_Name: Planet Gelb (2)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5509,7 +5509,7 @@ GameObject:
   - component: {fileID: 1221127831}
   m_Layer: 0
   m_Name: Planet Blau
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5642,7 +5642,7 @@ GameObject:
   - component: {fileID: 1228638214}
   m_Layer: 0
   m_Name: Planet Rot (6)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6365,7 +6365,7 @@ GameObject:
   - component: {fileID: 1390643103}
   m_Layer: 0
   m_Name: Planet Gelb (3)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6498,7 +6498,7 @@ GameObject:
   - component: {fileID: 1516391945}
   m_Layer: 0
   m_Name: Planet Blau (4)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6706,7 +6706,7 @@ GameObject:
   - component: {fileID: 1541235799}
   m_Layer: 0
   m_Name: Planet Blau (5)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7118,7 +7118,7 @@ GameObject:
   - component: {fileID: 1584146554}
   m_Layer: 0
   m_Name: Planet Gelb (4)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7572,7 +7572,7 @@ GameObject:
   - component: {fileID: 1640909974}
   m_Layer: 0
   m_Name: Planet Rot (7)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7786,7 +7786,7 @@ GameObject:
   - component: {fileID: 1807480889}
   m_Layer: 0
   m_Name: Planet Pink (6)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7919,7 +7919,7 @@ GameObject:
   - component: {fileID: 1844000670}
   m_Layer: 0
   m_Name: Planet Blau (6)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8052,7 +8052,7 @@ GameObject:
   - component: {fileID: 1846028552}
   m_Layer: 0
   m_Name: Planet Pink (1)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8185,7 +8185,7 @@ GameObject:
   - component: {fileID: 1873060837}
   m_Layer: 0
   m_Name: Planet Gelb (1)
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9009,9 +9009,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2045552276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 700557c24a4bb1b40badd0e91ce06ca1, type: 3}
+  m_Script: {fileID: 11500000, guid: 065c598d375d5b341b41ada987030dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetsInRange: 0
 --- !u!50 &2045552282
 Rigidbody2D:
   serializedVersion: 4

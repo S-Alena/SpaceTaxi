@@ -12,7 +12,7 @@ public class TaxiManager : MonoBehaviour
     //relevant for movement
     public float speed = 4;
     private Vector3 targetPosition;
-    private bool isMoving = false;
+    public bool isMoving = false;
     //************
 
     //relevant for collision
@@ -36,6 +36,7 @@ public class TaxiManager : MonoBehaviour
 
     //relevant for end
     private bool end = false;
+    private bool deathMessage;
 
     //relevant for planning
     public List<GameObject> böbbelCollection = new List<GameObject>();
@@ -73,6 +74,8 @@ public class TaxiManager : MonoBehaviour
         }
 
 
+
+
         //MovementUpdateOld(); //Move SpaceTaxi (2)
         MovementUpdate();
         //CalculateMovingDistance(); //Calculate the distace the SpaceTaxi has moved with the values from 1 and 3 (4)
@@ -92,7 +95,18 @@ public class TaxiManager : MonoBehaviour
         {
             this.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
         }
+
+        deathMessage = fuelDisplay.GetComponent<FuelManager>().deathMessage;
+        if(deathMessage == true)
+        {
+            endText.text = "Fuel Empty." + Environment.NewLine + "Press to Restart";
+            endText.enabled = true;
+            end = true;
+        }
+
+
     }
+
 
 
 
@@ -157,22 +171,13 @@ public class TaxiManager : MonoBehaviour
 
     void Move()
     {
-        if (fuelRange >= 0)
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        fuelDisplay.transform.position = Vector3.MoveTowards(fuelDisplay.transform.position, targetPosition, speed * Time.deltaTime);
+        if (transform.position == targetPosition)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-            fuelDisplay.transform.position = Vector3.MoveTowards(fuelDisplay.transform.position, targetPosition, speed * Time.deltaTime);
-            if (transform.position == targetPosition)
-            {
-                isMoving = false;
-            }
+            isMoving = false;
         }
-        else
-        {
-            endText.text = "Fuel Empty." + Environment.NewLine + "Press to Restart";
-            endText.enabled = true;
-            end = true;
-
-        }
+        
     }
     //*************************************
 
@@ -188,27 +193,25 @@ public class TaxiManager : MonoBehaviour
         if(isMoving == true)
         {
             float dist = Vector3.Distance(prevPosition, transform.position);
-            Debug.Log("Travel Distance since last Frame: " + dist);
+            //Debug.Log("Travel Distance since last Frame: " + dist);
             fuelRange = fuelRange - (2*dist); 
         }
-        if(fuelRange >= 0)
-        {
-            this.fuelDisplayRenderer.transform.localScale = new Vector3(fuelRange, fuelRange, 1);
-        }
-        if(fuelRange < 0)
+ 
+        this.fuelDisplayRenderer.transform.localScale = new Vector3(fuelRange, fuelRange, 1);
+
+        /*if(fuelRange < 0)
         {
             endText.text = "Fuel Empty." + Environment.NewLine + "Press to Restart";
             endText.enabled = true;
             end = true;
-        }
+        }*/
         //Debug.Log("Fuel Overlap: "+ fuelDisplay.GetComponent<FuelOverlap>().isOverlapping);
-        if (!fuelDisplay.GetComponent<FuelOverlap>().isOverlapping)
+        /*if (!fuelDisplay.GetComponent<FuelOverlap>().isOverlapping)
         {
             endText.text = "No Planet reachable" + Environment.NewLine + "Press to Restart";
             endText.enabled = true;
             end = true;
-        }
-        
+        }*/        
     }
 
     private void AddFuel(int numberOfFuelLoads)
@@ -216,7 +219,7 @@ public class TaxiManager : MonoBehaviour
         fuelRange = fuelRange + (numberOfFuelLoads * oneFuelLoad);
         if (fuelRange > maxFuel)
         {
-            fuelRange = maxFuel;
+            fuelRange = maxFuel;          
         }
         Debug.Log("Fuel: " + fuelRange);
     }
@@ -269,5 +272,6 @@ public class TaxiManager : MonoBehaviour
 
     }
     //*************************************
+
 
 }
