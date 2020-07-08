@@ -8338,6 +8338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1000
+  isMoving: 0
   endText: {fileID: 767572580}
   fuelDisplay: {fileID: 2045552276}
   "b\xF6bbelCollection": []
@@ -9013,6 +9014,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetsInRange: 0
+  spaceShip: {fileID: 1883159156}
+  deathMessage: 0
 --- !u!50 &2045552282
 Rigidbody2D:
   serializedVersion: 4

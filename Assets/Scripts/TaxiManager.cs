@@ -34,9 +34,14 @@ public class TaxiManager : MonoBehaviour
     private Vector3 prevPosition;
     //************
 
+    //relevant for interaction with planet
+    private GameObject activePlanet;
+    //************
+
     //relevant for end
     private bool end = false;
     private bool deathMessage;
+    //************
 
     //relevant for planning
     public List<GameObject> böbbelCollection = new List<GameObject>();
@@ -58,6 +63,7 @@ public class TaxiManager : MonoBehaviour
 
         GameEvents.current.onFuelPickup += AddFuel;
         GameEvents.current.onFlyCommand += UpdateTargetPosition;
+        GameEvents.current.onFlyCommand += UpdateActivePlanet;
     }
 
     // Update is called once per frame
@@ -155,9 +161,9 @@ public class TaxiManager : MonoBehaviour
     */
 
 
-    void UpdateTargetPosition(Vector3 planetPosition)
+    void UpdateTargetPosition(GameObject planetPosition)
     {
-        this.targetPosition.Set(planetPosition.x, planetPosition.y, 0);
+        this.targetPosition.Set(planetPosition.transform.position.x, planetPosition.transform.position.y + 200, 0);
         isMoving = true;
     }
 
@@ -176,6 +182,7 @@ public class TaxiManager : MonoBehaviour
         if (transform.position == targetPosition)
         {
             isMoving = false;
+            CollectPassengers();
         }
         
     }
@@ -221,14 +228,64 @@ public class TaxiManager : MonoBehaviour
         {
             fuelRange = maxFuel;          
         }
-        Debug.Log("Fuel: " + fuelRange);
+        //Debug.Log("Fuel: " + fuelRange);
     }
 
 
 
 
+    //**** Böbbel Collection ****
+    private void UpdateActivePlanet(GameObject planet)
+    {
+        activePlanet = planet;
+        Debug.Log("active Planet: " + activePlanet);
+    }
+    private void CollectPassengers()
+    {
+        Debug.Log("passenger collection Started");
+
+        int passengerCount = 0;
+
+        if (activePlanet.GetComponent<SpriteRenderer>().color == red)
+        {
+            passengerCount = PassengerCount.redPassengerCount;
+        }
+        if (activePlanet.GetComponent<SpriteRenderer>().color == pink)
+        {
+            passengerCount = PassengerCount.pinkPassengerCount;
+        }
+        if (activePlanet.GetComponent<SpriteRenderer>().color == blue)
+        {
+            passengerCount = PassengerCount.bluePassengerCount;
+        }
+        if (activePlanet.GetComponent<SpriteRenderer>().color == yellow)
+        {
+            passengerCount = PassengerCount.yellowPassengerCount;
+        }
+        if (activePlanet.name == "Home")
+        {
+
+            if (PassengerCount.yellowPassengerCount == 0 && PassengerCount.pinkPassengerCount == 0 && PassengerCount.bluePassengerCount == 0 && PassengerCount.redPassengerCount == 0)
+            {
+                endText.text = "You made it. " + Environment.NewLine + "Transported = " + PassengerCount.transported;
+            }
+            else
+            {
+                endText.text = "You didn't bring " + Environment.NewLine + "all the Passengers home!" + Environment.NewLine + "Press to Restart";
+            }
+            endText.enabled = true;
+            end = true;
+
+        }
+
+        GameEvents.current.PlanetCollision(activePlanet.name, passengerCount);
+    }
+    //*************************************
+
 
     //**** Planet Collision ****
+
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -271,6 +328,7 @@ public class TaxiManager : MonoBehaviour
         GameEvents.current.PlanetCollision(collision.gameObject.name, passengerCount);
 
     }
+    */
     //*************************************
 
 

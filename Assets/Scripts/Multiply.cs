@@ -147,7 +147,7 @@ public class Multiply : MonoBehaviour
         if(collision.gameObject.name == "FuelRange")
         {
             withinRange = true;
-            Debug.Log(plönet.name + "is within Range");
+            //Debug.Log(plönet.name + "is within Range");
         }
     }
 
@@ -177,7 +177,7 @@ public class Multiply : MonoBehaviour
     {
         if (withinRange == true)
         {
-            GameEvents.current.FlyToPlanetCenter(plönet.transform.position);
+            GameEvents.current.ReactToFlyCommand(plönet);
         }
     }
 }

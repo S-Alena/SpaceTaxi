@@ -54,13 +54,13 @@ public class GameEvents : MonoBehaviour
         }
     }
 
-    public event Action<Vector3> onFlyCommand;
+    public event Action<GameObject> onFlyCommand;
 
-    public void FlyToPlanetCenter(Vector3 destinationPosition)
+    public void ReactToFlyCommand(GameObject planetWithFlyCommand)
     {
         if(onFlyCommand != null)
         {
-            onFlyCommand(destinationPosition);
+            onFlyCommand(planetWithFlyCommand);
         }
     }
 
