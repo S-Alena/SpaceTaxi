@@ -25,6 +25,8 @@ public class Multiply : MonoBehaviour
     public List<GameObject> böbbelCollection = new List<GameObject>();
     public List<Color> colors = new List<Color>();
 
+    float offset = 0;
+
 
     void Start()
     {
@@ -54,15 +56,24 @@ public class Multiply : MonoBehaviour
         foreach (Color color in colors)
         {
             //erzeugt eine randomized Location
-            Vector3 spawnLocation = newLocation(colors.Count, count);
+            Vector3 spawnLocation = newLocation(colors.Count, count, 0f);
+
+            float rotate  = (count * 2 * Mathf.PI / colors.Count) * Mathf.Rad2Deg *-1;
 
 
             //erzeugt ein böbbel
             GameObject go = Instantiate(böbbel, spawnLocation, Quaternion.identity);
+
             //zählt böbbel, und setzt den Winkel eins weiter
 
             go.GetComponent<SpriteRenderer>().color = color;
 
+            Animator anim = go.GetComponent<Animator>();
+
+            float randomIdleStart = Random.Range(0, anim.GetCurrentAnimatorStateInfo(0).length); //Set a random part of the animation to start from
+            anim.Play("passengerAnim", 0, randomIdleStart);
+
+            go.transform.rotation = Quaternion.Euler(0, 0, rotate);
 
             //print("Böbbels: " + böbbelCount);
 
@@ -76,15 +87,34 @@ public class Multiply : MonoBehaviour
     void Update()
     {
 
+        offset += 0.25f * Time.deltaTime;
+
+        for (int i = böbbelCollection.Count - 1; i >= 0; i--)
+        {
+            GameObject go = böbbelCollection[i];
+
+            float thisOffset = offset;
+
+            if (i % 2 != 0)
+            {
+                thisOffset *= -1;
+            }
+            go.transform.position = newLocation(böbbelCollection.Count, i, thisOffset);
+
+
+            float rotate = (i * 2 * Mathf.PI / colors.Count + thisOffset) * Mathf.Rad2Deg * -1;
+            go.transform.rotation = Quaternion.Euler(0, 0, rotate);
+
+        }
     }
 
-    Vector3 newLocation(int limit, int böbbelNumber)
+    Vector3 newLocation(int limit, int böbbelNumber, float offset)
     {
         float x;
         float y;
 
         //Ein Kreis ist 2mal PI, geteilt durch Anzahl der böbbel, i sorgt dafür dass es um einen xten Teil verschoben wird
-        float zet = böbbelNumber * 2 * Mathf.PI / limit;
+        float zet = böbbelNumber * 2 * Mathf.PI / limit +offset;
 
         //setzt die location, ausgehend vom Mittelpunkt vom zugewiesenen PLönet
         Vector3 spawnLocation = new Vector3(
@@ -126,12 +156,16 @@ public class Multiply : MonoBehaviour
             for (int böbbelCount = 0; böbbelCount < numberOfColorPassengers; böbbelCount++)
             {
                 //erzeugt eine randomized Location
-                Vector3 spawnLocation = newLocation(numberOfColorPassengers, böbbelCount);
+                Vector3 spawnLocation = newLocation(numberOfColorPassengers, böbbelCount,0);
+
+                float rotate = (böbbelCount * 2 * Mathf.PI / numberOfColorPassengers) * Mathf.Rad2Deg * -1;
 
                 //erzeugt ein böbbel
                 GameObject go = Instantiate(böbbel, spawnLocation, Quaternion.identity);
                 //zählt böbbel, und setzt den Winkel eins weiter
                 go.GetComponent<SpriteRenderer>().color = this.plönet.GetComponent<SpriteRenderer>().color;
+
+                go.transform.rotation = Quaternion.Euler(0, 0, rotate);
 
                 böbbelCollection.Add(go);
 

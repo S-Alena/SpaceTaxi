@@ -52,6 +52,13 @@ public class TaxiManager : MonoBehaviour
     public static Color blue = new Color(133 / 255f, 198 / 255f, 230 / 255f, 1);
     public static Color yellow = new Color(1, 228 / 255f, 184 / 255f, 1);
 
+    //relevant for animation
+    float angle = 0;
+    float targetAngle = 0;
+
+    public GameObject beam;
+    float beamTime;
+
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +71,7 @@ public class TaxiManager : MonoBehaviour
         GameEvents.current.onFuelPickup += AddFuel;
         GameEvents.current.onFlyCommand += UpdateTargetPosition;
         GameEvents.current.onFlyCommand += UpdateActivePlanet;
+        beam.active = false;
     }
 
     // Update is called once per frame
@@ -100,6 +108,19 @@ public class TaxiManager : MonoBehaviour
         else
         {
             this.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+
+
+            if (angle != 0)
+            {
+                if(angle >= 0)
+                {
+                    angle -= 3;
+                }else
+                {
+                    angle += 3;
+                }
+            }
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
 
         deathMessage = fuelDisplay.GetComponent<FuelManager>().deathMessage;
@@ -108,6 +129,14 @@ public class TaxiManager : MonoBehaviour
             endText.text = "Fuel Empty." + Environment.NewLine + "Press to Restart";
             endText.enabled = true;
             end = true;
+        }
+
+        Debug.Log("currentTime: " + Time.timeSinceLevelLoad);
+        Debug.Log("beamTime: " + beamTime);
+
+        if(Time.timeSinceLevelLoad - beamTime >  1f || isMoving)
+        {
+            beam.active = false;
         }
 
 
@@ -163,8 +192,20 @@ public class TaxiManager : MonoBehaviour
 
     void UpdateTargetPosition(GameObject planetPosition)
     {
-        this.targetPosition.Set(planetPosition.transform.position.x, planetPosition.transform.position.y + 200, 0);
+        this.targetPosition.Set(planetPosition.transform.position.x, planetPosition.transform.position.y + 300, 0);
         isMoving = true;
+
+        Vector2 targetDir = new Vector2(this.targetPosition.x - this.gameObject.transform.position.x, this.targetPosition.y - this.gameObject.transform.position.y);
+        targetAngle = Vector2.Angle(Vector2.up, targetDir);
+
+        if (targetAngle > 20f)
+        {
+            targetAngle = 20;
+        }
+            if (this.targetPosition.x > this.gameObject.transform.position.x)
+        {
+            targetAngle *= -1;
+        }
     }
 
     void MovementUpdate()
@@ -179,10 +220,30 @@ public class TaxiManager : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         fuelDisplay.transform.position = Vector3.MoveTowards(fuelDisplay.transform.position, targetPosition, speed * Time.deltaTime);
+        
+
+        if(angle != targetAngle)
+        {
+            if(angle > targetAngle)
+            {
+                angle -=3;
+            }
+            else
+            {
+                angle += 3;
+            }
+            Debug.Log("Current Rotation: " + angle);
+            Debug.Log("Target Rotation: " + targetAngle);
+
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
+        
+
         if (transform.position == targetPosition)
         {
             isMoving = false;
             CollectPassengers();
+
         }
         
     }
@@ -243,6 +304,13 @@ public class TaxiManager : MonoBehaviour
     private void CollectPassengers()
     {
         Debug.Log("passenger collection Started");
+        if (activePlanet.name != "Home")
+        {
+            beam.active = true;
+        }
+        beamTime = Time.timeSinceLevelLoad;
+
+
 
         int passengerCount = 0;
 
