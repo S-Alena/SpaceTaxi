@@ -5,10 +5,9 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class MenuButton : MonoBehaviour
 {
     public Button StartGame;
-    public Button QuitGame;
     public string level;
 
     void Start()
@@ -16,19 +15,15 @@ public class UIManager : MonoBehaviour
         Button btn = StartGame.GetComponent<Button>();
         btn.onClick.AddListener(LoadLevel);
         
-        Button btn0 = QuitGame.GetComponent<Button>();
-        btn0.onClick.AddListener(Quit);
-        
-       }
+        }
      
     public void LoadLevel()
     {
         SceneManager.LoadScene(level,LoadSceneMode.Single);
     }
 
-    public void Quit()
-    {
-        Application.Quit();
-    }
+  
 
 }
+
+
