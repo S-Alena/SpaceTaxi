@@ -58,8 +58,6 @@ public class Multiply : MonoBehaviour
             //erzeugt eine randomized Location
             Vector3 spawnLocation = newLocation(colors.Count, count, 0f);
 
-            float rotate  = (count * 2 * Mathf.PI / colors.Count) * Mathf.Rad2Deg *-1;
-
 
             //erzeugt ein böbbel
             GameObject go = Instantiate(böbbel, spawnLocation, Quaternion.identity);
@@ -73,6 +71,7 @@ public class Multiply : MonoBehaviour
             float randomIdleStart = Random.Range(0, anim.GetCurrentAnimatorStateInfo(0).length); //Set a random part of the animation to start from
             anim.Play("passengerAnim", 0, randomIdleStart);
 
+            float rotate = (count * 2 * Mathf.PI / colors.Count) * Mathf.Rad2Deg * -1;
             go.transform.rotation = Quaternion.Euler(0, 0, rotate);
 
             //print("Böbbels: " + böbbelCount);
@@ -102,7 +101,7 @@ public class Multiply : MonoBehaviour
             go.transform.position = newLocation(böbbelCollection.Count, i, thisOffset);
 
 
-            float rotate = (i * 2 * Mathf.PI / colors.Count + thisOffset) * Mathf.Rad2Deg * -1;
+            float rotate = (i * 2 * Mathf.PI / böbbelCollection.Count + thisOffset) * Mathf.Rad2Deg * -1;
             go.transform.rotation = Quaternion.Euler(0, 0, rotate);
 
         }
@@ -120,7 +119,7 @@ public class Multiply : MonoBehaviour
         Vector3 spawnLocation = new Vector3(
             x = Mathf.Sin(zet) * 70 + this.plönet.transform.position.x,
             y = Mathf.Cos(zet) * 70 + this.plönet.transform.position.y,
-            -40);
+            -böbbelNumber);
 
         return spawnLocation;
 
@@ -131,8 +130,6 @@ public class Multiply : MonoBehaviour
 
         if (nameOfPlanet == this.plönet.name)
         {
-            int j = 0;
-
             //Böbbel absetzen
 
             for (int i = böbbelCollection.Count - 1; i >= 0; i--)
@@ -146,30 +143,44 @@ public class Multiply : MonoBehaviour
 
                     Destroy(böbbelCollection[i]);
                     böbbelCollection.Remove(böbbelCollection[i]);
-                    j++;
 
                 }
             }
+            
+            int newCount = böbbelCollection.Count + numberOfColorPassengers;
 
-            print("Anzahl Böbbel aufgenommen:" + j);
+            offset = 0;
+            
 
-            for (int böbbelCount = 0; böbbelCount < numberOfColorPassengers; böbbelCount++)
+            //neu Ordnen der Böbbel auf dem Planeten
+            for (int i = 0; i < böbbelCollection.Count; i++)
+            {
+                GameObject existing = böbbelCollection[i];
+                Vector3 spawnLocation = newLocation(newCount, i, 0f);
+
+                float rotate = (i * 2 * Mathf.PI / newCount) * Mathf.Rad2Deg * -1;
+                existing.transform.rotation = Quaternion.Euler(0, 0, rotate);
+                existing.transform.position = spawnLocation;
+
+            }
+
+            for (int b = numberOfColorPassengers-1; b >=0 ; b--)
             {
                 //erzeugt eine randomized Location
-                Vector3 spawnLocation = newLocation(numberOfColorPassengers, böbbelCount,0);
-
-                float rotate = (böbbelCount * 2 * Mathf.PI / numberOfColorPassengers) * Mathf.Rad2Deg * -1;
+                Vector3 spawnLocation = newLocation(newCount, böbbelCollection.Count +b, 0);
 
                 //erzeugt ein böbbel
                 GameObject go = Instantiate(böbbel, spawnLocation, Quaternion.identity);
                 //zählt böbbel, und setzt den Winkel eins weiter
                 go.GetComponent<SpriteRenderer>().color = this.plönet.GetComponent<SpriteRenderer>().color;
 
+                float rotate = (b  * 2 * Mathf.PI / newCount) * Mathf.Rad2Deg;
                 go.transform.rotation = Quaternion.Euler(0, 0, rotate);
 
                 böbbelCollection.Add(go);
 
                 GameEvents.current.PassengerRelease(this.plönet.GetComponent<SpriteRenderer>().color);
+
 
             }
             //print("Böbbel auf Planet: " + böbbelCollection.Count);

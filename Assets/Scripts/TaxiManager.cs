@@ -110,7 +110,7 @@ public class TaxiManager : MonoBehaviour
             this.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
 
 
-            if (angle != 0)
+            if (Mathf.Abs(angle) >= 3)
             {
                 if(angle >= 0)
                 {
@@ -119,6 +119,10 @@ public class TaxiManager : MonoBehaviour
                 {
                     angle += 3;
                 }
+            }
+            else
+            {
+                angle = 0;
             }
             this.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
@@ -222,7 +226,7 @@ public class TaxiManager : MonoBehaviour
         fuelDisplay.transform.position = Vector3.MoveTowards(fuelDisplay.transform.position, targetPosition, speed * Time.deltaTime);
         
 
-        if(angle != targetAngle)
+        if(Mathf.Abs(angle-targetAngle) >=3 )
         {
             if(angle > targetAngle)
             {
@@ -232,12 +236,15 @@ public class TaxiManager : MonoBehaviour
             {
                 angle += 3;
             }
-            Debug.Log("Current Rotation: " + angle);
-            Debug.Log("Target Rotation: " + targetAngle);
-
-            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
-        
+        else
+        {
+            angle = targetAngle;
+        }
+
+
+        this.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle);
+
 
         if (transform.position == targetPosition)
         {
