@@ -22,12 +22,19 @@ public class CameraManager : MonoBehaviour
 
     public float maxStray = 3000f; //maximal distance between camera position and taxi position
 
+    public GameObject starBackground;
+    private Rigidbody2D srb;
+    public GameObject freckleBackground;
+    private Rigidbody2D frb;
+
 
     // Start is called before the first frame update
     void Start()
     {
         cam = GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
+        srb = starBackground.GetComponent<Rigidbody2D>();
+        frb = freckleBackground.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -92,6 +99,8 @@ public class CameraManager : MonoBehaviour
         if(strayDistance < maxStray)
         {
             rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+            srb.MovePosition(srb.position + moveVelocity / 1.1f * Time.fixedDeltaTime);
+            frb.MovePosition(frb.position + moveVelocity / 1.05f * Time.fixedDeltaTime);
         }
 
     }
