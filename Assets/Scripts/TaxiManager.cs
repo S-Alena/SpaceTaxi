@@ -135,8 +135,8 @@ public class TaxiManager : MonoBehaviour
             end = true;
         }
 
-        Debug.Log("currentTime: " + Time.timeSinceLevelLoad);
-        Debug.Log("beamTime: " + beamTime);
+        //Debug.Log("currentTime: " + Time.timeSinceLevelLoad);
+        //Debug.Log("beamTime: " + beamTime);
 
         if(Time.timeSinceLevelLoad - beamTime >  1f || isMoving)
         {
@@ -271,7 +271,10 @@ public class TaxiManager : MonoBehaviour
             //Debug.Log("Travel Distance since last Frame: " + dist);
             fuelRange = fuelRange - (2*dist); 
         }
- 
+        if(fuelRange < 0f)
+        {
+            fuelRange = 0;
+        } 
         this.fuelDisplayRenderer.transform.localScale = new Vector3(fuelRange, fuelRange, 1);
 
         /*if(fuelRange < 0)

@@ -16,7 +16,10 @@ public class Multiply : MonoBehaviour
     public GameObject plönet;
     public GameObject böbbel;
     private GameObject halo;
-    private bool withinRange = false;
+    private SpriteRenderer haloRenderer;
+    private bool mouseOnHalo = false;
+    private bool mouseOnPlanet = false;
+    public bool withinRange = false;
     public int passengerRed;
     public int passengerPink;
     public int passengerBlue;
@@ -34,7 +37,8 @@ public class Multiply : MonoBehaviour
         GameEvents.current.onPlanetCollision += OnPassengerRemoval;
 
         halo = plönet.transform.GetChild(0).gameObject;
-        halo.active = false;
+        haloRenderer = halo.GetComponent<SpriteRenderer>();
+        haloRenderer.enabled = false;
 
         for (int i = 0; i < passengerRed; i++)
         {
@@ -105,6 +109,8 @@ public class Multiply : MonoBehaviour
             go.transform.rotation = Quaternion.Euler(0, 0, rotate);
 
         }
+        mouseOnHalo = halo.GetComponent<HaloManager>().mouseOnHalo;
+        UpdateHaloVisibility();
     }
 
     Vector3 newLocation(int limit, int böbbelNumber, float offset)
@@ -206,15 +212,24 @@ public class Multiply : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if(withinRange == true)
-        {
-            halo.active = true;
-        }
+        mouseOnPlanet = true;
     }
 
     void OnMouseExit()
     {
-        halo.active = false;
+        mouseOnPlanet = false;
+    }
+
+    void UpdateHaloVisibility()
+    {
+        if ((mouseOnPlanet == true || mouseOnHalo == true) && (withinRange == true))
+        {
+            haloRenderer.enabled = true;
+        }
+        else
+        {
+            haloRenderer.enabled = false;
+        }
     }
 
 

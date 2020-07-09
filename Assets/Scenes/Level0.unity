@@ -517,6 +517,8 @@ GameObject:
   m_Component:
   - component: {fileID: 55152470}
   - component: {fileID: 55152471}
+  - component: {fileID: 55152472}
+  - component: {fileID: 55152473}
   m_Layer: 0
   m_Name: Halo Rot 7
   m_TagString: Untagged
@@ -588,6 +590,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &55152472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55152469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &55152473
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55152469}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &70115495
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,6 +775,8 @@ GameObject:
   m_Component:
   - component: {fileID: 144867466}
   - component: {fileID: 144867467}
+  - component: {fileID: 144867468}
+  - component: {fileID: 144867469}
   m_Layer: 0
   m_Name: Halo Gelb 3
   m_TagString: Untagged
@@ -815,6 +848,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &144867468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144867465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &144867469
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144867465}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &180697176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,6 +1273,8 @@ GameObject:
   m_Component:
   - component: {fileID: 223736252}
   - component: {fileID: 223736253}
+  - component: {fileID: 223736254}
+  - component: {fileID: 223736255}
   m_Layer: 0
   m_Name: Halo Blau 2
   m_TagString: Untagged
@@ -1282,6 +1346,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &223736254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223736251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &223736255
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223736251}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &266647893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,6 +1385,8 @@ GameObject:
   m_Component:
   - component: {fileID: 266647894}
   - component: {fileID: 266647895}
+  - component: {fileID: 266647896}
+  - component: {fileID: 266647897}
   m_Layer: 0
   m_Name: Halo Pink 5
   m_TagString: Untagged
@@ -1363,6 +1458,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &266647896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266647893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &266647897
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266647893}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &275463887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1373,6 +1497,8 @@ GameObject:
   m_Component:
   - component: {fileID: 275463888}
   - component: {fileID: 275463889}
+  - component: {fileID: 275463890}
+  - component: {fileID: 275463891}
   m_Layer: 0
   m_Name: Halo Rot 4
   m_TagString: Untagged
@@ -1444,6 +1570,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &275463890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275463887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &275463891
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275463887}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &301329620
 GameObject:
   m_ObjectHideFlags: 0
@@ -1810,6 +1965,8 @@ GameObject:
   m_Component:
   - component: {fileID: 347640534}
   - component: {fileID: 347640535}
+  - component: {fileID: 347640536}
+  - component: {fileID: 347640537}
   m_Layer: 0
   m_Name: Halo Blau 4
   m_TagString: Untagged
@@ -1881,6 +2038,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &347640536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347640533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &347640537
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347640533}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &403900063
 GameObject:
   m_ObjectHideFlags: 0
@@ -3166,6 +3352,8 @@ GameObject:
   m_Component:
   - component: {fileID: 629364394}
   - component: {fileID: 629364395}
+  - component: {fileID: 629364396}
+  - component: {fileID: 629364397}
   m_Layer: 0
   m_Name: Halo Gelb 3
   m_TagString: Untagged
@@ -3237,6 +3425,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &629364396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629364393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &629364397
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629364393}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &676855132
 GameObject:
   m_ObjectHideFlags: 0
@@ -3380,6 +3597,8 @@ GameObject:
   m_Component:
   - component: {fileID: 692537361}
   - component: {fileID: 692537362}
+  - component: {fileID: 692537363}
+  - component: {fileID: 692537364}
   m_Layer: 0
   m_Name: Halo Gelb 3
   m_TagString: Untagged
@@ -3451,6 +3670,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &692537363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692537360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &692537364
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692537360}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &708114341
 GameObject:
   m_ObjectHideFlags: 0
@@ -4002,6 +4250,8 @@ GameObject:
   m_Component:
   - component: {fileID: 772591369}
   - component: {fileID: 772591370}
+  - component: {fileID: 772591371}
+  - component: {fileID: 772591372}
   m_Layer: 0
   m_Name: Halo Pink
   m_TagString: Untagged
@@ -4073,6 +4323,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &772591371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772591368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &772591372
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772591368}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &779207886
 GameObject:
   m_ObjectHideFlags: 0
@@ -4216,6 +4495,8 @@ GameObject:
   m_Component:
   - component: {fileID: 790037798}
   - component: {fileID: 790037799}
+  - component: {fileID: 790037800}
+  - component: {fileID: 790037801}
   m_Layer: 0
   m_Name: Halo Gelb 3
   m_TagString: Untagged
@@ -4287,6 +4568,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &790037800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790037797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &790037801
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790037797}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &797250296
 GameObject:
   m_ObjectHideFlags: 0
@@ -4430,6 +4740,8 @@ GameObject:
   m_Component:
   - component: {fileID: 813499885}
   - component: {fileID: 813499886}
+  - component: {fileID: 813499887}
+  - component: {fileID: 813499888}
   m_Layer: 0
   m_Name: Halo Rot 5
   m_TagString: Untagged
@@ -4501,6 +4813,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &813499887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813499884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &813499888
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813499884}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &816853983
 GameObject:
   m_ObjectHideFlags: 0
@@ -4511,6 +4852,8 @@ GameObject:
   m_Component:
   - component: {fileID: 816853984}
   - component: {fileID: 816853985}
+  - component: {fileID: 816853986}
+  - component: {fileID: 816853987}
   m_Layer: 0
   m_Name: Halo Balu 3
   m_TagString: Untagged
@@ -4582,6 +4925,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &816853986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816853983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &816853987
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816853983}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &839247818
 GameObject:
   m_ObjectHideFlags: 0
@@ -4694,6 +5066,8 @@ GameObject:
   m_Component:
   - component: {fileID: 869910435}
   - component: {fileID: 869910436}
+  - component: {fileID: 869910437}
+  - component: {fileID: 869910438}
   m_Layer: 0
   m_Name: Halo Gelb
   m_TagString: Untagged
@@ -4765,6 +5139,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &869910437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869910434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &869910438
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869910434}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &896269306
 GameObject:
   m_ObjectHideFlags: 0
@@ -4983,6 +5386,8 @@ GameObject:
   m_Component:
   - component: {fileID: 931268500}
   - component: {fileID: 931268501}
+  - component: {fileID: 931268502}
+  - component: {fileID: 931268503}
   m_Layer: 0
   m_Name: Halo Home
   m_TagString: Untagged
@@ -5054,6 +5459,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &931268502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931268499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &931268503
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931268499}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000047683716, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &953684570
 GameObject:
   m_ObjectHideFlags: 0
@@ -5064,6 +5498,8 @@ GameObject:
   m_Component:
   - component: {fileID: 953684571}
   - component: {fileID: 953684572}
+  - component: {fileID: 953684573}
+  - component: {fileID: 953684574}
   m_Layer: 0
   m_Name: Halo Gelb 1
   m_TagString: Untagged
@@ -5135,6 +5571,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &953684573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953684570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &953684574
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953684570}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &957483309
 GameObject:
   m_ObjectHideFlags: 0
@@ -5265,6 +5730,8 @@ GameObject:
   m_Component:
   - component: {fileID: 963148656}
   - component: {fileID: 963148657}
+  - component: {fileID: 963148658}
+  - component: {fileID: 963148659}
   m_Layer: 0
   m_Name: Halo Rot 2
   m_TagString: Untagged
@@ -5336,6 +5803,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &963148658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963148655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &963148659
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963148655}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &969459014
 GameObject:
   m_ObjectHideFlags: 0
@@ -5346,6 +5842,8 @@ GameObject:
   m_Component:
   - component: {fileID: 969459015}
   - component: {fileID: 969459016}
+  - component: {fileID: 969459017}
+  - component: {fileID: 969459018}
   m_Layer: 0
   m_Name: Halo Pink 3
   m_TagString: Untagged
@@ -5417,6 +5915,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &969459017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969459014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &969459018
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969459014}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &979466305
 GameObject:
   m_ObjectHideFlags: 0
@@ -5502,6 +6029,8 @@ GameObject:
   m_Component:
   - component: {fileID: 983375578}
   - component: {fileID: 983375579}
+  - component: {fileID: 983375580}
+  - component: {fileID: 983375581}
   m_Layer: 0
   m_Name: Halo Pink 1
   m_TagString: Untagged
@@ -5573,6 +6102,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &983375580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983375577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &983375581
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983375577}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1030646487
 GameObject:
   m_ObjectHideFlags: 0
@@ -5849,6 +6407,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1039612140}
   - component: {fileID: 1039612141}
+  - component: {fileID: 1039612142}
+  - component: {fileID: 1039612143}
   m_Layer: 0
   m_Name: Halo Blau 7
   m_TagString: Untagged
@@ -5920,6 +6480,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1039612142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039612139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1039612143
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039612139}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1048605633
 GameObject:
   m_ObjectHideFlags: 0
@@ -5930,6 +6519,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1048605634}
   - component: {fileID: 1048605635}
+  - component: {fileID: 1048605636}
+  - component: {fileID: 1048605637}
   m_Layer: 0
   m_Name: Halo Rot 6
   m_TagString: Untagged
@@ -6001,6 +6592,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1048605636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048605633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1048605637
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048605633}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1066916046
 GameObject:
   m_ObjectHideFlags: 0
@@ -6011,6 +6631,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1066916047}
   - component: {fileID: 1066916048}
+  - component: {fileID: 1066916049}
+  - component: {fileID: 1066916050}
   m_Layer: 0
   m_Name: Halo Rot 6
   m_TagString: Untagged
@@ -6082,6 +6704,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1066916049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066916046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1066916050
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066916046}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1071946550
 GameObject:
   m_ObjectHideFlags: 0
@@ -6092,6 +6743,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1071946551}
   - component: {fileID: 1071946552}
+  - component: {fileID: 1071946553}
+  - component: {fileID: 1071946554}
   m_Layer: 0
   m_Name: Halo Rot 3
   m_TagString: Untagged
@@ -6163,6 +6816,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1071946553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071946550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1071946554
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071946550}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1080963287
 GameObject:
   m_ObjectHideFlags: 0
@@ -6394,6 +7076,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1102154412}
   - component: {fileID: 1102154413}
+  - component: {fileID: 1102154414}
+  - component: {fileID: 1102154415}
   m_Layer: 0
   m_Name: Halo Blau 2
   m_TagString: Untagged
@@ -6465,6 +7149,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1102154414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102154411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1102154415
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102154411}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1110643961
 GameObject:
   m_ObjectHideFlags: 0
@@ -6475,6 +7188,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1110643962}
   - component: {fileID: 1110643963}
+  - component: {fileID: 1110643965}
+  - component: {fileID: 1110643964}
+  - component: {fileID: 1110643966}
   m_Layer: 0
   m_Name: Halo Rot
   m_TagString: Untagged
@@ -6546,6 +7262,48 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1110643964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110643961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!114 &1110643965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110643961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1110643966
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110643961}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1120010259
 GameObject:
   m_ObjectHideFlags: 0
@@ -6689,6 +7447,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1130979337}
   - component: {fileID: 1130979338}
+  - component: {fileID: 1130979339}
+  - component: {fileID: 1130979340}
   m_Layer: 0
   m_Name: Halo Pink 2
   m_TagString: Untagged
@@ -6760,6 +7520,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1130979339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130979336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1130979340
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130979336}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1137936958
 GameObject:
   m_ObjectHideFlags: 0
@@ -6770,6 +7559,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1137936959}
   - component: {fileID: 1137936960}
+  - component: {fileID: 1137936961}
+  - component: {fileID: 1137936962}
   m_Layer: 0
   m_Name: Halo Rot 6
   m_TagString: Untagged
@@ -6841,6 +7632,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1137936961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137936958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1137936962
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137936958}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1149975606
 GameObject:
   m_ObjectHideFlags: 0
@@ -7062,6 +7882,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1177499247}
   - component: {fileID: 1177499248}
+  - component: {fileID: 1177499249}
+  - component: {fileID: 1177499250}
   m_Layer: 0
   m_Name: Halo Pink 5
   m_TagString: Untagged
@@ -7133,6 +7955,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1177499249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177499246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1177499250
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177499246}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1205243188
 GameObject:
   m_ObjectHideFlags: 0
@@ -7143,6 +7994,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1205243189}
   - component: {fileID: 1205243190}
+  - component: {fileID: 1205243191}
+  - component: {fileID: 1205243192}
   m_Layer: 0
   m_Name: Halo Gelb 3
   m_TagString: Untagged
@@ -7214,6 +8067,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1205243191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205243188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1205243192
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205243188}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1210432408
 GameObject:
   m_ObjectHideFlags: 0
@@ -7533,6 +8415,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1232988115}
   - component: {fileID: 1232988116}
+  - component: {fileID: 1232988117}
+  - component: {fileID: 1232988118}
   m_Layer: 0
   m_Name: Halo Blau 5
   m_TagString: Untagged
@@ -7604,6 +8488,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1232988117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232988114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1232988118
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232988114}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1270431467
 GameObject:
   m_ObjectHideFlags: 0
@@ -7701,6 +8614,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1282987807}
   - component: {fileID: 1282987808}
+  - component: {fileID: 1282987809}
+  - component: {fileID: 1282987810}
   m_Layer: 0
   m_Name: Halo Gelb 4
   m_TagString: Untagged
@@ -7772,6 +8687,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1282987809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282987806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1282987810
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282987806}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1290380888
 GameObject:
   m_ObjectHideFlags: 0
@@ -7915,6 +8859,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1296267811}
   - component: {fileID: 1296267812}
+  - component: {fileID: 1296267813}
+  - component: {fileID: 1296267814}
   m_Layer: 0
   m_Name: Halo Rot 1
   m_TagString: Untagged
@@ -7986,6 +8932,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1296267813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296267810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1296267814
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296267810}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1310149377
 GameObject:
   m_ObjectHideFlags: 0
@@ -8175,6 +9150,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1342765903}
   - component: {fileID: 1342765904}
+  - component: {fileID: 1342765905}
+  - component: {fileID: 1342765906}
   m_Layer: 0
   m_Name: Halo Pink 6
   m_TagString: Untagged
@@ -8246,6 +9223,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1342765905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342765902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1342765906
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342765902}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1390643101
 GameObject:
   m_ObjectHideFlags: 0
@@ -8522,6 +9528,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1494358748}
   - component: {fileID: 1494358749}
+  - component: {fileID: 1494358750}
+  - component: {fileID: 1494358751}
   m_Layer: 0
   m_Name: Halo Blau 5
   m_TagString: Untagged
@@ -8593,6 +9601,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1494358750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494358747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1494358751
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494358747}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1502960347
 GameObject:
   m_ObjectHideFlags: 0
@@ -9135,6 +10172,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1521045708}
   - component: {fileID: 1521045709}
+  - component: {fileID: 1521045710}
+  - component: {fileID: 1521045711}
   m_Layer: 0
   m_Name: Halo Blau 2
   m_TagString: Untagged
@@ -9206,6 +10245,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1521045710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521045707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1521045711
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521045707}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1521419205
 GameObject:
   m_ObjectHideFlags: 0
@@ -9557,6 +10625,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1566735638}
   - component: {fileID: 1566735639}
+  - component: {fileID: 1566735640}
+  - component: {fileID: 1566735641}
   m_Layer: 0
   m_Name: Halo Blau 1
   m_TagString: Untagged
@@ -9628,6 +10698,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1566735640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566735637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1566735641
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566735637}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1570608524
 GameObject:
   m_ObjectHideFlags: 0
@@ -10047,6 +11146,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1596423248}
   - component: {fileID: 1596423249}
+  - component: {fileID: 1596423250}
+  - component: {fileID: 1596423251}
   m_Layer: 0
   m_Name: Halo Pink 4
   m_TagString: Untagged
@@ -10062,7 +11163,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596423247}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 301329625}
@@ -10118,6 +11219,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1596423250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596423247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1596423251
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596423247}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1609372553
 GameObject:
   m_ObjectHideFlags: 0
@@ -10128,6 +11258,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1609372554}
   - component: {fileID: 1609372555}
+  - component: {fileID: 1609372556}
+  - component: {fileID: 1609372557}
   m_Layer: 0
   m_Name: Halo Rot 4
   m_TagString: Untagged
@@ -10199,6 +11331,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1609372556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609372553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1609372557
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609372553}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1609499233
 GameObject:
   m_ObjectHideFlags: 0
@@ -10209,6 +11370,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1609499234}
   - component: {fileID: 1609499235}
+  - component: {fileID: 1609499236}
+  - component: {fileID: 1609499237}
   m_Layer: 0
   m_Name: Halo Balu
   m_TagString: Untagged
@@ -10224,7 +11387,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609499233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1221127830}
@@ -10280,6 +11443,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1609499236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609499233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1609499237
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609499233}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1625458861
 GameObject:
   m_ObjectHideFlags: 0
@@ -10393,6 +11585,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1627961838}
   - component: {fileID: 1627961839}
+  - component: {fileID: 1627961840}
+  - component: {fileID: 1627961841}
   m_Layer: 0
   m_Name: Halo Blau 6
   m_TagString: Untagged
@@ -10464,6 +11658,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1627961840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627961837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1627961841
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627961837}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1640909973
 GameObject:
   m_ObjectHideFlags: 0
@@ -10740,6 +11963,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1731437725}
   - component: {fileID: 1731437726}
+  - component: {fileID: 1731437727}
+  - component: {fileID: 1731437728}
   m_Layer: 0
   m_Name: Halo Gelb 2
   m_TagString: Untagged
@@ -10811,6 +12036,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1731437727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731437724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1731437728
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731437724}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1788948777
 GameObject:
   m_ObjectHideFlags: 0
@@ -11897,6 +13151,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1910777213}
   - component: {fileID: 1910777214}
+  - component: {fileID: 1910777215}
+  - component: {fileID: 1910777216}
   m_Layer: 0
   m_Name: Halo Gelb 5
   m_TagString: Untagged
@@ -11968,6 +13224,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1910777215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910777212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1910777216
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910777212}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1935833136
 GameObject:
   m_ObjectHideFlags: 0
@@ -11978,6 +13263,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1935833137}
   - component: {fileID: 1935833138}
+  - component: {fileID: 1935833139}
+  - component: {fileID: 1935833140}
   m_Layer: 0
   m_Name: Halo Gelb 3
   m_TagString: Untagged
@@ -12049,6 +13336,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1935833139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935833136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1935833140
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935833136}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1949382938
 GameObject:
   m_ObjectHideFlags: 0
@@ -12059,6 +13375,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1949382939}
   - component: {fileID: 1949382940}
+  - component: {fileID: 1949382941}
+  - component: {fileID: 1949382942}
   m_Layer: 0
   m_Name: Halo Pink 3
   m_TagString: Untagged
@@ -12130,6 +13448,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1949382941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949382938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1949382942
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949382938}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &1962617135
 GameObject:
   m_ObjectHideFlags: 0
@@ -12268,6 +13615,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1972076637}
   - component: {fileID: 1972076638}
+  - component: {fileID: 1972076639}
+  - component: {fileID: 1972076640}
   m_Layer: 0
   m_Name: Halo Blau 1
   m_TagString: Untagged
@@ -12339,6 +13688,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1972076639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972076636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &1972076640
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972076636}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &2027164484
 GameObject:
   m_ObjectHideFlags: 0
@@ -12349,6 +13727,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2027164485}
   - component: {fileID: 2027164486}
+  - component: {fileID: 2027164487}
+  - component: {fileID: 2027164488}
   m_Layer: 0
   m_Name: Halo Pink 5
   m_TagString: Untagged
@@ -12420,6 +13800,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2027164487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027164484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &2027164488
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027164484}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &2028612647
 GameObject:
   m_ObjectHideFlags: 0
@@ -12563,6 +13972,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2041447696}
   - component: {fileID: 2041447697}
+  - component: {fileID: 2041447698}
+  - component: {fileID: 2041447699}
   m_Layer: 0
   m_Name: Halo Gelb 3
   m_TagString: Untagged
@@ -12634,6 +14045,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2041447698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041447695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7de4317dbfbb24aacd7c105a29d4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOnHalo: 0
+--- !u!58 &2041447699
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041447695}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.255
 --- !u!1 &2045552276
 GameObject:
   m_ObjectHideFlags: 0
