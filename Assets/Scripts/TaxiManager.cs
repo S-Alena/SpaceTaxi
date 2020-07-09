@@ -72,6 +72,8 @@ public class TaxiManager : MonoBehaviour
         GameEvents.current.onFlyCommand += UpdateTargetPosition;
         GameEvents.current.onFlyCommand += UpdateActivePlanet;
         beam.active = false;
+
+        prevPosition = this.transform.position;
     }
 
     // Update is called once per frame
@@ -100,7 +102,7 @@ public class TaxiManager : MonoBehaviour
             //böbbelUpdate(böbbel, i);
             i++;
         }
-        prevPosition = this.transform.position;
+        //prevPosition = this.transform.position;
         if(isMoving == true)
         {
            this.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
@@ -269,7 +271,8 @@ public class TaxiManager : MonoBehaviour
         {
             float dist = Vector3.Distance(prevPosition, transform.position);
             //Debug.Log("Travel Distance since last Frame: " + dist);
-            fuelRange = fuelRange - (2*dist); 
+            fuelRange = fuelRange - (2*dist);
+            prevPosition = this.transform.position;
         }
         if(fuelRange < 0f)
         {
