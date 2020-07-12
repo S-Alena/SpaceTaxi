@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     public Button StartGame;
     public Button QuitGame;
     public string level;
+    public AudioSource beamSFX;
+    public AudioSource teleportSFX;
 
     void Start()
     {
@@ -23,11 +25,13 @@ public class UIManager : MonoBehaviour
      
     public void LoadLevel()
     {
+        teleportSFX.Play();
         SceneManager.LoadScene(level,LoadSceneMode.Single);
     }
 
     public void Quit()
     {
+        beamSFX.Play();
         Application.Quit();
     }
 

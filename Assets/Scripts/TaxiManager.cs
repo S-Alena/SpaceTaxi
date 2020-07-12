@@ -58,6 +58,7 @@ public class TaxiManager : MonoBehaviour
     float targetAngle = 0;
 
     public GameObject beam;
+    public AudioSource beamSFX;
     float beamTime;
 
 
@@ -328,6 +329,7 @@ public class TaxiManager : MonoBehaviour
         if (activePlanet.name != "Home")
         {
             beam.active = true;
+            beamSFX.Play();
         }
         beamTime = Time.timeSinceLevelLoad;
 
