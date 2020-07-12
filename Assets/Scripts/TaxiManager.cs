@@ -62,8 +62,8 @@ public class TaxiManager : MonoBehaviour
     public AudioSource beamSFX;
     float beamTime;
 
-    private Button NextButton;
-    private Button RestartButton;
+    private Button nextButton;
+    private Button restartButton;
 
 
     // Start is called before the first frame update
@@ -82,20 +82,8 @@ public class TaxiManager : MonoBehaviour
 
         prevPosition = this.transform.position;
 
-        for (int i = 0; i < menu.transform.childCount - 1; i++)
-        {
-            if (menu.transform.GetChild(i).transform.name == "Restart")
-            {
-                RestartButton = menu.transform.GetChild(i);
-            }
-        }
-        for (int i = 0; i < menu.transform.childCount - 1; i++)
-        {
-            if (menu.transform.GetChild(i).transform.name == "Next")
-            {
-                MenuButton = menu.transform.GetChild(i);
-            }
-        }
+        restartButton = menu.GetComponentsInChildren<Button>()[0];
+        nextButton = menu.GetComponentsInChildren<Button>()[1];
     }
 
     // Update is called once per frame
