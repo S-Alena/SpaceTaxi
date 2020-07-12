@@ -21,6 +21,7 @@ public class TaxiManager : MonoBehaviour
 
     //relevant for fuel
     private float fuelRange = 3000;
+    private float fuelRangeAfterMoving = 3000;
     public GameObject fuelDisplay;
     private SpriteRenderer fuelDisplayRenderer; //reference to the circle sprite that shows the fuel
 
@@ -71,6 +72,7 @@ public class TaxiManager : MonoBehaviour
         GameEvents.current.onFuelPickup += AddFuel;
         GameEvents.current.onFlyCommand += UpdateTargetPosition;
         GameEvents.current.onFlyCommand += UpdateActivePlanet;
+        GameEvents.current.onFlyCommand += UpdateFuelValues;
         beam.active = false;
 
         prevPosition = this.transform.position;
@@ -251,8 +253,8 @@ public class TaxiManager : MonoBehaviour
         if (transform.position == targetPosition)
         {
             isMoving = false;
+            removeRoundingErrorsInFuelDisplay();
             CollectPassengers();
-
         }
         
     }
@@ -260,10 +262,21 @@ public class TaxiManager : MonoBehaviour
 
 
 
- 
 
 
 
+
+    private void UpdateFuelValues(GameObject planetEndPos)
+    {
+        Vector3 endPosition = planetEndPos.transform.position;
+        Vector3 currentPosition = this.transform.position;
+        float flyDistance = Vector3.Distance(endPosition, currentPosition);
+        fuelRangeAfterMoving = fuelRange - (flyDistance * 2);
+        if (fuelRangeAfterMoving < 0f)
+        {
+            fuelRangeAfterMoving = 0;
+        }
+    }
 
     private void FuelUpdate()
     {
@@ -279,20 +292,15 @@ public class TaxiManager : MonoBehaviour
             fuelRange = 0;
         } 
         this.fuelDisplayRenderer.transform.localScale = new Vector3(fuelRange, fuelRange, 1);
+        Debug.Log("FuelRange = " + fuelRange);
 
-        /*if(fuelRange < 0)
-        {
-            endText.text = "Fuel Empty." + Environment.NewLine + "Press to Restart";
-            endText.enabled = true;
-            end = true;
-        }*/
-        //Debug.Log("Fuel Overlap: "+ fuelDisplay.GetComponent<FuelOverlap>().isOverlapping);
-        /*if (!fuelDisplay.GetComponent<FuelOverlap>().isOverlapping)
-        {
-            endText.text = "No Planet reachable" + Environment.NewLine + "Press to Restart";
-            endText.enabled = true;
-            end = true;
-        }*/        
+    }
+
+    private void removeRoundingErrorsInFuelDisplay()
+    {
+        Debug.Log("FuelRangeAfterMoving = " + fuelRangeAfterMoving);
+        fuelRange = fuelRangeAfterMoving;
+        Debug.Log("FuelRange (after moving) = " + fuelRangeAfterMoving);
     }
 
     private void AddFuel(int numberOfFuelLoads)
@@ -302,7 +310,7 @@ public class TaxiManager : MonoBehaviour
         {
             fuelRange = maxFuel;          
         }
-        //Debug.Log("Fuel: " + fuelRange);
+        Debug.Log("FuelRange (after adding) = " + fuelRange);
     }
 
 

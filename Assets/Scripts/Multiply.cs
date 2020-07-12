@@ -123,8 +123,8 @@ public class Multiply : MonoBehaviour
 
         //setzt die location, ausgehend vom Mittelpunkt vom zugewiesenen PLönet
         Vector3 spawnLocation = new Vector3(
-            x = Mathf.Sin(zet) * 70 + this.plönet.transform.position.x,
-            y = Mathf.Cos(zet) * 70 + this.plönet.transform.position.y,
+            x = Mathf.Sin(zet) * this.plönet.transform.localScale.x * 4 + this.plönet.transform.position.x,
+            y = Mathf.Cos(zet) * this.plönet.transform.localScale.x * 4 + this.plönet.transform.position.y,
             -böbbelNumber);
 
         return spawnLocation;

@@ -20,14 +20,14 @@ public class HaloManager : MonoBehaviour
 
      void OnMouseEnter()
     {
-        Debug.Log("halo entered: " + this.gameObject.name);
+        //Debug.Log("halo entered: " + this.gameObject.name);
         mouseOnHalo = true;
     }
 
     private void OnMouseExit()
     {
         mouseOnHalo = false;
-        Debug.Log("halo exit: " + this.gameObject.name);
+        //Debug.Log("halo exit: " + this.gameObject.name);
     }
 
     private void OnMouseDown()
