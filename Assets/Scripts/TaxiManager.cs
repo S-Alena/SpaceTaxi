@@ -16,6 +16,7 @@ public class TaxiManager : MonoBehaviour
     //************
 
     //relevant for collision
+    public GameObject menu;
     public Text endText;
     //************
 
@@ -61,11 +62,14 @@ public class TaxiManager : MonoBehaviour
     public AudioSource beamSFX;
     float beamTime;
 
+    private Button NextButton;
+    private Button RestartButton;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        endText.enabled = false;
+        menu.SetActive(false);
         fuelDisplayRenderer = fuelDisplay.GetComponent<SpriteRenderer>(); // circle sprite is first child element of the SpaceTaxi
         fuelDisplayRenderer.enabled = true;
         targetPosition.Set(transform.position.x, transform.position.y, transform.position.z);
@@ -77,6 +81,21 @@ public class TaxiManager : MonoBehaviour
         beam.active = false;
 
         prevPosition = this.transform.position;
+
+        for (int i = 0; i < menu.transform.childCount - 1; i++)
+        {
+            if (menu.transform.GetChild(i).transform.name == "Restart")
+            {
+                RestartButton = menu.transform.GetChild(i);
+            }
+        }
+        for (int i = 0; i < menu.transform.childCount - 1; i++)
+        {
+            if (menu.transform.GetChild(i).transform.name == "Next")
+            {
+                MenuButton = menu.transform.GetChild(i);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -90,6 +109,19 @@ public class TaxiManager : MonoBehaviour
             PassengerCount.yellowPassengerCount = 0;
             PassengerCount.bluePassengerCount = 0;
             PassengerCount.transported = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            endText.text = "Pause Menu";
+            if(menu.active == false)
+            {
+                menu.SetActive(true);
+            }
+            else
+            {
+                menu.SetActive(false);
+            }
         }
 
 
@@ -136,7 +168,7 @@ public class TaxiManager : MonoBehaviour
         if(deathMessage == true)
         {
             endText.text = "Fuel Empty." + Environment.NewLine + "Press to Restart";
-            endText.enabled = true;
+            menu.SetActive(true);
             end = true;
         }
 
@@ -323,6 +355,7 @@ public class TaxiManager : MonoBehaviour
         activePlanet = planet;
         Debug.Log("active Planet: " + activePlanet);
     }
+
     private void CollectPassengers()
     {
         Debug.Log("passenger collection Started");
@@ -359,12 +392,13 @@ public class TaxiManager : MonoBehaviour
             if (PassengerCount.yellowPassengerCount == 0 && PassengerCount.pinkPassengerCount == 0 && PassengerCount.bluePassengerCount == 0 && PassengerCount.redPassengerCount == 0)
             {
                 endText.text = "You made it. " + Environment.NewLine + "Transported = " + PassengerCount.transported;
+
             }
             else
             {
                 endText.text = "You didn't bring " + Environment.NewLine + "all the Passengers home!" + Environment.NewLine + "Press to Restart";
             }
-            endText.enabled = true;
+            menu.SetActive(true);
             end = true;
 
         }
