@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Collections.Specialized;
+using UnityEngine.SceneManagement;
 //using System.Diagnostics;
 
 public class TaxiManager : MonoBehaviour
@@ -83,7 +84,10 @@ public class TaxiManager : MonoBehaviour
         prevPosition = this.transform.position;
 
         restartButton = menu.GetComponentsInChildren<Button>()[0];
+        restartButton.onClick.AddListener(Restart);
+
         nextButton = menu.GetComponentsInChildren<Button>()[1];
+        nextButton.onClick.AddListener(MainMenu);
     }
 
     // Update is called once per frame
@@ -91,12 +95,12 @@ public class TaxiManager : MonoBehaviour
     {
         if (end == true && Input.anyKeyDown)
         {
-            GameEvents.current.RestartGame();
+            /*GameEvents.current.RestartGame();
             PassengerCount.redPassengerCount = 0;
             PassengerCount.pinkPassengerCount = 0;
             PassengerCount.yellowPassengerCount = 0;
             PassengerCount.bluePassengerCount = 0;
-            PassengerCount.transported = 0;
+            PassengerCount.transported = 0;*/
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -169,6 +173,26 @@ public class TaxiManager : MonoBehaviour
         }
 
 
+    }
+
+    public void Restart()
+    {
+        GameEvents.current.RestartGame();
+        PassengerCount.redPassengerCount = 0;
+        PassengerCount.pinkPassengerCount = 0;
+        PassengerCount.yellowPassengerCount = 0;
+        PassengerCount.bluePassengerCount = 0;
+        PassengerCount.transported = 0;
+    }
+
+    public void MainMenu()
+    {
+        PassengerCount.redPassengerCount = 0;
+        PassengerCount.pinkPassengerCount = 0;
+        PassengerCount.yellowPassengerCount = 0;
+        PassengerCount.bluePassengerCount = 0;
+        PassengerCount.transported = 0;
+        SceneManager.LoadScene("StartScreen", LoadSceneMode.Single);
     }
 
 
