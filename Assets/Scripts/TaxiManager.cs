@@ -313,10 +313,14 @@ public class TaxiManager : MonoBehaviour
 
     private void UpdateFuelValues(GameObject planetEndPos)
     {
-        Vector3 endPosition = planetEndPos.transform.position;
+
+
         Vector3 currentPosition = this.transform.position;
-        float flyDistance = Vector3.Distance(endPosition, currentPosition);
+        float flyDistance = Vector3.Distance(targetPosition, currentPosition);
+        Debug.Log("................. flyDistance: " + flyDistance);
+        Debug.Log("fuelRange before calculation: " + fuelRange);
         fuelRangeAfterMoving = fuelRange - (flyDistance * 2);
+        Debug.Log("fuelRange after calculation: " + fuelRangeAfterMoving);
         if (fuelRangeAfterMoving < 0f)
         {
             fuelRangeAfterMoving = 0;
