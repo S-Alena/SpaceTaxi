@@ -1235,6 +1235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb1ba1140ca40dd4b8ef24971c7da067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartGame: {fileID: 843434821}
+  level: Level2
 --- !u!1 &1005580837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1812,6 +1814,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb1ba1140ca40dd4b8ef24971c7da067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartGame: {fileID: 1463397532}
+  level: Level1
 --- !u!1 &1463555646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1944,6 +1948,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb1ba1140ca40dd4b8ef24971c7da067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartGame: {fileID: 1463555648}
+  level: Level3
 --- !u!1 &1470168565
 GameObject:
   m_ObjectHideFlags: 0
