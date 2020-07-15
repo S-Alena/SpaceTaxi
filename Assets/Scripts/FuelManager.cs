@@ -11,6 +11,7 @@ public class FuelManager : MonoBehaviour
     public GameObject spaceShip;
     private bool spaceShipIsMoving = true;
     public bool deathMessage = false;
+    private bool homeInRange = false;
 
     private void Start()
     {
@@ -21,7 +22,7 @@ public class FuelManager : MonoBehaviour
     {
         spaceShipIsMoving = spaceShip.GetComponent<TaxiManager>().isMoving;
 
-        if (planetsInRange <= 1 && spaceShipIsMoving == false)
+        if (planetsInRange <= 1 && spaceShipIsMoving == false && !homeInRange && !spaceShip.GetComponent<TaxiManager>().end)
         {
             messageCounter++;
         }
@@ -40,6 +41,10 @@ public class FuelManager : MonoBehaviour
             planetsInRange++;
             messageCounter = 0;
         }
+        if (collision.tag.Equals("Finish"))
+        {
+                homeInRange = true;
+        }
 
     }
 
@@ -48,6 +53,10 @@ public class FuelManager : MonoBehaviour
         if (collision.tag.Equals("Planet"))
         {
             planetsInRange--;
+        }
+        if (collision.tag.Equals("Finish"))
+        {
+            homeInRange = false;
         }
     }
 }

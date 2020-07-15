@@ -42,7 +42,7 @@ public class TaxiManager : MonoBehaviour
     //************
 
     //relevant for end
-    private bool end = false;
+    public bool end = false;
     private bool deathMessage;
     //************
 
