@@ -4571,7 +4571,7 @@ MonoBehaviour:
   "b\xF6bbel": {fileID: 5669133901745477715, guid: 9aa7c7d2f5caf8940843785eef6a0cd6,
     type: 3}
   withinRange: 0
-  passengerRed: 1
+  passengerRed: 2
   passengerPink: 0
   passengerBlue: 3
   passengerYellow: 0
