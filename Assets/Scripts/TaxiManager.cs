@@ -22,13 +22,13 @@ public class TaxiManager : MonoBehaviour
     //************
 
     //relevant for fuel
-    private float fuelRange = 3000;
+    public float fuelRange = 3000;
     private float fuelRangeAfterMoving = 3000;
     public GameObject fuelDisplay;
     private SpriteRenderer fuelDisplayRenderer; //reference to the circle sprite that shows the fuel
 
-    private float oneFuelLoad = 400;
-    private float maxFuel = 3000;
+    public float oneFuelLoad = 400;
+    public float maxFuel = 3000;
 
     private Vector3 positonBeforeMoving;
     private Vector3 positionAfterMoving;
@@ -88,6 +88,8 @@ public class TaxiManager : MonoBehaviour
 
         nextButton = menu.GetComponentsInChildren<Button>()[1];
         nextButton.onClick.AddListener(MainMenu);
+
+        fuelRangeAfterMoving = fuelRange;
     }
 
     // Update is called once per frame
