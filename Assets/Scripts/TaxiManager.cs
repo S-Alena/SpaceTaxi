@@ -319,10 +319,10 @@ public class TaxiManager : MonoBehaviour
 
         Vector3 currentPosition = this.transform.position;
         float flyDistance = Vector3.Distance(targetPosition, currentPosition);
-        Debug.Log("................. flyDistance: " + flyDistance);
-        Debug.Log("fuelRange before calculation: " + fuelRange);
+        //Debug.Log("................. flyDistance: " + flyDistance);
+        //Debug.Log("fuelRange before calculation: " + fuelRange);
         fuelRangeAfterMoving = fuelRange - (flyDistance * 2);
-        Debug.Log("fuelRange after calculation: " + fuelRangeAfterMoving);
+        //Debug.Log("fuelRange after calculation: " + fuelRangeAfterMoving);
         if (fuelRangeAfterMoving < 0f)
         {
             fuelRangeAfterMoving = 0;
@@ -343,15 +343,15 @@ public class TaxiManager : MonoBehaviour
             fuelRange = 0;
         } 
         this.fuelDisplayRenderer.transform.localScale = new Vector3(fuelRange, fuelRange, 1);
-        Debug.Log("FuelRange = " + fuelRange);
+        //Debug.Log("FuelRange = " + fuelRange);
 
     }
 
     private void removeRoundingErrorsInFuelDisplay()
     {
-        Debug.Log("FuelRangeAfterMoving = " + fuelRangeAfterMoving);
+        //Debug.Log("FuelRangeAfterMoving = " + fuelRangeAfterMoving);
         fuelRange = fuelRangeAfterMoving;
-        Debug.Log("FuelRange (after moving) = " + fuelRangeAfterMoving);
+        //Debug.Log("FuelRange (after moving) = " + fuelRangeAfterMoving);
     }
 
     private void AddFuel(int numberOfFuelLoads)
@@ -361,7 +361,7 @@ public class TaxiManager : MonoBehaviour
         {
             fuelRange = maxFuel;          
         }
-        Debug.Log("FuelRange (after adding) = " + fuelRange);
+        //Debug.Log("FuelRange (after adding) = " + fuelRange);
     }
 
 
@@ -371,12 +371,12 @@ public class TaxiManager : MonoBehaviour
     private void UpdateActivePlanet(GameObject planet)
     {
         activePlanet = planet;
-        Debug.Log("active Planet: " + activePlanet);
+        //Debug.Log("active Planet: " + activePlanet);
     }
 
     private void CollectPassengers()
     {
-        Debug.Log("passenger collection Started");
+        //Debug.Log("passenger collection Started");
         if (activePlanet.name != "Home")
         {
             beam.active = true;
