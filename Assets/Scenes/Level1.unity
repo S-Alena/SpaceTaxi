@@ -5557,7 +5557,8 @@ MonoBehaviour:
   volumeToggle: {fileID: 2001587529}
   volumeSlider: {fileID: 16169153}
   bgMusic: {fileID: 361231034}
-  sfx: {fileID: 1904741733}
+  sfx:
+  - {fileID: 1904741733}
 --- !u!1 &738650405
 GameObject:
   m_ObjectHideFlags: 0
