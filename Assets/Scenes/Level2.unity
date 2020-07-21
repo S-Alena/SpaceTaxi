@@ -2930,6 +2930,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3043,6 +3044,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba853645dd5b8940a7cfbe9833bfd49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 20
+  volumeToggle: {fileID: 163679385}
+  volumeSlider: {fileID: 495803299}
+  bgMusic: {fileID: 361231034}
+  sfx:
+  - {fileID: 1904741733}
 --- !u!1 &522424397
 GameObject:
   m_ObjectHideFlags: 0
@@ -4836,7 +4855,6 @@ GameObject:
   - component: {fileID: 708114346}
   - component: {fileID: 708114343}
   - component: {fileID: 708114347}
-  - component: {fileID: 708114348}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4945,23 +4963,6 @@ MonoBehaviour:
   pinkPassengerDisplay: {fileID: 1584693143}
   yellowPassengerDisplay: {fileID: 1570608525}
   bluePassengerDisplay: {fileID: 316548490}
---- !u!114 &708114348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708114341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bba853645dd5b8940a7cfbe9833bfd49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeToggle: {fileID: 163679385}
-  volumeSlider: {fileID: 495803299}
-  bgMusic: {fileID: 361231034}
-  sfx:
-  - {fileID: 1904741733}
 --- !u!1 &739075789
 GameObject:
   m_ObjectHideFlags: 0

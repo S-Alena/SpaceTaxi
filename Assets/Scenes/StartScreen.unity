@@ -2667,7 +2667,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -612, y: -329.8}
+  m_AnchoredPosition: {x: -628, y: -233}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1632311945
@@ -2877,6 +2877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba853645dd5b8940a7cfbe9833bfd49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeDuration: 20
   volumeToggle: {fileID: 1632311945}
   volumeSlider: {fileID: 2086974262}
   bgMusic: {fileID: 1005580839}
@@ -3138,7 +3139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -612, y: -228}
+  m_AnchoredPosition: {x: -628, y: -131.20001}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2086974264
