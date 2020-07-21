@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class RestartGame : MonoBehaviour
 {
+    public AudioSource teleportSFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class RestartGame : MonoBehaviour
 
     public void ReloadScene()
     {
+        teleportSFX.Play();
         string sceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(sceneName);
     }

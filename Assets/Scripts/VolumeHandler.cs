@@ -12,14 +12,14 @@ public class VolumeHandler : MonoBehaviour
     private static readonly string VolumePref = "VolumePref";
     private float volumeFloat;
 
-    public float fadeDuration;
+    //public float fadeDuration;
     public Button volumeToggle;
     public GameObject volumeSlider;
     public AudioSource bgMusic;
     public AudioSource[] sfx;
     Slider slider;
-    IEnumerator volumeCoroutine;
-    public float targetVolume { get; private set; }
+    //IEnumerator volumeCoroutine;
+    //public float targetVolume { get; private set; }
 
     void Start()
     {
@@ -30,7 +30,21 @@ public class VolumeHandler : MonoBehaviour
         volumeFloat = PlayerPrefs.GetFloat(VolumePref, 0.3f);
         slider = volumeSlider.GetComponent<Slider>();
         slider.value = volumeFloat;
-        targetVolume = volumeFloat;
+
+        bgMusic.volume = volumeFloat;
+        for (int i = 0; i < sfx.Length; i++)
+        {
+            if (volumeFloat + 0.2f <= 1)
+            {
+                sfx[i].volume = volumeFloat + 0.2f;
+            }
+            else
+            {
+                sfx[i].volume = 1;
+            }
+        }
+
+        /*targetVolume = volumeFloat;
 
         bgMusic.volume = 0f;
         VolumeTransition(targetVolume, fadeDuration, bgMusic);
@@ -45,7 +59,7 @@ public class VolumeHandler : MonoBehaviour
             {
                 VolumeTransition(1f, fadeDuration, sfx[i]);
             }
-        }
+        }*/
     }
 
     public void Update()
@@ -92,10 +106,10 @@ public class VolumeHandler : MonoBehaviour
             SaveSoundSettings();
         }
     }
-
+    /*
     IEnumerator VolumeTransitionCoroutine(float target, float duration, AudioSource audio)
     {
-        /*Debug.Log("VolumeTransitionCoroutine aufgerufen.");
+        Debug.Log("VolumeTransitionCoroutine aufgerufen.");
         float start = audio.volume;
         float lastTime = 1;
         while (start < target)
@@ -107,7 +121,7 @@ public class VolumeHandler : MonoBehaviour
             }
 
         }
-        yield return null;*/
+        yield return null;
         bgMusic.volume = 0f;
         float progress = 0.0f;
         while (progress < 1.0f && bgMusic.volume < targetVolume)
@@ -137,5 +151,5 @@ public class VolumeHandler : MonoBehaviour
             volumeCoroutine = VolumeTransitionCoroutine(target, duration, audio);
             StartCoroutine(volumeCoroutine);
         }
-    }
+    }*/
 }

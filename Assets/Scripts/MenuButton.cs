@@ -9,6 +9,7 @@ public class MenuButton : MonoBehaviour
 {
     public Button StartGame;
     public string level;
+    public AudioSource teleportSFX;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class MenuButton : MonoBehaviour
      
     public void LoadLevel()
     {
+        teleportSFX.Play();
         SceneManager.LoadScene(level,LoadSceneMode.Single);
     }
 

@@ -1384,6 +1384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartGame: {fileID: 843434821}
   level: Level2
+  teleportSFX: {fileID: 1295361635}
 --- !u!1 &854547035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,6 +1558,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1295361634}
   - component: {fileID: 1295361635}
+  - component: {fileID: 1295361636}
   m_Layer: 0
   m_Name: teleport
   m_TagString: Untagged
@@ -1588,7 +1590,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3d9762a4b51175445855e08318f18952, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e027a6736d8d9154a942a9771a6ab632, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1674,6 +1676,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1295361636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295361633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65f98fee5b778d641ae4e1fff47fe5ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1308372199
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,6 +2014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartGame: {fileID: 1463397532}
   level: Level1
+  teleportSFX: {fileID: 1295361635}
 --- !u!1 &1463555646
 GameObject:
   m_ObjectHideFlags: 0
@@ -2134,6 +2149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartGame: {fileID: 1463555648}
   level: Level3
+  teleportSFX: {fileID: 1295361635}
 --- !u!1 &1470168565
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,7 +2683,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -628, y: -233}
+  m_AnchoredPosition: {x: -620, y: -331}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1632311945
@@ -2877,7 +2893,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba853645dd5b8940a7cfbe9833bfd49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 20
   volumeToggle: {fileID: 1632311945}
   volumeSlider: {fileID: 2086974262}
   bgMusic: {fileID: 1005580839}
@@ -3139,7 +3154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -628, y: -131.20001}
+  m_AnchoredPosition: {x: -620, y: -229.20001}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2086974264

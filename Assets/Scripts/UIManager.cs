@@ -20,8 +20,8 @@ public class UIManager : MonoBehaviour
         
         Button btn0 = QuitGame.GetComponent<Button>();
         btn0.onClick.AddListener(Quit);
-        
-       }
+
+    }
      
     public void LoadLevel()
     {
