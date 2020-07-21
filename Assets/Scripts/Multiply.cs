@@ -118,13 +118,14 @@ public class Multiply : MonoBehaviour
         float x;
         float y;
 
+
         //Ein Kreis ist 2mal PI, geteilt durch Anzahl der böbbel, i sorgt dafür dass es um einen xten Teil verschoben wird
         float zet = böbbelNumber * 2 * Mathf.PI / limit +offset;
 
         //setzt die location, ausgehend vom Mittelpunkt vom zugewiesenen PLönet
         Vector3 spawnLocation = new Vector3(
-            x = Mathf.Sin(zet) * this.plönet.transform.localScale.x * 4 + this.plönet.transform.position.x,
-            y = Mathf.Cos(zet) * this.plönet.transform.localScale.x * 4 + this.plönet.transform.position.y,
+            x = Mathf.Sin(zet) * this.plönet.transform.localScale.x * 4.3f + this.plönet.transform.position.x,
+            y = Mathf.Cos(zet) * this.plönet.transform.localScale.x * 4.3f + this.plönet.transform.position.y,
             -böbbelNumber);
 
         return spawnLocation;

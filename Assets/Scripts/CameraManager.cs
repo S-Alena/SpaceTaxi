@@ -66,7 +66,6 @@ public class CameraManager : MonoBehaviour
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         //edge scrolling
-        /*
         if (Input.mousePosition.x > Screen.width - edgeSize)
         {
             moveInput.Set(1, 0);
@@ -83,7 +82,6 @@ public class CameraManager : MonoBehaviour
         {
             moveInput.Set(0, -1);
         }
-        */
 
         moveVelocity = moveInput.normalized * moveSpeed;
 
