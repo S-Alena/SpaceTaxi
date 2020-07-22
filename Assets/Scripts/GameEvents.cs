@@ -74,4 +74,14 @@ public class GameEvents : MonoBehaviour
         }
     }
 
+    public event Action onWin;
+
+    public void ActivateNextLevel()
+    {
+        if (onWin != null)
+        {
+            onWin();
+        }
+    }
+
 }

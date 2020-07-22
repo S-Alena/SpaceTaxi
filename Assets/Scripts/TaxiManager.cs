@@ -62,8 +62,6 @@ public class TaxiManager : MonoBehaviour
     public GameObject beam;
     public AudioSource beamSFX;
     float beamTime;
-    
-    private Button nextLevelButton;
 
 
     // Start is called before the first frame update
@@ -82,25 +80,7 @@ public class TaxiManager : MonoBehaviour
 
         prevPosition = this.transform.position;
 
-        Button[] menuButtons = menu.GetComponentsInChildren<Button>();
 
-        foreach (Button btn in menuButtons)
-        {
-            if(btn.name == "Restart")
-            {
-                btn.onClick.AddListener(Restart);
-            }
-            else if (btn.name == "Menu")
-            {
-                btn.onClick.AddListener(MainMenu);
-            }else if (btn.name =="Next Level")
-            {
-                nextLevelButton = btn;
-                nextLevelButton.onClick.AddListener(NextLevel);
-                nextLevelButton.gameObject.SetActive(false);
-            }
-
-        }
 
 
         fuelRangeAfterMoving = fuelRange;
@@ -189,55 +169,6 @@ public class TaxiManager : MonoBehaviour
         }
 
 
-    }
-
-    public void Restart()
-    {
-        GameEvents.current.RestartGame();
-        PassengerCount.redPassengerCount = 0;
-        PassengerCount.pinkPassengerCount = 0;
-        PassengerCount.yellowPassengerCount = 0;
-        PassengerCount.bluePassengerCount = 0;
-        PassengerCount.transported = 0;
-    }
-
-    public void MainMenu()
-    {
-        PassengerCount.redPassengerCount = 0;
-        PassengerCount.pinkPassengerCount = 0;
-        PassengerCount.yellowPassengerCount = 0;
-        PassengerCount.bluePassengerCount = 0;
-        PassengerCount.transported = 0;
-        SceneManager.LoadScene("StartScreen", LoadSceneMode.Single);
-    }
-
-    public void NextLevel()
-    {
-        PassengerCount.redPassengerCount = 0;
-        PassengerCount.pinkPassengerCount = 0;
-        PassengerCount.yellowPassengerCount = 0;
-        PassengerCount.bluePassengerCount = 0;
-        PassengerCount.transported = 0;
-
-        String next = "Level0";
-
-        switch (SceneManager.GetActiveScene().name)
-        {
-            case "Level--":
-                next = "Level0";
-                break;
-            case "Level0":
-                next = "Level1";
-                break;
-            case "Level1":
-                next = "Level2";
-                break;
-            case "Level2":
-                next = "Level3";
-                break;
-
-        }
-        SceneManager.LoadScene(next, LoadSceneMode.Single);
     }
 
 
@@ -451,7 +382,7 @@ public class TaxiManager : MonoBehaviour
 
             if (PassengerCount.yellowPassengerCount == 0 && PassengerCount.pinkPassengerCount == 0 && PassengerCount.bluePassengerCount == 0 && PassengerCount.redPassengerCount == 0)
             {
-                nextLevelButton.gameObject.SetActive(true);
+                GameEvents.current.ActivateNextLevel();
                 endText.text = "You made it. " + Environment.NewLine + "Transported = " + PassengerCount.transported;
 
             }
