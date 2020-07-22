@@ -41,7 +41,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
 
@@ -72,10 +72,7 @@ public class PauseMenu : MonoBehaviour
         PassengerCount.yellowPassengerCount = 0;
         PassengerCount.bluePassengerCount = 0;
         PassengerCount.transported = 0;
-        if (nextLevel.Length > 0)
-        {
-            SceneManager.LoadScene(nextLevel, LoadSceneMode.Single);
-        }
+        SceneManager.LoadScene(nextLevel, LoadSceneMode.Single);
     }
 
     public void NextButton()

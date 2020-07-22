@@ -57,7 +57,6 @@ public class PassengerCount : MonoBehaviour
 
     private void DeletePassengerCount(Color color)
     {
-        Debug.Log("Deleted");
 
 
         if (color == TaxiManager.red)

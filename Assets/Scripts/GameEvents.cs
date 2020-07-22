@@ -78,8 +78,10 @@ public class GameEvents : MonoBehaviour
 
     public void ActivateNextLevel()
     {
+
         if (onWin != null)
         {
+
             onWin();
         }
     }

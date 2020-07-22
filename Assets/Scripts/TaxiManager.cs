@@ -373,6 +373,7 @@ public class TaxiManager : MonoBehaviour
 
             if (PassengerCount.yellowPassengerCount == 0 && PassengerCount.pinkPassengerCount == 0 && PassengerCount.bluePassengerCount == 0 && PassengerCount.redPassengerCount == 0)
             {
+                Debug.Log("You won");
                 GameEvents.current.ActivateNextLevel();
                 float score = PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name,0);
                 if(PassengerCount.transported > score)
