@@ -14632,7 +14632,6 @@ GameObject:
   - component: {fileID: 1771602764}
   - component: {fileID: 1771602763}
   - component: {fileID: 1771602762}
-  - component: {fileID: 1771602761}
   - component: {fileID: 1771602760}
   - component: {fileID: 1771602759}
   m_Layer: 5
@@ -14673,22 +14672,6 @@ MonoBehaviour:
   sfx:
   - {fileID: 1716420398}
   - {fileID: 1164213802}
---- !u!114 &1771602761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1771602758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ebfaa74152b8a849b0f2ff55d14385c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  redPassengerDisplay: {fileID: 1416659720}
-  pinkPassengerDisplay: {fileID: 1782348325}
-  yellowPassengerDisplay: {fileID: 1243929061}
-  bluePassengerDisplay: {fileID: 1623007856}
 --- !u!114 &1771602762
 MonoBehaviour:
   m_ObjectHideFlags: 0

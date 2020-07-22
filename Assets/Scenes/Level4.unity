@@ -6786,7 +6786,6 @@ GameObject:
   - component: {fileID: 679580692}
   - component: {fileID: 679580691}
   - component: {fileID: 679580690}
-  - component: {fileID: 679580689}
   - component: {fileID: 679580688}
   - component: {fileID: 679580687}
   m_Layer: 5
@@ -6827,22 +6826,6 @@ MonoBehaviour:
   sfx:
   - {fileID: 533633090}
   - {fileID: 69745958}
---- !u!114 &679580689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679580686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ebfaa74152b8a849b0f2ff55d14385c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  redPassengerDisplay: {fileID: 776419763}
-  pinkPassengerDisplay: {fileID: 1453405466}
-  yellowPassengerDisplay: {fileID: 861464980}
-  bluePassengerDisplay: {fileID: 1151325382}
 --- !u!114 &679580690
 MonoBehaviour:
   m_ObjectHideFlags: 0

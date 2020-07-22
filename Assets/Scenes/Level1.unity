@@ -3194,7 +3194,6 @@ GameObject:
   - component: {fileID: 447863574}
   - component: {fileID: 447863573}
   - component: {fileID: 447863572}
-  - component: {fileID: 447863571}
   - component: {fileID: 447863576}
   - component: {fileID: 447863577}
   m_Layer: 5
@@ -3229,22 +3228,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &447863571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447863569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ebfaa74152b8a849b0f2ff55d14385c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  redPassengerDisplay: {fileID: 1172165758}
-  pinkPassengerDisplay: {fileID: 1584693143}
-  yellowPassengerDisplay: {fileID: 1570608525}
-  bluePassengerDisplay: {fileID: 316548490}
 --- !u!114 &447863572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14957,6 +14940,7 @@ GameObject:
   - component: {fileID: 2090632274}
   - component: {fileID: 2090632273}
   - component: {fileID: 2090632272}
+  - component: {fileID: 2090632275}
   m_Layer: 0
   m_Name: Canvas-PassengerCount
   m_TagString: Untagged
@@ -15047,6 +15031,22 @@ Canvas:
   m_SortingLayerID: -1630107737
   m_SortingOrder: 10
   m_TargetDisplay: 0
+--- !u!114 &2090632275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090632270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ebfaa74152b8a849b0f2ff55d14385c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redPassengerDisplay: {fileID: 1172165758}
+  pinkPassengerDisplay: {fileID: 1584693143}
+  yellowPassengerDisplay: {fileID: 1570608525}
+  bluePassengerDisplay: {fileID: 316548490}
 --- !u!1 &2123283672
 GameObject:
   m_ObjectHideFlags: 0

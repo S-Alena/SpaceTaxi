@@ -7940,7 +7940,6 @@ GameObject:
   - component: {fileID: 987647121}
   - component: {fileID: 987647120}
   - component: {fileID: 987647119}
-  - component: {fileID: 987647118}
   - component: {fileID: 987647117}
   - component: {fileID: 987647116}
   m_Layer: 5
@@ -8006,22 +8005,6 @@ MonoBehaviour:
   sfx:
   - {fileID: 1240588008}
   - {fileID: 781695532}
---- !u!114 &987647118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 987647114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ebfaa74152b8a849b0f2ff55d14385c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  redPassengerDisplay: {fileID: 258310149}
-  pinkPassengerDisplay: {fileID: 53016456}
-  yellowPassengerDisplay: {fileID: 382119002}
-  bluePassengerDisplay: {fileID: 1095721749}
 --- !u!114 &987647119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13607,6 +13590,7 @@ GameObject:
   - component: {fileID: 1670792569}
   - component: {fileID: 1670792568}
   - component: {fileID: 1670792567}
+  - component: {fileID: 1670792570}
   m_Layer: 0
   m_Name: Canvas-PassengerCount
   m_TagString: Untagged
@@ -13697,6 +13681,22 @@ Canvas:
   m_SortingLayerID: -1630107737
   m_SortingOrder: 10
   m_TargetDisplay: 0
+--- !u!114 &1670792570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670792565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ebfaa74152b8a849b0f2ff55d14385c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redPassengerDisplay: {fileID: 258310149}
+  pinkPassengerDisplay: {fileID: 53016456}
+  yellowPassengerDisplay: {fileID: 382119002}
+  bluePassengerDisplay: {fileID: 1095721749}
 --- !u!1 &1677140693
 GameObject:
   m_ObjectHideFlags: 0
