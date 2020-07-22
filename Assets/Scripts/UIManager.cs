@@ -12,7 +12,6 @@ public class UIManager : MonoBehaviour
     public string level;
     public AudioSource beamSFX;
     public AudioSource teleportSFX;
-    public GameObject highScores;
 
 
     void Start()
@@ -22,14 +21,6 @@ public class UIManager : MonoBehaviour
         
         Button btn0 = QuitGame.GetComponent<Button>();
         btn0.onClick.AddListener(Quit);
-
-        Text[] highScoreTexts = highScores.GetComponentsInChildren<Text>();
-
-        foreach (Text highScore in highScoreTexts)
-        {
-            float score = PlayerPrefs.GetFloat(highScore.name, 0);
-            highScore.text = "Highscore: " + score;
-        }
 
     }
      
