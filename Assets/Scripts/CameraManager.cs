@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -95,8 +96,7 @@ public class CameraManager : MonoBehaviour
     private void FixedUpdate()
     {
         float strayDistance = Vector2.Distance(worldCenter.transform.position, (rb.position + moveVelocity * Time.fixedDeltaTime));
-
-        //Debug.Log("Distance: " + strayDistance);
+        
 
 
         if (strayDistance < maxStray)
