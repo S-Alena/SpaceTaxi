@@ -26,7 +26,10 @@ public class CameraManager : MonoBehaviour
     private Rigidbody2D srb;
     public GameObject freckleBackground;
     private Rigidbody2D frb;
-
+    public GameObject planetLayer;
+    private Rigidbody2D prb;
+    public GameObject planetLayer2;
+    private Rigidbody2D prb2;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +38,8 @@ public class CameraManager : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         srb = starBackground.GetComponent<Rigidbody2D>();
         frb = freckleBackground.GetComponent<Rigidbody2D>();
+        prb = planetLayer.GetComponent<Rigidbody2D>();
+        prb2 = planetLayer2.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -44,7 +49,7 @@ public class CameraManager : MonoBehaviour
         //zoom
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
-            if(zoomSize > minZoom)
+            if (zoomSize > minZoom)
             {
                 zoomSize -= 100;
                 MoveCam();
@@ -53,7 +58,7 @@ public class CameraManager : MonoBehaviour
 
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
-            if(zoomSize < maxZoom)
+            if (zoomSize < maxZoom)
             {
                 zoomSize += 100;
             }
@@ -70,11 +75,11 @@ public class CameraManager : MonoBehaviour
         {
             moveInput.Set(1, 0);
         }
-        if(Input.mousePosition.x < edgeSize)
+        if (Input.mousePosition.x < edgeSize)
         {
             moveInput.Set(-1, 0);
         }
-        if(Input.mousePosition.y > Screen.height - edgeSize)
+        if (Input.mousePosition.y > Screen.height - edgeSize)
         {
             moveInput.Set(0, 1);
         }
@@ -94,11 +99,13 @@ public class CameraManager : MonoBehaviour
         //Debug.Log("Distance: " + strayDistance);
 
 
-        if(strayDistance < maxStray)
+        if (strayDistance < maxStray)
         {
             rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
             srb.MovePosition(srb.position + moveVelocity / 1.1f * Time.fixedDeltaTime);
-            frb.MovePosition(frb.position + moveVelocity / 1.05f * Time.fixedDeltaTime);
+            frb.MovePosition(frb.position + moveVelocity * Time.fixedDeltaTime);
+            prb.MovePosition(prb.position + moveVelocity / 1.2f  * Time.fixedDeltaTime);
+            prb2.MovePosition(prb2.position + moveVelocity / 1.4f * Time.fixedDeltaTime);
         }
 
     }
@@ -114,10 +121,16 @@ public class CameraManager : MonoBehaviour
 
         float strayDistance = Vector2.Distance(worldCenter.transform.position, (transform.position + (moveTowards - transform.position) * multiplier));
 
+        Vector3 posAdd = (moveTowards - transform.position) * multiplier;
+
         if (strayDistance < maxStray)
         {
             // Move camera
-            transform.position += (moveTowards - transform.position) * multiplier;
+            transform.position += posAdd;
+            frb.transform.position += posAdd;
+            srb.transform.position += posAdd / 1.1f;
+            prb.transform.position += posAdd / 1.2f;
+            prb2.transform.position += posAdd / 1.4f;
         }
     }
 }
