@@ -3580,6 +3580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85aeaebff73ce7543811502cfca5aa55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextLevel: 
 --- !u!1 &456496121
 GameObject:
   m_ObjectHideFlags: 0
@@ -14700,7 +14701,7 @@ MonoBehaviour:
     type: 3}
   withinRange: 0
   passengerRed: 0
-  passengerPink: 5
+  passengerPink: 6
   passengerBlue: 0
   passengerYellow: 0
   "b\xF6bbelCollection": []

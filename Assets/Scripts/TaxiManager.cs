@@ -89,15 +89,6 @@ public class TaxiManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (end == true && Input.anyKeyDown)
-        {
-            /*GameEvents.current.RestartGame();
-            PassengerCount.redPassengerCount = 0;
-            PassengerCount.pinkPassengerCount = 0;
-            PassengerCount.yellowPassengerCount = 0;
-            PassengerCount.bluePassengerCount = 0;
-            PassengerCount.transported = 0;*/
-        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -383,7 +374,16 @@ public class TaxiManager : MonoBehaviour
             if (PassengerCount.yellowPassengerCount == 0 && PassengerCount.pinkPassengerCount == 0 && PassengerCount.bluePassengerCount == 0 && PassengerCount.redPassengerCount == 0)
             {
                 GameEvents.current.ActivateNextLevel();
-                endText.text = "You made it. " + Environment.NewLine + "Transported = " + PassengerCount.transported;
+                float score = PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name,0);
+                if(PassengerCount.transported > score)
+                {
+                    PlayerPrefs.SetFloat(SceneManager.GetActiveScene().name, PassengerCount.transported);
+                    endText.text = "New Highscore! " + Environment.NewLine + "Transported = " + PassengerCount.transported;
+                }
+                else
+                {
+                    endText.text = "You made it. " + Environment.NewLine + "Transported = " + PassengerCount.transported;
+                }
 
             }
             else

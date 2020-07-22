@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
 
 
     private Button nextLevelButton;
-    public string nextLevel;
+    public string nextLevel = "";
 
     void Start()
     {
