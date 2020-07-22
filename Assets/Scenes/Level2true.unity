@@ -8404,6 +8404,7 @@ GameObject:
   - component: {fileID: 1237872840}
   - component: {fileID: 1237872839}
   - component: {fileID: 1237872838}
+  - component: {fileID: 1237872841}
   m_Layer: 0
   m_Name: Canvas-PassengerCount
   m_TagString: Untagged
@@ -8494,6 +8495,22 @@ Canvas:
   m_SortingLayerID: -1630107737
   m_SortingOrder: 10
   m_TargetDisplay: 0
+--- !u!114 &1237872841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237872836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ebfaa74152b8a849b0f2ff55d14385c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redPassengerDisplay: {fileID: 1062049453}
+  pinkPassengerDisplay: {fileID: 1670914469}
+  yellowPassengerDisplay: {fileID: 1124583842}
+  bluePassengerDisplay: {fileID: 2075176285}
 --- !u!1 &1263651598
 GameObject:
   m_ObjectHideFlags: 0
