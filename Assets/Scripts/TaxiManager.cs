@@ -388,7 +388,7 @@ public class TaxiManager : MonoBehaviour
             }
             else
             {
-                endText.text = "You didn't bring " + Environment.NewLine + "all the Passengers home!" + Environment.NewLine + "Press to Restart";
+                endText.text = "You didn't bring " + Environment.NewLine + "all the Passengers home!";
             }
             menu.SetActive(true);
             end = true;

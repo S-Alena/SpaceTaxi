@@ -48,12 +48,12 @@ public class Window_QuestPointer : MonoBehaviour
             {
                 cappedTargetScreenPosition.y = Screen.height - 20f;
             }
-            Debug.Log("Is off screen: " + isOffScreen);
+            //Debug.Log("Is off screen: " + isOffScreen);
             pointerRectTransform.localPosition = new Vector3(cappedTargetScreenPosition.x, cappedTargetScreenPosition.y, 0f);
         }
         else
         {
-            Debug.Log("Is off screen: " + isOffScreen);
+            //Debug.Log("Is off screen: " + isOffScreen);
             pointerRectTransform.localPosition = new Vector3(targetPositionScreenPoint.x, targetPositionScreenPoint.y, 0f);
             transform.Find("Pointer").GetComponent<Image>().enabled = false;
 
