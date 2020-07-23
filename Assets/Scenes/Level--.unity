@@ -2847,6 +2847,8 @@ MonoBehaviour:
   maxStray: 3000
   starBackground: {fileID: 1950281899}
   freckleBackground: {fileID: 355000633}
+  planetLayer: {fileID: 0}
+  planetLayer2: {fileID: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
