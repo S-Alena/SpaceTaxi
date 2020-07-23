@@ -6,11 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
 
-
-    private Button nextLevelButton;
     public string nextLevel = "";
+    private Button nextLevelButton;
 
     void Start()
     {
@@ -38,7 +36,6 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
        
