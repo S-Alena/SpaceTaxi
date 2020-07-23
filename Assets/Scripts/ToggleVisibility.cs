@@ -34,9 +34,9 @@ public class ToggleVisibility : MonoBehaviour
     }
 
     private void Toggle()
-        {
-            showObj.SetActive(true);
-            noShow1.SetActive(false);
-            noShow2.SetActive(false);
-        }
+    {
+        showObj.SetActive(true);
+        noShow1.SetActive(false);
+        noShow2.SetActive(false);
+    }
 }
