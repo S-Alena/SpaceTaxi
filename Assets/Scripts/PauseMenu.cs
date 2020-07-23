@@ -12,8 +12,8 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        GameEvents.current.onWin += NextButton;
 
+        GameEvents.current.onWin += NextButton;
         Button[] menuButtons = this.GetComponentsInChildren<Button>();
 
         foreach (Button btn in menuButtons)
@@ -38,7 +38,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-       
+
     }
 
 

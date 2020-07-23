@@ -63,6 +63,9 @@ public class TaxiManager : MonoBehaviour
     public AudioSource beamSFX;
     float beamTime;
 
+    //relevant for NextLevelButton
+    public bool win = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -101,6 +104,11 @@ public class TaxiManager : MonoBehaviour
             {
                 menu.SetActive(false);
             }
+        }
+
+        if (win == true)
+        {
+            GameEvents.current.ActivateNextLevel();
         }
 
 
@@ -161,53 +169,6 @@ public class TaxiManager : MonoBehaviour
 
 
     }
-
-
-
-    //**** Point & Click Movement ****
-
-    /*
-    void MovementUpdateOld() //called once per frame
-    {
-        positonBeforeMoving = transform.position;
-        if (Input.GetMouseButtonDown(0))
-        {
-            SetTargetPosition();
-        }
-        if (isMoving == true)
-        {
-            Move();
-        }
-    }
-
-    void SetTargetPosition()
-    {
-        targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        targetPosition.z = transform.position.z;
-
-        isMoving = true;
-    }
-
-    void MoveOld()
-    {
-        //transform.rotation = Quaternion.LookRotation(targetPosition,Vector3.forward); //rotation of Player
-        if(fuelRange >= 0)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-            fuelDisplay.transform.position = Vector3.MoveTowards(fuelDisplay.transform.position, targetPosition, speed * Time.deltaTime);
-            if (transform.position == targetPosition)
-            {
-                isMoving = false;
-            }
-        }else{
-            endText.text = "Fuel Empty." + Environment.NewLine + "Press to Restart";
-            endText.enabled = true;
-            end = true;
-
-        }
-    }
-    */
-
 
     void UpdateTargetPosition(GameObject planetPosition)
     {
@@ -271,6 +232,52 @@ public class TaxiManager : MonoBehaviour
     }
     //*************************************
 
+
+
+
+    //**** Point & Click Movement ****
+
+    /*
+    void MovementUpdateOld() //called once per frame
+    {
+        positonBeforeMoving = transform.position;
+        if (Input.GetMouseButtonDown(0))
+        {
+            SetTargetPosition();
+        }
+        if (isMoving == true)
+        {
+            Move();
+        }
+    }
+
+    void SetTargetPosition()
+    {
+        targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        targetPosition.z = transform.position.z;
+
+        isMoving = true;
+    }
+
+    void MoveOld()
+    {
+        //transform.rotation = Quaternion.LookRotation(targetPosition,Vector3.forward); //rotation of Player
+        if(fuelRange >= 0)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            fuelDisplay.transform.position = Vector3.MoveTowards(fuelDisplay.transform.position, targetPosition, speed * Time.deltaTime);
+            if (transform.position == targetPosition)
+            {
+                isMoving = false;
+            }
+        }else{
+            endText.text = "Fuel Empty." + Environment.NewLine + "Press to Restart";
+            endText.enabled = true;
+            end = true;
+
+        }
+    }
+    */
 
 
 
@@ -373,8 +380,6 @@ public class TaxiManager : MonoBehaviour
 
             if (PassengerCount.yellowPassengerCount == 0 && PassengerCount.pinkPassengerCount == 0 && PassengerCount.bluePassengerCount == 0 && PassengerCount.redPassengerCount == 0)
             {
-                Debug.Log("You won");
-                GameEvents.current.ActivateNextLevel();
                 float score = PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name,0);
                 if(PassengerCount.transported > score)
                 {
@@ -385,6 +390,7 @@ public class TaxiManager : MonoBehaviour
                 {
                     endText.text = "You made it. " + Environment.NewLine + "Transported = " + PassengerCount.transported;
                 }
+                win = true;
 
             }
             else

@@ -17,6 +17,10 @@ public class ToggleVisibility : MonoBehaviour
         btn.onClick.AddListener(Toggle);
 
 
+        if (showObj.activeSelf)
+        {
+            btn.Select();
+        }
 
         Text[] highScoreTexts = highScores.GetComponentsInChildren<Text>();
 
