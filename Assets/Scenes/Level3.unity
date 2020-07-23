@@ -12007,7 +12007,7 @@ SpriteRenderer:
   m_SortingLayer: -3
   m_SortingOrder: 30
   m_Sprite: {fileID: 21300000, guid: 010bd371f95c3d043a54b42e50a94289, type: 3}
-  m_Color: {r: 0.20392159, g: 0.3647059, b: 0.62352943, a: 1}
+  m_Color: {r: 0.3994749, g: 0.41630453, b: 0.4433962, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14535,6 +14535,7 @@ MonoBehaviour:
     type: 3}
   beam: {fileID: 2138900100}
   beamSFX: {fileID: 1427262126}
+  win: 0
 --- !u!210 &1974340170
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -14960,7 +14961,7 @@ SpriteRenderer:
   m_SortingLayer: -3
   m_SortingOrder: 30
   m_Sprite: {fileID: 21300000, guid: 010bd371f95c3d043a54b42e50a94289, type: 3}
-  m_Color: {r: 0.6132076, g: 0.32247058, b: 0.19958171, a: 1}
+  m_Color: {r: 0.4056604, g: 0.37194648, b: 0.35782307, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
